@@ -13,6 +13,9 @@
 		B57054181F7BC98300514412 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B57054171F7BC98300514412 /* Assets.xcassets */; };
 		B570541B1F7BC98300514412 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B57054191F7BC98300514412 /* LaunchScreen.storyboard */; };
 		B57054261F7BC98300514412 /* ProAcademyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57054251F7BC98300514412 /* ProAcademyTests.swift */; };
+		B57054311F7E247600514412 /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57054301F7E247600514412 /* WelcomePageViewController.swift */; };
+		B57054331F7E29B600514412 /* WelcomePage1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57054321F7E29B600514412 /* WelcomePage1ViewController.swift */; };
+		B57054351F7E344C00514412 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57054341F7E344C00514412 /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		B57054211F7BC98300514412 /* ProAcademyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProAcademyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B57054251F7BC98300514412 /* ProAcademyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProAcademyTests.swift; sourceTree = "<group>"; };
 		B57054271F7BC98300514412 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B57054301F7E247600514412 /* WelcomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePageViewController.swift; sourceTree = "<group>"; };
+		B57054321F7E29B600514412 /* WelcomePage1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePage1ViewController.swift; sourceTree = "<group>"; };
+		B57054341F7E344C00514412 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,7 @@
 				B57054171F7BC98300514412 /* Assets.xcassets */,
 				B57054191F7BC98300514412 /* LaunchScreen.storyboard */,
 				B570541C1F7BC98300514412 /* Info.plist */,
+				B57054361F7E43D600514412 /* Welcome */,
 			);
 			path = ProAcademy;
 			sourceTree = "<group>";
@@ -94,6 +101,16 @@
 				B57054271F7BC98300514412 /* Info.plist */,
 			);
 			path = ProAcademyTests;
+			sourceTree = "<group>";
+		};
+		B57054361F7E43D600514412 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				B57054301F7E247600514412 /* WelcomePageViewController.swift */,
+				B57054321F7E29B600514412 /* WelcomePage1ViewController.swift */,
+				B57054341F7E344C00514412 /* WelcomeViewController.swift */,
+			);
+			name = Welcome;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +218,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B57054331F7E29B600514412 /* WelcomePage1ViewController.swift in Sources */,
+				B57054351F7E344C00514412 /* WelcomeViewController.swift in Sources */,
+				B57054311F7E247600514412 /* WelcomePageViewController.swift in Sources */,
 				B57054131F7BC98300514412 /* ViewController.swift in Sources */,
 				B57054111F7BC98300514412 /* AppDelegate.swift in Sources */,
 			);
