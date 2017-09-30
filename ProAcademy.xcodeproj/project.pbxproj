@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B5437ACA1F7F9441003DB93D /* TrainingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5437AC91F7F9441003DB93D /* TrainingsViewController.swift */; };
+		B5437ACC1F7F957A003DB93D /* TrainingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5437ACB1F7F957A003DB93D /* TrainingTableViewCell.swift */; };
 		B57054111F7BC98300514412 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57054101F7BC98300514412 /* AppDelegate.swift */; };
 		B57054131F7BC98300514412 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57054121F7BC98300514412 /* ViewController.swift */; };
 		B57054161F7BC98300514412 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B57054141F7BC98300514412 /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B5437AC91F7F9441003DB93D /* TrainingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingsViewController.swift; sourceTree = "<group>"; };
+		B5437ACB1F7F957A003DB93D /* TrainingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingTableViewCell.swift; sourceTree = "<group>"; };
 		B570540D1F7BC98300514412 /* ProAcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProAcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B57054101F7BC98300514412 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B57054121F7BC98300514412 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +66,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B5437ACD1F7F95D7003DB93D /* Trainings */ = {
+			isa = PBXGroup;
+			children = (
+				B5437AC91F7F9441003DB93D /* TrainingsViewController.swift */,
+				B5437ACB1F7F957A003DB93D /* TrainingTableViewCell.swift */,
+			);
+			name = Trainings;
+			sourceTree = "<group>";
+		};
 		B57054041F7BC98300514412 = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +103,7 @@
 				B57054191F7BC98300514412 /* LaunchScreen.storyboard */,
 				B570541C1F7BC98300514412 /* Info.plist */,
 				B57054361F7E43D600514412 /* Welcome */,
+				B5437ACD1F7F95D7003DB93D /* Trainings */,
 			);
 			path = ProAcademy;
 			sourceTree = "<group>";
@@ -220,8 +234,10 @@
 			files = (
 				B57054331F7E29B600514412 /* WelcomePage1ViewController.swift in Sources */,
 				B57054351F7E344C00514412 /* WelcomeViewController.swift in Sources */,
+				B5437ACA1F7F9441003DB93D /* TrainingsViewController.swift in Sources */,
 				B57054311F7E247600514412 /* WelcomePageViewController.swift in Sources */,
 				B57054131F7BC98300514412 /* ViewController.swift in Sources */,
+				B5437ACC1F7F957A003DB93D /* TrainingTableViewCell.swift in Sources */,
 				B57054111F7BC98300514412 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,6 +450,7 @@
 				B570542C1F7BC98300514412 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B570542D1F7BC98300514412 /* Build configuration list for PBXNativeTarget "ProAcademyTests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +459,7 @@
 				B570542F1F7BC98300514412 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
