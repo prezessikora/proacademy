@@ -438,7 +438,7 @@
         <!--TrainingDetails-->
         <scene sceneID="TPD-C1-hHa">
             <objects>
-                <viewController id="uxx-9D-iik" userLabel="TrainingDetails" sceneMemberID="viewController">
+                <viewController title="Perfekcyjne Brwi" id="uxx-9D-iik" userLabel="TrainingDetails" customClass="TrainingDetailsViewController" customModule="ProAcademy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mpP-rP-0qR"/>
                         <viewControllerLayoutGuide type="bottom" id="s5c-fZ-Q38"/>
@@ -446,8 +446,126 @@
                     <view key="view" contentMode="scaleToFill" id="9HY-LJ-N9a">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oDh-Wa-BBu">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Xm-XG-dAN">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="156"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Duc-76-8d5">
+                                                <rect key="frame" x="8" y="8" width="304" height="140"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="p:a" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRf-34-qaZ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="304" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="100" id="ENP-PA-Bvp"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EiO-wK-eJQ">
+                                                        <rect key="frame" x="0.0" y="100" width="304" height="40"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18/20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1v-Uh-93U">
+                                                                <rect key="frame" x="0.0" y="0.0" width="224" height="40"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKM-PS-eOK">
+                                                                <rect key="frame" x="224" y="0.0" width="80" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="80" id="tK3-Ml-4Cc"/>
+                                                                </constraints>
+                                                                <state key="normal" title="450,00 zł"/>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="FAV-P9-lT1"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Duc-76-8d5" secondAttribute="bottom" constant="8" id="2hh-rT-nuD"/>
+                                            <constraint firstAttribute="trailing" secondItem="Duc-76-8d5" secondAttribute="trailing" constant="8" id="FjC-PT-7WP"/>
+                                            <constraint firstItem="Duc-76-8d5" firstAttribute="top" secondItem="7Xm-XG-dAN" secondAttribute="top" constant="8" id="cYH-4r-ygx"/>
+                                            <constraint firstItem="Duc-76-8d5" firstAttribute="leading" secondItem="7Xm-XG-dAN" secondAttribute="leading" constant="8" id="eaw-1m-cAa"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JfY-xZ-dFk">
+                                        <rect key="frame" x="0.0" y="156" width="320" height="298"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UIl-cr-6iO">
+                                                <rect key="frame" x="8" y="8" width="304" height="282"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Perfekcyjne Brwi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fr-Cn-EYT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="304" height="16.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:00 AM - 5:00 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fds-64-SR2">
+                                                        <rect key="frame" x="0.0" y="21.5" width="304" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kościuszki 16/3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaV-iH-cYo">
+                                                        <rect key="frame" x="0.0" y="43.5" width="304" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jagoda Wrześniawska" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qcr-Yj-kv0">
+                                                        <rect key="frame" x="0.0" y="65.5" width="304" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="itW-2A-bA5">
+                                                        <rect key="frame" x="0.0" y="87.5" width="304" height="194.5"/>
+                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <string key="text">Jest to wspaniała okazaja aby spędzić miłe chwile w kobiecym gronie, przy okazji wynosząc przydatną widzę na temat makijażu, czyli wszystko co tygrski lubią najbardziej w jednym miejscu.</string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="UIl-cr-6iO" firstAttribute="top" secondItem="JfY-xZ-dFk" secondAttribute="top" constant="8" id="4Dh-46-Nrx"/>
+                                            <constraint firstAttribute="trailing" secondItem="UIl-cr-6iO" secondAttribute="trailing" constant="8" id="bSx-se-cop"/>
+                                            <constraint firstItem="UIl-cr-6iO" firstAttribute="leading" secondItem="JfY-xZ-dFk" secondAttribute="leading" constant="8" id="fOy-3Q-CXn"/>
+                                            <constraint firstAttribute="bottom" secondItem="UIl-cr-6iO" secondAttribute="bottom" constant="8" id="wxs-1o-FpF"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npv-CI-6cJ">
+                                        <rect key="frame" x="0.0" y="454" width="320" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="PIJ-BC-gIT"/>
+                                        </constraints>
+                                        <state key="normal" title="Rezerwacja">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oDh-Wa-BBu" firstAttribute="top" secondItem="mpP-rP-0qR" secondAttribute="bottom" id="MzK-cz-cCq"/>
+                            <constraint firstItem="oDh-Wa-BBu" firstAttribute="leading" secondItem="9HY-LJ-N9a" secondAttribute="leading" id="gDr-vq-wOK"/>
+                            <constraint firstItem="s5c-fZ-Q38" firstAttribute="top" secondItem="oDh-Wa-BBu" secondAttribute="bottom" id="nN2-2z-BH6"/>
+                            <constraint firstAttribute="trailing" secondItem="oDh-Wa-BBu" secondAttribute="trailing" id="tPU-Ov-B84"/>
+                        </constraints>
                     </view>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ubB-aR-F59" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
