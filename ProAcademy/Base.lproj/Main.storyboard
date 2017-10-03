@@ -305,7 +305,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="255"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bzb-8v-WVS" id="kgA-it-D7p">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="254.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="255"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qep-1j-hTg">
@@ -553,6 +553,9 @@
                                         <state key="normal" title="Rezerwacja">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="DaS-6x-WF7" kind="show" id="Zug-yQ-Ib2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -574,7 +577,7 @@
         <!--Booking-->
         <scene sceneID="Ifk-ea-FDc">
             <objects>
-                <viewController id="DaS-6x-WF7" userLabel="Booking" sceneMemberID="viewController">
+                <viewController title="Rezerwacja" id="DaS-6x-WF7" userLabel="Booking" customClass="BookingViewController" customModule="ProAcademy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wXR-0c-3iN"/>
                         <viewControllerLayoutGuide type="bottom" id="41N-BU-wwk"/>
@@ -582,12 +585,186 @@
                     <view key="view" contentMode="scaleToFill" id="oX7-8g-JdR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="guY-8l-1dR">
+                                <rect key="frame" x="0.0" y="64" width="320" height="454"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cVN-2A-X6Q" userLabel="ParticipantView">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uczestnik" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyP-lZ-5Ub">
+                                                <rect key="frame" x="5" y="5" width="72" height="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="iyP-lZ-5Ub" secondAttribute="bottom" constant="5" id="7dM-0h-k5T"/>
+                                            <constraint firstAttribute="height" constant="30" id="8ZT-RP-owk"/>
+                                            <constraint firstItem="iyP-lZ-5Ub" firstAttribute="top" secondItem="cVN-2A-X6Q" secondAttribute="top" constant="5" id="97R-9h-PTH"/>
+                                            <constraint firstItem="iyP-lZ-5Ub" firstAttribute="leading" secondItem="cVN-2A-X6Q" secondAttribute="leading" constant="5" id="lc2-2s-rdd"/>
+                                            <constraint firstItem="iyP-lZ-5Ub" firstAttribute="centerY" secondItem="cVN-2A-X6Q" secondAttribute="centerY" id="qYE-TA-EcH"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czL-6L-d73">
+                                        <rect key="frame" x="0.0" y="48" width="320" height="30"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Pp8-Gu-L3h">
+                                                <rect key="frame" x="10" y="13" width="300" height="17"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xio-ab-qiR">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lidia Małaszyńska" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LE9-ed-pHf">
+                                                        <rect key="frame" x="100" y="0.0" width="200" height="17"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="200" id="eaZ-Gg-3Z5"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Pp8-Gu-L3h" secondAttribute="trailing" constant="10" id="0bW-XM-4mS"/>
+                                            <constraint firstItem="Pp8-Gu-L3h" firstAttribute="leading" secondItem="czL-6L-d73" secondAttribute="leading" constant="10" id="Zv4-EN-UIb"/>
+                                            <constraint firstAttribute="bottom" secondItem="Pp8-Gu-L3h" secondAttribute="bottom" id="vG9-P8-jLV"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eQ1-xD-dtU">
+                                        <rect key="frame" x="0.0" y="96" width="320" height="152"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gja-Ea-2vJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="152"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Lidia.Małaszyńska@gmail.com" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWy-43-xae">
+                                                <rect key="frame" x="120" y="0.0" width="200" height="152"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="4sg-zr-cgx"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nhg-Ry-Xiz" userLabel="DetailsView">
+                                        <rect key="frame" x="0.0" y="266" width="320" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Szczegóły szkolenia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lba-Xa-MFK">
+                                                <rect key="frame" x="5" y="5" width="130" height="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="lba-Xa-MFK" firstAttribute="leading" secondItem="Nhg-Ry-Xiz" secondAttribute="leading" constant="5" id="6QW-eU-JEM"/>
+                                            <constraint firstItem="lba-Xa-MFK" firstAttribute="top" secondItem="Nhg-Ry-Xiz" secondAttribute="top" constant="5" id="HLf-mF-bI4"/>
+                                            <constraint firstItem="lba-Xa-MFK" firstAttribute="centerY" secondItem="Nhg-Ry-Xiz" secondAttribute="centerY" id="d5f-oG-bVo"/>
+                                            <constraint firstAttribute="bottom" secondItem="lba-Xa-MFK" secondAttribute="bottom" constant="5" id="kWN-Y7-3Zw"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nf0-DW-LaZ">
+                                        <rect key="frame" x="0.0" y="314" width="320" height="17"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Nazwa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwy-rY-vbP">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Perfekcyjne Brwi" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qy6-9G-Pbr">
+                                                <rect key="frame" x="120" y="0.0" width="200" height="17"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="feh-CH-6p8"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xeM-Z0-hmC">
+                                        <rect key="frame" x="0.0" y="349" width="320" height="17"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Całkowity koszt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OV5-fb-bqP">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="450,00 PLN" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qv7-XK-gIg">
+                                                <rect key="frame" x="120" y="0.0" width="200" height="17"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="pwz-54-Cj7"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k6O-vD-hvB" userLabel="InfoView">
+                                        <rect key="frame" x="0.0" y="384" width="320" height="70"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Po kliknięciu przycisku zatwierdź zatwierdzisz uczestnictwo w kursie. " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HDZ-hl-fyl">
+                                                <rect key="frame" x="8" y="8" width="292" height="45"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="ziz-2O-5Ul"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="cVN-2A-X6Q" firstAttribute="height" secondItem="czL-6L-d73" secondAttribute="height" id="hK8-Pt-1J9"/>
+                                    <constraint firstItem="cVN-2A-X6Q" firstAttribute="height" secondItem="Nhg-Ry-Xiz" secondAttribute="height" id="nlq-dB-JB5"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mde-Mz-TEA">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Zwp-bW-q7m"/>
+                                </constraints>
+                                <state key="normal" title="Zatwierdź">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="guY-8l-1dR" firstAttribute="top" secondItem="wXR-0c-3iN" secondAttribute="bottom" id="2ql-T8-2O9"/>
+                            <constraint firstItem="mde-Mz-TEA" firstAttribute="top" secondItem="guY-8l-1dR" secondAttribute="bottom" id="As2-g3-Gui"/>
+                            <constraint firstAttribute="trailing" secondItem="guY-8l-1dR" secondAttribute="trailing" id="BfC-wL-5pR"/>
+                            <constraint firstItem="41N-BU-wwk" firstAttribute="top" secondItem="mde-Mz-TEA" secondAttribute="bottom" id="Bu3-sw-Uiu"/>
+                            <constraint firstItem="mde-Mz-TEA" firstAttribute="leading" secondItem="oX7-8g-JdR" secondAttribute="leading" id="HkI-wJ-e2d"/>
+                            <constraint firstItem="guY-8l-1dR" firstAttribute="leading" secondItem="oX7-8g-JdR" secondAttribute="leading" id="LDC-zG-09O"/>
+                            <constraint firstAttribute="trailing" secondItem="mde-Mz-TEA" secondAttribute="trailing" id="tv1-Ek-9LC"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5F-kU-VCm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5092.5" y="-204.92957746478874"/>
+            <point key="canvasLocation" x="5193.75" y="-200.70422535211267"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Lgz-fn-2PC">

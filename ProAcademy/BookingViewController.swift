@@ -1,22 +1,21 @@
 //
-//  TrainingDetailsViewController.swift
+//  BookingViewController.swift
 //  ProAcademy
 //
-//  Created by Krzysztof Sikora on 30/09/2017.
+//  Created by Krzysztof Sikora on 02/10/2017.
 //  Copyright © 2017 Design Love. All rights reserved.
 //
 
 import UIKit
 
-class TrainingDetailsViewController: UIViewController {
+class BookingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Perfekcyjne Brwi"
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        
+
+        // Do any additional setup after loading the view.
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
         
@@ -26,6 +25,5 @@ class TrainingDetailsViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
     }
-
-
+  
 }
