@@ -28,7 +28,7 @@ class TrainingsViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icons8-Home-48"), style: .plain, target: nil , action: nil)
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: imageFrom(systemItem: .search), style: .plain, target: nil , action: nil)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: Utils.imageFrom(systemItem: .search), style: .plain, target: nil , action: nil)
         
         self.navigationItem.titleView = UIImageView(image:  UIImage(named: "pa_title"))
 
@@ -36,22 +36,7 @@ class TrainingsViewController: UITableViewController {
     
     
     
-    func imageFrom(systemItem: UIBarButtonSystemItem)-> UIImage? {
-        let tempItem = UIBarButtonItem(barButtonSystemItem: systemItem, target: nil, action: nil)
-        
-        // add to toolbar and render it
-        UIToolbar().setItems([tempItem], animated: false)
-        
-        // got image from real uibutton
-        let itemView = tempItem.value(forKey: "view") as! UIView
-        for view in itemView.subviews {
-            if let button = view as? UIButton, let imageView = button.imageView {
-                return imageView.image
-            }
-        }
-        
-        return nil
-    }
+
 
 
 }
