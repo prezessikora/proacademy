@@ -26,6 +26,7 @@
 		B57054311F7E247600514412 /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57054301F7E247600514412 /* WelcomePageViewController.swift */; };
 		B57054331F7E29B600514412 /* WelcomePage1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57054321F7E29B600514412 /* WelcomePage1ViewController.swift */; };
 		B57054351F7E344C00514412 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57054341F7E344C00514412 /* WelcomeViewController.swift */; };
+		B5CAC3DD1F875B72009B2A4D /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CAC3DC1F875B72009B2A4D /* ArtistViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		B57054301F7E247600514412 /* WelcomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePageViewController.swift; sourceTree = "<group>"; };
 		B57054321F7E29B600514412 /* WelcomePage1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePage1ViewController.swift; sourceTree = "<group>"; };
 		B57054341F7E344C00514412 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		B5CAC3DC1F875B72009B2A4D /* ArtistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				B5437AD01F8213A8003DB93D /* BookingViewController.swift */,
 				B5437AD81F8525CF003DB93D /* Favourites */,
 				B5437AD41F83A265003DB93D /* Utils.swift */,
+				B5CAC3DC1F875B72009B2A4D /* ArtistViewController.swift */,
 			);
 			path = ProAcademy;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				B5437ADE1F8669E4003DB93D /* ArtistCell.swift in Sources */,
 				B5437AD71F85214A003DB93D /* EventsCollectionViewController.swift in Sources */,
 				B5437AD51F83A265003DB93D /* Utils.swift in Sources */,
+				B5CAC3DD1F875B72009B2A4D /* ArtistViewController.swift in Sources */,
 				B57054111F7BC98300514412 /* AppDelegate.swift in Sources */,
 				B5437AD31F83A20E003DB93D /* FavouritesViewController.swift in Sources */,
 				B5437ADC1F863726003DB93D /* FavouriteEventCell.swift in Sources */,

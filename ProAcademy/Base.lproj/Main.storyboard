@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ArE-mC-Jgb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sJ1-P5-0c6">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -260,26 +260,114 @@
         <!--Artist-->
         <scene sceneID="5MR-Ng-4wZ">
             <objects>
-                <viewController id="fNo-v1-pCZ" userLabel="Artist" sceneMemberID="viewController">
+                <viewController title="Natalia Stawiarska" id="fNo-v1-pCZ" userLabel="Artist" customClass="ArtistViewController" customModule="ProAcademy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="raJ-ci-4t5"/>
                         <viewControllerLayoutGuide type="bottom" id="A27-h0-6am"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="aN8-Jw-Y6W">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="595"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="B6D-KF-yaw">
+                                <rect key="frame" x="0.0" y="64" width="320" height="521"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pro-academy-natalia-stawiarska-profile-150x150" translatesAutoresizingMaskIntoConstraints="NO" id="zVQ-Jd-3Mo">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="142"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="zVQ-Jd-3Mo" secondAttribute="height" multiplier="160:71" id="Fy2-Oh-HZ3"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d77-WD-C6l">
+                                        <rect key="frame" x="0.0" y="152" width="320" height="30"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3fo-vp-Nqh">
+                                                <rect key="frame" x="15" y="0.0" width="290" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make-up artist &amp; CEO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pq0-WQ-cUh">
+                                                        <rect key="frame" x="0.0" y="0.0" width="220" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fT-w4-ORp">
+                                                        <rect key="frame" x="225" y="0.0" width="30" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="30" id="dzl-gH-O3L"/>
+                                                            <constraint firstAttribute="height" constant="30" id="lZf-bV-eBB"/>
+                                                        </constraints>
+                                                        <state key="normal" title="FB"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f82-BD-68Y">
+                                                        <rect key="frame" x="260" y="0.0" width="30" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="30" id="6KK-0O-qW2"/>
+                                                            <constraint firstAttribute="height" constant="30" id="StY-mo-qSv"/>
+                                                        </constraints>
+                                                        <state key="normal" title="LN"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="3fo-vp-Nqh" firstAttribute="top" secondItem="d77-WD-C6l" secondAttribute="top" id="POz-sw-QgW"/>
+                                            <constraint firstItem="3fo-vp-Nqh" firstAttribute="leading" secondItem="d77-WD-C6l" secondAttribute="leading" constant="15" id="Uxv-If-8v8"/>
+                                            <constraint firstAttribute="height" constant="30" id="o82-bE-a43"/>
+                                            <constraint firstAttribute="bottom" secondItem="3fo-vp-Nqh" secondAttribute="bottom" id="r5G-Vz-3if"/>
+                                            <constraint firstAttribute="trailing" secondItem="3fo-vp-Nqh" secondAttribute="trailing" constant="15" id="zPO-DW-gpD"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YXp-V6-qaE">
+                                        <rect key="frame" x="0.0" y="192" width="320" height="329"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hg3-VJ-Iva">
+                                                <rect key="frame" x="10" y="0.0" width="300" height="329"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <mutableString key="text">Współzałożycielka oraz jedna z głównych wizażystek Pro Academy. Ponad 10 lat związana z makijażem. Znana jako Na.La, uwielbiana przez klientki. Wiele lat współpracowała z firmą Mac Cosmetics, zdobywając międzynarodowe doświadczenie. Specjalistka od makijażu ust. Wulkan energii, pracoholik uwielbiający wyzwania. Mocno motywująca kursantki do przekraczania swoich granic i osiągania najlepszych wyników. Gdyby nie była wizażystką, zostałaby psychologiem.</mutableString>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Hg3-VJ-Iva" secondAttribute="trailing" constant="10" id="252-fr-3MJ"/>
+                                            <constraint firstItem="Hg3-VJ-Iva" firstAttribute="top" secondItem="YXp-V6-qaE" secondAttribute="top" id="9Jk-Zw-FTK"/>
+                                            <constraint firstAttribute="bottom" secondItem="Hg3-VJ-Iva" secondAttribute="bottom" id="EF0-TL-Ov9"/>
+                                            <constraint firstItem="Hg3-VJ-Iva" firstAttribute="leading" secondItem="YXp-V6-qaE" secondAttribute="leading" constant="10" id="TQS-6R-DMJ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="B6D-KF-yaw" secondAttribute="trailing" id="3oC-Jq-ur1"/>
+                            <constraint firstItem="B6D-KF-yaw" firstAttribute="leading" secondItem="aN8-Jw-Y6W" secondAttribute="leading" id="Iw5-vZ-i9y"/>
+                            <constraint firstItem="B6D-KF-yaw" firstAttribute="top" secondItem="raJ-ci-4t5" secondAttribute="bottom" id="QYJ-MD-Ruy"/>
+                            <constraint firstItem="A27-h0-6am" firstAttribute="top" secondItem="B6D-KF-yaw" secondAttribute="bottom" constant="10" id="ZZp-RT-AiE"/>
+                        </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="595"/>
+                    <connections>
+                        <outlet property="companyTitle" destination="Pq0-WQ-cUh" id="uvn-3G-2t1"/>
+                        <outlet property="fbButton" destination="3fT-w4-ORp" id="MOq-pe-vXj"/>
+                        <outlet property="imageView" destination="zVQ-Jd-3Mo" id="1Lc-qF-eLH"/>
+                        <outlet property="info" destination="Hg3-VJ-Iva" id="X8a-jx-ulF"/>
+                        <outlet property="linkedButton" destination="f82-BD-68Y" id="xCy-NL-zy9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sKa-zV-l2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2610" y="1163"/>
+            <point key="canvasLocation" x="3633.75" y="1489.9647887323945"/>
         </scene>
         <!--Artists Collection View Controller-->
         <scene sceneID="wWu-6t-WKe">
             <objects>
                 <collectionViewController id="F79-WS-JSE" customClass="ArtistsCollectionViewController" customModule="ProAcademy" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="6fq-FM-JwP">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6fq-FM-JwP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="395"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -343,6 +431,7 @@
                                     <outlet property="image" destination="6UH-M5-QFX" id="KCT-T8-HKa"/>
                                     <outlet property="name" destination="KIV-ub-Ku8" id="csV-xo-jC8"/>
                                     <outlet property="title" destination="fW4-ZA-RIG" id="8Fr-JA-8PO"/>
+                                    <segue destination="fNo-v1-pCZ" kind="show" id="bSJ-Ya-u6h"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -1087,6 +1176,7 @@
     <resources>
         <image name="icons8-Heart Outline-50" width="50" height="50"/>
         <image name="pro-academy-miss-lula-150x150" width="150" height="150"/>
+        <image name="pro-academy-natalia-stawiarska-profile-150x150" width="149" height="74"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Cvr-ow-xHn"/>
