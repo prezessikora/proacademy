@@ -28,7 +28,7 @@ class TrainingsViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icons8-Home-48"), style: .plain, target: nil , action: nil)
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: Utils.imageFrom(systemItem: .search), style: .plain, target: nil , action: nil)
+        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: Utils.imageFrom(systemItem: .search), style: .plain, target: nil , action: nil)
         
         self.navigationItem.titleView = UIImageView(image:  UIImage(named: "pa_title"))
 

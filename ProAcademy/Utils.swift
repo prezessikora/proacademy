@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Utils: NSObject {
+class Utils  {
     static func imageFrom(systemItem: UIBarButtonSystemItem)-> UIImage? {
         let tempItem = UIBarButtonItem(barButtonSystemItem: systemItem, target: nil, action: nil)
         
