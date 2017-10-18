@@ -3,12 +3,48 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "ArtistsViewController.carouselCurrentItemIndexDidChange(_:):ArtistsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "carousel.currentItemView?">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FlipPresentAnimationController.animateTransition(using:):FlipPresentAnimationController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "fromVC.dynamicType">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ArtistsViewController.viewDidLoad():ArtistsViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "backgrounds">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ArtistsViewController.carousel(_:didSelectItemAt:):ArtistsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "carousel.itemView(at: 2)">
+            </PersistentString>
+            <PersistentString
+               value = "carousel.itemView(at: carousel.currentItemIndex)">
+            </PersistentString>
+            <PersistentString
+               value = "carousel.currentItemIndex">
+            </PersistentString>
+            <PersistentString
+               value = "carousel.currentItemView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ArtistsViewController.viewWillAppear(_:):ArtistsViewController.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

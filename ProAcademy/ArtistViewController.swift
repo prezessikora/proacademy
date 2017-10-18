@@ -23,7 +23,15 @@ class ArtistViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-
+        
+        self.title = "Natalia Stawiarska"
+        let navBarbutton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.stop, target: self, action: #selector(close))
+        self.navigationItem.rightBarButtonItem = navBarbutton
+        
+    }
+    
+    func close() {
+        dismiss(animated: true, completion: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {

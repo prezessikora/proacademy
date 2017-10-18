@@ -250,31 +250,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AaF-SM-SRz" customClass="iCarousel">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="GzC-hq-j1z">
                                 <rect key="frame" x="0.0" y="20" width="320" height="499"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="u6E-Bn-MLn" id="8JD-9B-YRG"/>
-                                    <outlet property="delegate" destination="u6E-Bn-MLn" id="jnu-R9-u6m"/>
-                                </connections>
-                            </view>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AaF-SM-SRz" customClass="iCarousel">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="499"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="u6E-Bn-MLn" id="8JD-9B-YRG"/>
+                                            <outlet property="delegate" destination="u6E-Bn-MLn" id="jnu-R9-u6m"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="AaF-SM-SRz" secondAttribute="trailing" id="25d-lZ-GmV"/>
-                            <constraint firstItem="bQ4-qp-cUl" firstAttribute="top" secondItem="AaF-SM-SRz" secondAttribute="bottom" id="3Qh-Rr-Mlc"/>
-                            <constraint firstItem="AaF-SM-SRz" firstAttribute="leading" secondItem="n97-kS-w03" secondAttribute="leading" id="CHE-oH-6qr"/>
-                            <constraint firstItem="AaF-SM-SRz" firstAttribute="top" secondItem="OpO-zl-bLM" secondAttribute="bottom" id="Hy0-QO-rUH"/>
+                            <constraint firstAttribute="trailing" secondItem="GzC-hq-j1z" secondAttribute="trailing" id="Exg-os-EGk"/>
+                            <constraint firstItem="GzC-hq-j1z" firstAttribute="leading" secondItem="n97-kS-w03" secondAttribute="leading" id="gFA-KV-ecx"/>
+                            <constraint firstItem="GzC-hq-j1z" firstAttribute="top" secondItem="OpO-zl-bLM" secondAttribute="bottom" id="iUX-yD-lGU"/>
+                            <constraint firstItem="bQ4-qp-cUl" firstAttribute="top" secondItem="GzC-hq-j1z" secondAttribute="bottom" id="tQh-TM-vzk"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Artyści" id="nvw-DF-Zws"/>
                     <connections>
                         <outlet property="carousel" destination="AaF-SM-SRz" id="YF7-N5-Bce"/>
+                        <segue destination="zYn-cb-oxl" kind="show" identifier="showArtistDetails" id="h8b-K6-O9Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cWh-mH-lCN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1926" y="1163"/>
+            <point key="canvasLocation" x="2359" y="1365"/>
         </scene>
         <!--Artist-->
         <scene sceneID="5MR-Ng-4wZ">
@@ -363,10 +369,11 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="B6D-KF-yaw" secondAttribute="trailing" id="3oC-Jq-ur1"/>
                             <constraint firstItem="B6D-KF-yaw" firstAttribute="leading" secondItem="aN8-Jw-Y6W" secondAttribute="leading" id="Iw5-vZ-i9y"/>
-                            <constraint firstItem="B6D-KF-yaw" firstAttribute="top" secondItem="raJ-ci-4t5" secondAttribute="bottom" id="QYJ-MD-Ruy"/>
+                            <constraint firstItem="B6D-KF-yaw" firstAttribute="top" secondItem="aN8-Jw-Y6W" secondAttribute="top" constant="64" id="O0D-CY-byT"/>
                             <constraint firstItem="A27-h0-6am" firstAttribute="top" secondItem="B6D-KF-yaw" secondAttribute="bottom" constant="10" id="ZZp-RT-AiE"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="h3L-2I-Zhd"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="595"/>
@@ -380,7 +387,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sKa-zV-l2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3633.75" y="1489.9647887323945"/>
+            <point key="canvasLocation" x="4665" y="1528"/>
         </scene>
         <!--Artists Collection View Controller-->
         <scene sceneID="wWu-6t-WKe">
@@ -450,7 +457,7 @@
                                     <outlet property="image" destination="6UH-M5-QFX" id="KCT-T8-HKa"/>
                                     <outlet property="name" destination="KIV-ub-Ku8" id="csV-xo-jC8"/>
                                     <outlet property="title" destination="fW4-ZA-RIG" id="8Fr-JA-8PO"/>
-                                    <segue destination="fNo-v1-pCZ" kind="show" id="bSJ-Ya-u6h"/>
+                                    <segue destination="fNo-v1-pCZ" kind="show" id="4UW-ki-Md9"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -810,11 +817,11 @@
                         <viewControllerLayoutGuide type="bottom" id="s5c-fZ-Q38"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9HY-LJ-N9a">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="395"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oDh-Wa-BBu">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="395"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Xm-XG-dAN">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="156"/>
@@ -863,10 +870,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JfY-xZ-dFk">
-                                        <rect key="frame" x="0.0" y="156" width="320" height="189"/>
+                                        <rect key="frame" x="0.0" y="156" width="320" height="298"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UIl-cr-6iO">
-                                                <rect key="frame" x="8" y="8" width="304" height="173"/>
+                                                <rect key="frame" x="8" y="8" width="304" height="282"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Perfekcyjne Brwi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fr-Cn-EYT">
                                                         <rect key="frame" x="0.0" y="0.0" width="304" height="26.5"/>
@@ -893,7 +900,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="itW-2A-bA5">
-                                                        <rect key="frame" x="0.0" y="97.5" width="304" height="75.5"/>
+                                                        <rect key="frame" x="0.0" y="97.5" width="304" height="184.5"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <string key="text">Jest to wspaniała okazaja aby spędzić miłe chwile w kobiecym gronie, przy okazji wynosząc przydatną widzę na temat makijażu, czyli wszystko co tygrski lubią najbardziej w jednym miejscu.</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -911,7 +918,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npv-CI-6cJ">
-                                        <rect key="frame" x="0.0" y="345" width="320" height="50"/>
+                                        <rect key="frame" x="0.0" y="454" width="320" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="PIJ-BC-gIT"/>
@@ -949,11 +956,11 @@
                         <viewControllerLayoutGuide type="bottom" id="41N-BU-wwk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oX7-8g-JdR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="395"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="guY-8l-1dR">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="345"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="454"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cVN-2A-X6Q" userLabel="ParticipantView">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
@@ -1006,16 +1013,16 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eQ1-xD-dtU">
-                                        <rect key="frame" x="0.0" y="96" width="320" height="43"/>
+                                        <rect key="frame" x="0.0" y="96" width="320" height="152"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gja-Ea-2vJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="120" height="43"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="152"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Lidia.Małaszyńska@gmail.com" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWy-43-xae">
-                                                <rect key="frame" x="120" y="0.0" width="200" height="43"/>
+                                                <rect key="frame" x="120" y="0.0" width="200" height="152"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="4sg-zr-cgx"/>
                                                 </constraints>
@@ -1026,7 +1033,7 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nhg-Ry-Xiz" userLabel="DetailsView">
-                                        <rect key="frame" x="0.0" y="157" width="320" height="30"/>
+                                        <rect key="frame" x="0.0" y="266" width="320" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Szczegóły szkolenia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lba-Xa-MFK">
                                                 <rect key="frame" x="5" y="5" width="130" height="20"/>
@@ -1044,7 +1051,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nf0-DW-LaZ">
-                                        <rect key="frame" x="0.0" y="205" width="320" height="17"/>
+                                        <rect key="frame" x="0.0" y="314" width="320" height="17"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Nazwa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwy-rY-vbP">
                                                 <rect key="frame" x="0.0" y="0.0" width="120" height="17"/>
@@ -1064,7 +1071,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xeM-Z0-hmC">
-                                        <rect key="frame" x="0.0" y="240" width="320" height="17"/>
+                                        <rect key="frame" x="0.0" y="349" width="320" height="17"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Całkowity koszt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OV5-fb-bqP">
                                                 <rect key="frame" x="0.0" y="0.0" width="120" height="17"/>
@@ -1084,7 +1091,7 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k6O-vD-hvB" userLabel="InfoView">
-                                        <rect key="frame" x="0.0" y="275" width="320" height="70"/>
+                                        <rect key="frame" x="0.0" y="384" width="320" height="70"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Po kliknięciu przycisku zatwierdź zatwierdzisz uczestnictwo w kursie. " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HDZ-hl-fyl">
                                                 <rect key="frame" x="8" y="8" width="292" height="45"/>
@@ -1106,7 +1113,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mde-Mz-TEA">
-                                <rect key="frame" x="0.0" y="345" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Zwp-bW-q7m"/>
@@ -1191,6 +1198,24 @@
             </objects>
             <point key="canvasLocation" x="2570.625" y="466.90140845070425"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZnP-s3-PrJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zYn-cb-oxl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QLm-g3-SY1">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fNo-v1-pCZ" kind="relationship" relationship="rootViewController" id="Wf4-e5-mdO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wce-wU-yr5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3660" y="1527.4647887323945"/>
+        </scene>
     </scenes>
     <resources>
         <image name="icons8-Heart Outline-50" width="50" height="50"/>
@@ -1198,6 +1223,7 @@
         <image name="pro-academy-natalia-stawiarska-profile-150x150" width="149" height="74"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Cvr-ow-xHn"/>
+        <segue reference="A7N-ZV-Xin"/>
+        <segue reference="Wf4-e5-mdO"/>
     </inferredMetricsTieBreakers>
 </document>

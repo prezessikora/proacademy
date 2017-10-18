@@ -11,6 +11,8 @@ import UIKit
 struct Artist {
     let name: String
     let title: String
+    let quote: String
+    let description: String
     let image: UIImage
 }
 
@@ -18,7 +20,9 @@ class ArtistsCollectionViewController: FavouritesCollection {
 
     fileprivate let reuseIdentifier = "ArtistCell"
 
-    let artists = [Artist(name: "Miss Lula", title: "Pani Dyrektor p:a", image: UIImage(named: "pro-academy-miss-lula-150x150")!),Artist(name: "Natalia Stawiarska", title: "Make up & CEO", image: UIImage(named: "pro-academy-natalia-stawiarska-150x150")!)]
+    let artists = [
+        Artist(name: "Miss Lula", title: "Pani Dyrektor p:a", quote: "", description: "", image: UIImage(named: "pro-academy-miss-lula-150x150")!),
+        Artist(name: "Natalia Stawiarska", title: "Make up & CEO", quote: "", description: "", image: UIImage(named: "pro-academy-natalia-stawiarska-150x150")!)]
     
     
     

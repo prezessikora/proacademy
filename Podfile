@@ -4,5 +4,11 @@
 target 'ProAcademy' do
   use_frameworks!
   
+  pod 'Contentful'
   pod 'iCarousel'
+  
+  target 'ProAcademyTests' do
+      inherit! :search_paths
+  end
+  
 end
