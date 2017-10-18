@@ -33,6 +33,7 @@
 		B57054351F7E344C00514412 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57054341F7E344C00514412 /* WelcomeViewController.swift */; };
 		B5842B9E1F8B52F400E6B573 /* ArtistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5842B9D1F8B52F400E6B573 /* ArtistsViewController.swift */; };
 		B5CAC3DD1F875B72009B2A4D /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CAC3DC1F875B72009B2A4D /* ArtistViewController.swift */; };
+		B5CD41FC1F972ABD0081151A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CD41FB1F972ABD0081151A /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		B57054341F7E344C00514412 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		B5842B9D1F8B52F400E6B573 /* ArtistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsViewController.swift; sourceTree = "<group>"; };
 		B5CAC3DC1F875B72009B2A4D /* ArtistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
+		B5CD41FB1F972ABD0081151A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 				B5437AD41F83A265003DB93D /* Utils.swift */,
 				B5CAC3DC1F875B72009B2A4D /* ArtistViewController.swift */,
 				B5633C2F1F8E2D0F005F9BE5 /* Artists */,
+				B5CD41FB1F972ABD0081151A /* AboutViewController.swift */,
 			);
 			path = ProAcademy;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				B5437AD31F83A20E003DB93D /* FavouritesViewController.swift in Sources */,
 				B5437ADC1F863726003DB93D /* FavouriteEventCell.swift in Sources */,
 				B5514CD91F9213370013A560 /* FlipPresentAnimationController.swift in Sources */,
+				B5CD41FC1F972ABD0081151A /* AboutViewController.swift in Sources */,
 				B5437ACF1F7FB9D7003DB93D /* TrainingDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

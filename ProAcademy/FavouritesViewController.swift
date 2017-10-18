@@ -46,7 +46,23 @@ class Tab {
 
 }
 
-class FavouritesViewController: UIViewController {
+class TabBasedViewController : UIViewController {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icons8-Home-48"), style: .plain, target: nil , action: nil)
+        self.navigationItem.titleView = UIImageView(image:  UIImage(named: "pa_title"))
+    }
+    
+    func changeState(active: Tab, inactive: Tab...) {
+        active.activate()
+        
+        for tab in inactive {
+            tab.deactivate()
+        }
+    }
+}
+
+class FavouritesViewController: TabBasedViewController {
 
     var artistsTab: Tab!
     @IBOutlet weak var eventsButton: UIButton!
@@ -67,21 +83,7 @@ class FavouritesViewController: UIViewController {
         
         changeState(active: eventsTab, inactive: artistsTab)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icons8-Home-48"), style: .plain, target: nil , action: nil)
-        
-        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: Utils.imageFrom(systemItem: .search), style: .plain, target: nil , action: nil)
-        
-        self.navigationItem.titleView = UIImageView(image:  UIImage(named: "pa_title"))
-        
-    }
-    
-    func changeState(active: Tab, inactive: Tab) {
-        active.activate()
-        inactive.deactivate()
-    }
-    
+
     @IBAction func onEvents(_ sender: Any) {
         changeState(active: eventsTab, inactive: artistsTab)
     }
