@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import Interstellar
-import CoreLocation
 
 /// The available URL parameter names for queries; used internally by the various `Contentful.Query` types.
 /// Use these static variables to avoid making typos when constructing queries. It is recommended to take
@@ -74,11 +72,37 @@ extension Date: QueryableRange {
     }
 }
 
+/**
+ Small struct to store location coordinates. This is used in preferences over CoreLocation types to avoid
+ extra linking requirements for the SDK.
+ */
+public struct Location: Decodable {
+
+    public let latitude: Double
+    public let longitude: Double
+
+    public init(latitude: Double, longitude: Double) {
+        self.latitude = latitude
+        self.longitude = longitude
+    }
+
+    public init(from decoder: Decoder) throws {
+        let container   = try decoder.container(keyedBy: CodingKeys.self)
+        latitude        = try container.decode(Double.self, forKey: .latitude)
+        longitude       = try container.decode(Double.self, forKey: .longitude)
+    }
+
+    private enum CodingKeys: String, CodingKey {
+        case latitude = "lat"
+        case longitude = "lon"
+    }
+}
+
 /// Use bounding boxes or bounding circles to perform queries on location-enabled content.
 /// See: <https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/locations-in-a-bounding-object>
 public enum Bounds {
-    case box(bottomLeft: CLLocationCoordinate2D, topRight: CLLocationCoordinate2D)
-    case circle(center: CLLocationCoordinate2D, radius: Double)
+    case box(bottomLeft: Location, topRight: Location)
+    case circle(center: Location, radius: Double)
 }
 
 /// All the possible MIME types that are supported by Contentful. \
@@ -135,7 +159,7 @@ public enum QueryOperation {
     case isGreaterThanOrEqualTo(QueryableRange)
 
     /// Proximity searches.
-    case isNear(CLLocationCoordinate2D)
+    case isNear(Location)
     case isWithin(Bounds)
 
     fileprivate var string: String {
@@ -744,10 +768,10 @@ public final class AssetQuery: Query {
 /** 
  An additional query to filter by the properties of linked objects when searching on references.
  See: <https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/search-on-references>
- and see the init<LinkType: EntryModellable>(whereLinkAt fieldNameForLink: String, matches filterQuery: FilterQuery<LinkType>? = nil) methods
+ and see the init<LinkType: EntryDecodable>(whereLinkAt fieldNameForLink: String, matches filterQuery: FilterQuery<LinkType>? = nil) methods
  on QueryOn for example usage.
 */
-public final class FilterQuery<EntryType>: AbstractQuery where EntryType: EntryModellable {
+public final class FilterQuery<EntryType>: AbstractQuery where EntryType: EntryDecodable {
 
     /// The parameters dictionary that are converted to `URLComponents` (HTTP parameters/arguments) on the HTTP URL. Useful for debugging.
     public var parameters: [String: String] = [String: String]()
@@ -794,7 +818,7 @@ public final class FilterQuery<EntryType>: AbstractQuery where EntryType: EntryM
  Operations that are only available when querying `Entry`s on specific content types (i.e. content_type must be set) 
  are available through this class.
  */
-public final class QueryOn<EntryType>: ChainableQuery where EntryType: EntryModellable {
+public final class QueryOn<EntryType>: ChainableQuery where EntryType: EntryDecodable {
 
     /// The parameters dictionary that are converted to `URLComponents` (HTTP parameters/arguments) on the HTTP URL. Useful for debugging.
     public var parameters: [String: String] = [String: String]()
@@ -825,7 +849,7 @@ public final class QueryOn<EntryType>: ChainableQuery where EntryType: EntryMode
                          set on the `Client` instance is used.
      */
     public convenience init<LinkType>(whereLinkAt fieldNameForLink: String, matches filterQuery: FilterQuery<LinkType>? = nil,
-                            for locale: String? = nil) where LinkType: EntryModellable {
+                            for locale: String? = nil) {
         self.init()
 
         self.parameters["fields.\(fieldNameForLink).sys.contentType.sys.id"] = LinkType.contentTypeId

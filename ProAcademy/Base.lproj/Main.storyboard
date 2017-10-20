@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="YHb-ep-HD0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sJ1-P5-0c6">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -217,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r02-b5-hJZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="324" y="1183"/>
+            <point key="canvasLocation" x="129" y="1181"/>
         </scene>
         <!--About-->
         <scene sceneID="KoE-Hz-LD5">
@@ -1340,65 +1340,211 @@
         <scene sceneID="ODz-8y-i1C">
             <objects>
                 <viewController id="yK3-Df-amy" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bQe-44-3Em"/>
+                        <viewControllerLayoutGuide type="bottom" id="qSR-5l-b7R"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zrc-rw-97t">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="439"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="about" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4a-oI-Ivn">
-                                <rect key="frame" x="99" y="64" width="45" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SgQ-35-C0A">
+                                <rect key="frame" x="0.0" y="20" width="320" height="419"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pa_title" translatesAutoresizingMaskIntoConstraints="NO" id="5SQ-7G-x2N">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="0.0"/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kP4-dA-1dt">
+                                        <rect key="frame" x="0.0" y="10" width="320" height="409"/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <string key="text">Nowoczesna i renomowana Szkoła Makijażu, jedna z najlepszych w Polsce.
+Wykładowcy PRO ACADEMY swoje umiejętności przez kilka lat rozwijali pracując m.in. dla marki MAC Cosmetics. Doświadczenie zawodowe zdobywali m.in. w Hollywood i Los Angeles, Toronto, Berlinie i Istambule. 
+Szkoła na stałe współpracuje z projektantami, pokazami mody, teatrami i produkcjami filmowymi. Kursanci mają możliwość praktyk w czasie wielu wyjątkowych eventów.
+Szkoła bazuje na autorskim programie nauczania.   Gwarantuje zdobycie wiedzy teoretycznej i praktycznej, uczestnictwo w sesjach zdjęciowych, pracę na profesjonalnych kosmetykach w szczególności marki MAC, szczegółowe materiały dydaktyczne oraz dwujęzyczny certyfikat na zakończenie nauki.   Dodatkowo Kursanci mają zapewnioną wspaniałą atmosferę, imprezy integracyjne oraz Students Card z bogatym pakietem zniżek.
+W PRO ACADEMY SCHOOL OF MAKEUP można wybrać naukę w czterech systemach: Rocznej Szkole Makijażu, Intensywnym Kursie Express Pro , Indywidualnym Kursie oraz Warsztatach Pro.
+ 
+Chcemy podzielić się z Tobą naszą wiedzą. Zdobądź swój wymarzony zawód.
+PRO ACADEMY SCHOOL OF MAKEUP to Doświadczenie, Pasja i Zaangażowanie.
+ 
+WROCŁAW UL. KOŚCIUSZKI 16/3
+www.pro-academy.pl
+telefon: 510 450 893
+e-mail: kontakt@pro-academy.pl</string>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="kP4-dA-1dt" firstAttribute="leading" secondItem="SgQ-35-C0A" secondAttribute="leading" id="WUV-kf-HLR"/>
+                                    <constraint firstAttribute="trailing" secondItem="kP4-dA-1dt" secondAttribute="trailing" id="fkQ-UP-BSy"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="SgQ-35-C0A" firstAttribute="leading" secondItem="zrc-rw-97t" secondAttribute="leading" id="6Vd-kE-46K"/>
+                            <constraint firstAttribute="trailing" secondItem="SgQ-35-C0A" secondAttribute="trailing" id="GGW-oy-Wwf"/>
+                            <constraint firstItem="SgQ-35-C0A" firstAttribute="top" secondItem="zrc-rw-97t" secondAttribute="topMargin" constant="20" id="ibG-IN-CPL"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="SgQ-35-C0A" secondAttribute="bottom" id="uuf-8z-kB0"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pU1-QD-xcy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="454" y="2026"/>
+            <point key="canvasLocation" x="453.75" y="2025.5281690140846"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="oOO-cb-FkG">
             <objects>
-                <viewController id="7Y2-ih-uW5" sceneMemberID="viewController">
+                <viewController id="7Y2-ih-uW5" customClass="FAQViewController" customModule="ProAcademy" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2fH-Fr-CLE"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wfo-QS-kBx"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8Tc-NZ-pZn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="439"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="faq" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKK-Gj-jsn">
-                                <rect key="frame" x="86" y="54" width="25" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dr5-wF-xI2">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="439"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableCell" rowHeight="162" id="PyX-hK-saq" customClass="FAQAnwserCellTableViewCell" customModule="ProAcademy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="162"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PyX-hK-saq" id="wZV-u9-IUx">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="161.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ddg-DN-nBE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="161.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ddg-DN-nBE" firstAttribute="leading" secondItem="wZV-u9-IUx" secondAttribute="leading" id="DZ7-ma-8eM"/>
+                                                <constraint firstAttribute="bottom" secondItem="ddg-DN-nBE" secondAttribute="bottom" id="Ria-Fh-nNw"/>
+                                                <constraint firstAttribute="trailing" secondItem="ddg-DN-nBE" secondAttribute="trailing" id="SEC-qq-VUz"/>
+                                                <constraint firstItem="ddg-DN-nBE" firstAttribute="top" secondItem="wZV-u9-IUx" secondAttribute="top" id="bp8-iv-mbc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="anwserText" destination="ddg-DN-nBE" id="Hrf-Ge-dql"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="7Y2-ih-uW5" id="Tbl-dQ-gU8"/>
+                                    <outlet property="delegate" destination="7Y2-ih-uW5" id="ViI-Ez-lRw"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dr5-wF-xI2" firstAttribute="leading" secondItem="8Tc-NZ-pZn" secondAttribute="leading" id="2ae-Xh-4rB"/>
+                            <constraint firstAttribute="trailing" secondItem="Dr5-wF-xI2" secondAttribute="trailing" id="f5Q-fL-Mtl"/>
+                            <constraint firstItem="Dr5-wF-xI2" firstAttribute="top" secondItem="2fH-Fr-CLE" secondAttribute="bottom" id="iGu-eT-6Wy"/>
+                            <constraint firstItem="Wfo-QS-kBx" firstAttribute="top" secondItem="Dr5-wF-xI2" secondAttribute="bottom" id="wdp-B1-5jG"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Dr5-wF-xI2" id="o8h-OY-8w2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sbZ-GN-ZVt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1106" y="2026"/>
+            <point key="canvasLocation" x="1104.375" y="2025.5281690140846"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="3zl-Zu-y6H">
             <objects>
                 <viewController id="NwK-uB-ZBx" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O3Z-b7-Lx0"/>
+                        <viewControllerLayoutGuide type="bottom" id="ih1-Ib-Zqg"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="EX2-5b-q9q">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="439"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="terms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKa-sZ-pKc">
-                                <rect key="frame" x="74" y="43" width="45" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kJ2-hV-qSJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="439"/>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="1. Title">
+                                        <attributes>
+                                            <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="  ">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name=".AppleSystemUIFont"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="  ">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="2. Title">
+                                        <attributes>
+                                            <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="  ">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name=".AppleSystemUIFont"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="  ">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="3. Title">
+                                        <attributes>
+                                            <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="  ">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name=".AppleSystemUIFont"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kJ2-hV-qSJ" firstAttribute="top" secondItem="EX2-5b-q9q" secondAttribute="topMargin" id="77N-lP-XNU"/>
+                            <constraint firstItem="kJ2-hV-qSJ" firstAttribute="leading" secondItem="EX2-5b-q9q" secondAttribute="leading" id="ECp-Bq-7X5"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="kJ2-hV-qSJ" secondAttribute="bottom" id="Yir-a2-7oW"/>
+                            <constraint firstAttribute="trailing" secondItem="kJ2-hV-qSJ" secondAttribute="trailing" id="l5y-YG-KSz"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="adP-S7-7Nj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1408,6 +1554,7 @@
     </scenes>
     <resources>
         <image name="icons8-Heart Outline-50" width="50" height="50"/>
+        <image name="pa_title" width="118" height="33"/>
         <image name="pro-academy-miss-lula-150x150" width="150" height="150"/>
         <image name="pro-academy-natalia-stawiarska-profile-150x150" width="149" height="74"/>
     </resources>

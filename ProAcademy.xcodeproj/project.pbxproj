@@ -34,6 +34,8 @@
 		B5842B9E1F8B52F400E6B573 /* ArtistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5842B9D1F8B52F400E6B573 /* ArtistsViewController.swift */; };
 		B5CAC3DD1F875B72009B2A4D /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CAC3DC1F875B72009B2A4D /* ArtistViewController.swift */; };
 		B5CD41FC1F972ABD0081151A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CD41FB1F972ABD0081151A /* AboutViewController.swift */; };
+		B5CD41FE1F977D6B0081151A /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CD41FD1F977D6B0081151A /* FAQViewController.swift */; };
+		B5CD42001F9907770081151A /* FAQAnwserCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CD41FF1F9907770081151A /* FAQAnwserCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		B5842B9D1F8B52F400E6B573 /* ArtistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsViewController.swift; sourceTree = "<group>"; };
 		B5CAC3DC1F875B72009B2A4D /* ArtistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
 		B5CD41FB1F972ABD0081151A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		B5CD41FD1F977D6B0081151A /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
+		B5CD41FF1F9907770081151A /* FAQAnwserCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQAnwserCellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +200,7 @@
 				B5CAC3DC1F875B72009B2A4D /* ArtistViewController.swift */,
 				B5633C2F1F8E2D0F005F9BE5 /* Artists */,
 				B5CD41FB1F972ABD0081151A /* AboutViewController.swift */,
+				B5CD42011F9907B50081151A /* FAQ */,
 			);
 			path = ProAcademy;
 			sourceTree = "<group>";
@@ -217,6 +222,15 @@
 				B57054341F7E344C00514412 /* WelcomeViewController.swift */,
 			);
 			name = Welcome;
+			sourceTree = "<group>";
+		};
+		B5CD42011F9907B50081151A /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				B5CD41FF1F9907770081151A /* FAQAnwserCellTableViewCell.swift */,
+				B5CD41FD1F977D6B0081151A /* FAQViewController.swift */,
+			);
+			name = FAQ;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,14 +431,12 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ProAcademy/Pods-ProAcademy-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Contentful/Contentful.framework",
 				"${BUILT_PRODUCTS_DIR}/Interstellar/Interstellar.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/iCarousel/iCarousel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Contentful.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Interstellar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iCarousel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,6 +461,7 @@
 				B57054131F7BC98300514412 /* ViewController.swift in Sources */,
 				B5437ACC1F7F957A003DB93D /* TrainingTableViewCell.swift in Sources */,
 				B5437ADE1F8669E4003DB93D /* ArtistCell.swift in Sources */,
+				B5CD42001F9907770081151A /* FAQAnwserCellTableViewCell.swift in Sources */,
 				B5842B9E1F8B52F400E6B573 /* ArtistsViewController.swift in Sources */,
 				B5437AD71F85214A003DB93D /* EventsCollectionViewController.swift in Sources */,
 				B5437AD51F83A265003DB93D /* Utils.swift in Sources */,
@@ -457,6 +470,7 @@
 				B5437AD31F83A20E003DB93D /* FavouritesViewController.swift in Sources */,
 				B5437ADC1F863726003DB93D /* FavouriteEventCell.swift in Sources */,
 				B5514CD91F9213370013A560 /* FlipPresentAnimationController.swift in Sources */,
+				B5CD41FE1F977D6B0081151A /* FAQViewController.swift in Sources */,
 				B5CD41FC1F972ABD0081151A /* AboutViewController.swift in Sources */,
 				B5437ACF1F7FB9D7003DB93D /* TrainingDetailsViewController.swift in Sources */,
 			);

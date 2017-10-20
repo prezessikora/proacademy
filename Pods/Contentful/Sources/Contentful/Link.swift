@@ -7,25 +7,26 @@
 //
 
 import Foundation
-import ObjectMapper
-
-public struct LinkSys {
-
-    /// The identifier of the linked resource
-    public let id: String
-
-    /// The type of the linked resource: either "Entry" or "Asset".
-    public let linkType: String
-}
-
 
 /** 
  A representation of Linked Resources that a field may point to in your content model.
  This stateful type safely highlights links that have been resolved to Entries, Assets, or if they are
- still unresolved. If your data model conforms to `EntryModellable` you can also use the `at` method
- to extract an instance of your linked type.
+ still unresolved.
 */
-public enum Link {
+public enum Link: Decodable {
+
+    public struct Sys: Decodable {
+
+        /// The identifier of the linked resource
+        public let id: String
+
+        /// The type of the linked resource: either "Entry" or "Asset".
+        public let linkType: String
+
+        /// The content type identifier for the linked resource.
+        public let type: String
+    }
+
 
     /// The Link points to an `Asset`
     case asset(Asset)
@@ -34,7 +35,7 @@ public enum Link {
     case entry(Entry)
 
     /// The Link is unresolved, and therefore contains a dictionary of metadata describing the linked resource.
-    case unresolved(LinkSys)
+    case unresolved(Link.Sys)
 
     /// The unique identifier of the linked asset or entry
     public var id: String {
@@ -61,23 +62,7 @@ public enum Link {
         }
     }
 
-    internal static func link(from fieldValue: Any) -> Link? {
-        if let link = fieldValue as? Link {
-            return link
-        }
-
-        // Linked objects are stored as a dictionary with "type": "Link",
-        // value for "linkType" can be "Asset", "Entry", "Space", "ContentType".
-        if let linkJSON = fieldValue as? [String: AnyObject],
-            let sys = linkJSON["sys"] as? [String: AnyObject],
-            let id = sys["id"] as? String,
-            let linkType = sys["linkType"] as? String {
-            return Link.unresolved(LinkSys(id: id, linkType: linkType))
-        }
-        return nil
-    }
-
-    private var sys: LinkSys {
+    public var sys: Link.Sys {
         switch self {
         case .unresolved(let sys):
             return sys
@@ -120,5 +105,15 @@ public enum Link {
         let sys = link["sys"] as? [String: Any]
         let id = sys?["id"] as? String
         return id
+    }
+
+    public init(from decoder: Decoder) throws {
+        let container   = try decoder.container(keyedBy: CodingKeys.self)
+        let sys         = try container.decode(Link.Sys.self, forKey: .sys)
+        self            = .unresolved(sys)
+    }
+
+    private enum CodingKeys: String, CodingKey {
+        case sys
     }
 }

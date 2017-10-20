@@ -6,7 +6,6 @@
 //  Copyright © 2015 Contentful GmbH. All rights reserved.
 //
 
-import ObjectMapper
 import Foundation
 import Interstellar
 
@@ -34,6 +33,8 @@ open class Client {
         return clientConfiguration.server
     }
 
+    public var jsonDecoder: JSONDecoder
+
     /**
      The persistence integration which will receive delegate messages from the `Client` when new
      `Entry` and `Asset` objects are created from data being sent over the network. Currently, these
@@ -56,8 +57,6 @@ open class Client {
     private var dataDelegate: DataDelegate?
 
     internal var urlSession: URLSession
-
-    internal let contentModel: ContentModel?
 
     fileprivate(set) var space: Space?
 
@@ -82,11 +81,20 @@ open class Client {
                 clientConfiguration: ClientConfiguration = .default,
                 sessionConfiguration: URLSessionConfiguration = .default,
                 persistenceIntegration: PersistenceIntegration? = nil,
-                contentModel: ContentModel? = nil) {
+                contentTypeClasses: [EntryDecodable.Type]? = nil) {
 
         self.spaceId = spaceId
         self.clientConfiguration = clientConfiguration
-        self.contentModel = contentModel
+
+        self.jsonDecoder = Client.jsonDecoderWithoutLocalizationContext
+        if let contentTypeClasses = contentTypeClasses {
+            var contentTypes = [ContentTypeId: EntryDecodable.Type]()
+            for type in contentTypeClasses {
+                contentTypes[type.contentTypeId] = type
+            }
+            jsonDecoder.userInfo[DecoderContext.contentTypesContextKey] = contentTypes
+            jsonDecoder.userInfo[DecoderContext.linkResolverContextKey] = LinkResolver()
+        }
 
         self.persistenceIntegration = persistenceIntegration
         self.dataDelegate = clientConfiguration.dataDelegate
@@ -128,8 +136,8 @@ open class Client {
         return nil
     }
 
-    internal func fetch<MappableType: ImmutableMappable>(url: URL?,
-                        then completion: @escaping ResultsHandler<MappableType>) -> URLSessionDataTask? {
+    internal func fetch<DecodableType: Decodable>(url: URL?,
+                        then completion: @escaping ResultsHandler<DecodableType>) -> URLSessionDataTask? {
 
         guard let url = url else {
             completion(Result.error(SDKError.invalidURL(string: "")))
@@ -225,55 +233,30 @@ open class Client {
         return false
     }
 
-
     fileprivate func handleRateLimitJSON(_ data: Data, timeUntilLimitReset: Int, _ completion: ResultsHandler<RateLimitError>) {
-        do {
-            guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
-                let error = SDKError.unparseableJSON(data: data, errorMessage: "SDK unable to parse RateLimitError payload")
-                completion(Result.error(error))
-                return
-            }
-
-            let map = Map(mappingType: .fromJSON, JSON: json)
-            guard let rateLimitError = RateLimitError(map: map) else {
-                completion(.error(SDKError.unparseableJSON(data: data, errorMessage: "SDK unable to parse RateLimitError payload")))
+            guard let rateLimitError = try? jsonDecoder.decode(RateLimitError.self, from: data) else {
+                completion(Result.error(SDKError.unparseableJSON(data: data, errorMessage: "SDK unable to parse RateLimitError payload")))
                 return
             }
             rateLimitError.timeBeforeLimitReset = timeUntilLimitReset
 
             // In this case, .success means that a RateLimitError was successfully initialized.
             completion(Result.success(rateLimitError))
-        } catch _ {
-            completion(.error(SDKError.unparseableJSON(data: data, errorMessage: "SDK unable to parse RateLimitError payload")))
-        }
     }
 
-    fileprivate func handleJSON<MappableType: ImmutableMappable>(_ data: Data, _ completion: ResultsHandler<MappableType>) {
+    fileprivate func handleJSON<DecodableType: Decodable>(_ data: Data, _ completion: ResultsHandler<DecodableType>) {
         do {
-            guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
-                let error = SDKError.unparseableJSON(data: data, errorMessage: "Foundation.JSONSerialization failed")
-                completion(Result.error(error))
-                return
-            }
-
-            let localizationContext = space?.localizationContext
-            let map = Map(mappingType: .fromJSON, JSON: json, context: localizationContext)
-
-            // Use `Mappable` failable initialzer to optional rather throwing `ImmutableMappable` initializer
+            // Use failable initialzer to optional rather than initializer that throws,
             // because failure to find an error in the JSON should error should not throw an error that JSON is not parseable.
-            if let apiError = ContentfulError(map: map) {
+            if let apiError = ContentfulError.error(with: jsonDecoder, and: data) {
                 completion(Result.error(apiError))
                 return
             }
 
-            // Locales will be injected via the map.property option.
-            let decodedObject = try MappableType(map: map)
+            let decodedObject = try jsonDecoder.decode(DecodableType.self, from: data)
             completion(Result.success(decodedObject))
-
-        } catch let error as MapError {
-            completion(.error(SDKError.unparseableJSON(data: data, errorMessage: "\(error)")))
-        } catch _ {
-            completion(.error(SDKError.unparseableJSON(data: data, errorMessage: "")))
+        } catch {
+            completion(Result.error(SDKError.unparseableJSON(data: data, errorMessage: "The SDK was unable to parse the JSON: \(error)")))
         }
     }
 }
@@ -298,6 +281,11 @@ extension Client {
         }
         return fetch(url: self.URL()) { (result: Result<Space>) in
             self.space = result.value
+
+            // Inject locale information to JSONDecoder.
+            Client.update(self.jsonDecoder, withLocalizationContextFrom: self.space)
+
+            // Inject locale information to
             let localeCodes = self.space?.locales.map { $0.code } ?? []
             self.persistenceIntegration?.update(localeCodes: localeCodes)
             completion(result)
