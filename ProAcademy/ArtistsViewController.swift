@@ -32,7 +32,13 @@ class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDel
 
     var service : ArtistsService!
     
+    // MARK: transition variables
+    
     var currentCardIndex = -1
+    
+    var currentCard : UIView?
+    
+    var transitionCard : UIView?
     
     // MARK: init
     
@@ -61,9 +67,13 @@ class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDel
             if let fetched = fetchResult {
                 self.artists = fetched
                 DispatchQueue.main.async {
+                    // save aside as reload sets it to 0
+                    let indexValue = self.currentCardIndex
                     self.carousel.reloadData()
-                    if (self.currentCardIndex == -1) {
-                        self.carousel.scrollToItem(at: fetched.count, animated: false)
+                    // after return and new entry added you might end up different card - check it
+                    
+                    if (indexValue == -1) { // first load
+                        self.carousel.scrollToItem(at: fetched.count, animated: true)
                     } else {
                         self.carousel.scrollToItem(at: self.currentCardIndex, animated: false)
                     }
@@ -147,7 +157,7 @@ class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDel
     }
     // MARK: transition
     
-    var currentCard : UIView?
+    
     
     func carouselCurrentItemIndexDidChange(_ carousel: iCarousel) {
         currentCardIndex = carousel.currentItemIndex
@@ -187,8 +197,6 @@ class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDel
         destinationViewController.transitioningDelegate = self
     }
     
-    var transitionCard : UIView?
-    
     func carousel(_ carousel: iCarousel, didSelectItemAt index: Int) {
         
         if (index != currentCardIndex) {
@@ -208,9 +216,7 @@ class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDel
 
 
         transitionCard = card
-        
-        carousel.isHidden = true
-        
+
         setTabBarVisible(visible: false, animated: true) {_ in
             self.performSegue(withIdentifier: "showDetails", sender: self)
         }

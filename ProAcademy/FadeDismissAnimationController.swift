@@ -28,7 +28,6 @@ class FadeDismissAnimationController: NSObject, UIViewControllerAnimatedTransiti
         let snapshot = fromVC.view.snapshotView(afterScreenUpdates: false)
         let cardSnapshot = artistsVC.currentCardSnapShot()
 
-        
         cardSnapshot.frame = initialFrame
 
         let containerView = transitionContext.containerView
@@ -42,8 +41,6 @@ class FadeDismissAnimationController: NSObject, UIViewControllerAnimatedTransiti
         cardSnapshot.centerYAnchor.constraint(equalTo: (snapshot?.centerYAnchor)!).isActive = true
         cardSnapshot.widthAnchor.constraint(equalTo: (snapshot?.widthAnchor)!).isActive = true
         cardSnapshot.heightAnchor.constraint(equalTo: (snapshot?.heightAnchor)!).isActive = true
-        
-        
         cardSnapshot.alpha = 0.0
         
         fromVC.view.isHidden = true
@@ -62,11 +59,8 @@ class FadeDismissAnimationController: NSObject, UIViewControllerAnimatedTransiti
             cardSnapshot.removeFromSuperview()
             transitionContext.completeTransition(true)
             
-            fromVC.view.isHidden = false
             artistsVC.carousel.isHidden = false
             artistsVC.setTabBarVisible(visible: true, animated: true) { _ in }
-
-            
         })
     }
     

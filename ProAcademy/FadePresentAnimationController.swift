@@ -17,10 +17,13 @@ class FadePresentAnimationController: NSObject, UIViewControllerAnimatedTransiti
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         
+        
         let fromVC = transitionContext.viewController(forKey: .from)! as! UITabBarController
         let artistsVC = fromVC.selectedViewController as! ArtistsViewController
         let toVC = transitionContext.viewController(forKey: .to)!
         
+        artistsVC.carousel.isHidden = false
+
         let initialFrame = originFrame
         let finalFrame = transitionContext.finalFrame(for: toVC)
         
@@ -33,34 +36,34 @@ class FadePresentAnimationController: NSObject, UIViewControllerAnimatedTransiti
         let containerView = transitionContext.containerView
         containerView.backgroundColor = UIColor.white
         containerView.addSubview(toVC.view)
-        containerView.addSubview(snapshot!)
-        containerView.addSubview(cardSnapshot)
+        toVC.view.isHidden = true
         
+        containerView.addSubview(snapshot!)
+        snapshot?.alpha = 0.0
+        
+        containerView.addSubview(cardSnapshot)
         cardSnapshot.translatesAutoresizingMaskIntoConstraints = false
         cardSnapshot.centerXAnchor.constraint(equalTo: (snapshot?.centerXAnchor)!).isActive = true
         cardSnapshot.centerYAnchor.constraint(equalTo: (snapshot?.centerYAnchor)!).isActive = true
         cardSnapshot.widthAnchor.constraint(equalTo: (snapshot?.widthAnchor)!).isActive = true
         cardSnapshot.heightAnchor.constraint(equalTo: (snapshot?.heightAnchor)!).isActive = true
         
-        toVC.view.isHidden = true
-        artistsVC.transitionCard?.alpha = 0.0
+        artistsVC.transitionCard?.removeFromSuperview()
         
         let duration = transitionDuration(using: transitionContext)
-        snapshot?.alpha = 0.0
-        UIView.animate(withDuration: duration, animations: {
+
+        UIView.animate(withDuration: duration, delay: 0.0, options: [.curveEaseOut], animations: {
             snapshot?.frame = finalFrame
             snapshot?.alpha = 1.0
             cardSnapshot.alpha = 0.0
             cardSnapshot.frame = finalFrame
-
         }, completion: { _ in
-            
             toVC.view.isHidden = false
             snapshot?.removeFromSuperview()
             cardSnapshot.removeFromSuperview()
             transitionContext.completeTransition(true)
-            
         })
+        
         
     }
 }
