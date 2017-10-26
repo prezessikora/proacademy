@@ -30,9 +30,12 @@ class ArtistViewController: UIViewController {
         
     }
     
-    func close() {
+    @IBAction func close(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+        
     }
+    
+ 
 
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true

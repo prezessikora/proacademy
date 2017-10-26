@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CollapsibleTableSectionViewController
 
 class FAQViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -84,8 +83,8 @@ class FAQViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         //recast your view as a UITableViewHeaderFooterView
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
-        header.contentView.backgroundColor = UIColor.lightGray
-        header.textLabel?.textColor = UIColor.black
+        header.contentView.backgroundColor = AboutUsUI.faqHeaderBackgroundColor
+        header.textLabel?.textColor = AboutUsUI.faqQuestionColor
         
         if let viewWithTag = self.view.viewWithTag(kHeaderSectionTag + section) {
             viewWithTag.removeFromSuperview()
@@ -93,6 +92,9 @@ class FAQViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         let headerFrame = self.view.frame.size
         let theImageView = UIImageView(frame: CGRect(x: headerFrame.width - 32, y: 13, width: 18, height: 18));
         theImageView.image = UIImage(named: "Chevron-Dn-Wht")
+        theImageView.image? = (theImageView.image?.withRenderingMode(.alwaysTemplate))!
+        theImageView.tintColor = AboutUsUI.faqArrowTint
+        
         theImageView.tag = kHeaderSectionTag + section
         header.addSubview(theImageView)
         

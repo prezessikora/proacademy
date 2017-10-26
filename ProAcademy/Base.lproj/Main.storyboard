@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -395,12 +395,12 @@
                     <tabBarItem key="tabBarItem" title="Artyści" id="nvw-DF-Zws"/>
                     <connections>
                         <outlet property="carousel" destination="AaF-SM-SRz" id="YF7-N5-Bce"/>
-                        <segue destination="zYn-cb-oxl" kind="show" identifier="showArtistDetails" id="h8b-K6-O9Y"/>
+                        <segue destination="qMd-LV-bk9" kind="presentation" identifier="showDetails" id="ftu-MR-spp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cWh-mH-lCN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1691" y="1181"/>
+            <point key="canvasLocation" x="2691" y="1349"/>
         </scene>
         <!--Artist-->
         <scene sceneID="5MR-Ng-4wZ">
@@ -417,14 +417,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="B6D-KF-yaw">
                                 <rect key="frame" x="0.0" y="64" width="320" height="521"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pro-academy-natalia-stawiarska-profile-150x150" translatesAutoresizingMaskIntoConstraints="NO" id="zVQ-Jd-3Mo">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="142"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pro-academy-natalia-stawiarska-150x150" translatesAutoresizingMaskIntoConstraints="NO" id="zVQ-Jd-3Mo">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="zVQ-Jd-3Mo" secondAttribute="height" multiplier="160:71" id="Fy2-Oh-HZ3"/>
+                                            <constraint firstAttribute="width" secondItem="zVQ-Jd-3Mo" secondAttribute="height" multiplier="1:1" id="Fy2-Oh-HZ3"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d77-WD-C6l">
-                                        <rect key="frame" x="0.0" y="152" width="320" height="30"/>
+                                        <rect key="frame" x="0.0" y="330" width="320" height="30"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3fo-vp-Nqh">
                                                 <rect key="frame" x="15" y="0.0" width="290" height="30"/>
@@ -464,10 +464,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YXp-V6-qaE">
-                                        <rect key="frame" x="0.0" y="192" width="320" height="329"/>
+                                        <rect key="frame" x="0.0" y="370" width="320" height="151"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hg3-VJ-Iva">
-                                                <rect key="frame" x="10" y="0.0" width="300" height="329"/>
+                                                <rect key="frame" x="10" y="0.0" width="300" height="151"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <string key="text">Współzałożycielka oraz jedna z głównych wizażystek Pro Academy. Ponad 10 lat związana z makijażem. Znana jako Na.La, uwielbiana przez klientki. Wiele lat współpracowała z firmą Mac Cosmetics, zdobywając międzynarodowe doświadczenie. Specjalistka od makijażu ust. Wulkan energii, pracoholik uwielbiający wyzwania. Mocno motywująca kursantki do przekraczania swoich granic i osiągania najlepszych wyników. Gdyby nie była wizażystką, zostałaby psychologiem.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -507,7 +507,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sKa-zV-l2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4665" y="1528"/>
+            <point key="canvasLocation" x="5062.5" y="1527.9929577464789"/>
         </scene>
         <!--Artists Collection View Controller-->
         <scene sceneID="wWu-6t-WKe">
@@ -532,7 +532,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-Heart Outline-50" translatesAutoresizingMaskIntoConstraints="NO" id="E2J-DZ-aAr">
-                                            <rect key="frame" x="181" y="0.0" width="30" height="29"/>
+                                            <rect key="frame" x="165" y="0.0" width="30" height="29"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="30" id="517-J1-Ldv"/>
                                                 <constraint firstAttribute="width" secondItem="E2J-DZ-aAr" secondAttribute="height" multiplier="31:30" id="eBI-tN-0UK"/>
@@ -577,7 +577,7 @@
                                     <outlet property="image" destination="6UH-M5-QFX" id="KCT-T8-HKa"/>
                                     <outlet property="name" destination="KIV-ub-Ku8" id="csV-xo-jC8"/>
                                     <outlet property="title" destination="fW4-ZA-RIG" id="8Fr-JA-8PO"/>
-                                    <segue destination="fNo-v1-pCZ" kind="show" id="4UW-ki-Md9"/>
+                                    <segue destination="qMd-LV-bk9" kind="show" id="4UW-ki-Md9"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -613,14 +613,14 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="160" height="60"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qv-Lb-9fm">
-                                                        <rect key="frame" x="57" y="0.0" width="46" height="30"/>
+                                                        <rect key="frame" x="57" y="0.0" width="46" height="10"/>
                                                         <state key="normal" title="Events"/>
                                                         <connections>
                                                             <action selector="onEvents:" destination="njq-3B-C8X" eventType="touchUpInside" id="Rfx-eZ-371"/>
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E4Y-iC-ogB">
-                                                        <rect key="frame" x="0.0" y="30" width="160" height="30"/>
+                                                        <rect key="frame" x="0.0" y="10" width="160" height="50"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                 </subviews>
@@ -629,14 +629,14 @@
                                                 <rect key="frame" x="160" y="0.0" width="160" height="60"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGY-w2-0Ji">
-                                                        <rect key="frame" x="57.5" y="0.0" width="45" height="30"/>
+                                                        <rect key="frame" x="57.5" y="0.0" width="45" height="10"/>
                                                         <state key="normal" title="Artists"/>
                                                         <connections>
                                                             <action selector="onArtists:" destination="njq-3B-C8X" eventType="touchUpInside" id="ND1-PE-2o1"/>
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5hF-Qe-ZkW">
-                                                        <rect key="frame" x="0.0" y="30" width="160" height="30"/>
+                                                        <rect key="frame" x="0.0" y="10" width="160" height="50"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                 </subviews>
@@ -869,22 +869,22 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="LhB-GD-Inb">
-                                            <rect key="frame" x="0.0" y="158" width="233" height="50"/>
+                                            <rect key="frame" x="16" y="158" width="201" height="50"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Perfekcyjne Brwi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6J-XB-c8H">
-                                                    <rect key="frame" x="62.5" y="0.0" width="108" height="17"/>
+                                                    <rect key="frame" x="46.5" y="0.0" width="108" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jagoda Wrześniewska" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOb-g3-U2D">
-                                                    <rect key="frame" x="54" y="19" width="125.5" height="14.5"/>
+                                                    <rect key="frame" x="38" y="19" width="125.5" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17.09.2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykV-u6-GOj">
-                                                    <rect key="frame" x="87" y="35.5" width="59.5" height="14.5"/>
+                                                    <rect key="frame" x="71" y="35.5" width="59.5" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -892,7 +892,7 @@
                                             </subviews>
                                         </stackView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-Heart Outline-50" translatesAutoresizingMaskIntoConstraints="NO" id="J5J-ce-ieU">
-                                            <rect key="frame" x="203" y="0.0" width="30" height="29"/>
+                                            <rect key="frame" x="187" y="0.0" width="30" height="29"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="30" id="b2f-Oo-b2j"/>
                                                 <constraint firstAttribute="width" secondItem="J5J-ce-ieU" secondAttribute="height" multiplier="31:30" id="bCC-wy-ZgS"/>
@@ -1318,28 +1318,10 @@
             </objects>
             <point key="canvasLocation" x="2570.625" y="466.90140845070425"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ZnP-s3-PrJ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zYn-cb-oxl" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QLm-g3-SY1">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="fNo-v1-pCZ" kind="relationship" relationship="rootViewController" id="Wf4-e5-mdO"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wce-wU-yr5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3660" y="1527.4647887323945"/>
-        </scene>
-        <!--View Controller-->
+        <!--About Us View Controller-->
         <scene sceneID="ODz-8y-i1C">
             <objects>
-                <viewController id="yK3-Df-amy" sceneMemberID="viewController">
+                <viewController id="yK3-Df-amy" customClass="AboutUsViewController" customModule="ProAcademy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bQe-44-3Em"/>
                         <viewControllerLayoutGuide type="bottom" id="qSR-5l-b7R"/>
@@ -1390,6 +1372,10 @@ e-mail: kontakt@pro-academy.pl</string>
                             <constraint firstAttribute="bottomMargin" secondItem="SgQ-35-C0A" secondAttribute="bottom" id="uuf-8z-kB0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="aboutUsText" destination="kP4-dA-1dt" id="UPh-oD-0ao"/>
+                        <outlet property="image" destination="5SQ-7G-x2N" id="9oe-8s-gYK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pU1-QD-xcy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1461,9 +1447,36 @@ e-mail: kontakt@pro-academy.pl</string>
             <point key="canvasLocation" x="1104.375" y="2025.5281690140846"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="94m-6f-RAY">
+            <objects>
+                <viewController id="XAe-rl-tER" customClass="ViewController" customModule="ProAcademy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uci-p6-PDa"/>
+                        <viewControllerLayoutGuide type="bottom" id="Euy-Is-5Bs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uBE-yI-fV3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron-Dn-Wht" translatesAutoresizingMaskIntoConstraints="NO" id="afI-rt-wg6">
+                                <rect key="frame" x="40" y="276" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="image" destination="afI-rt-wg6" id="cxZ-L5-357"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uvu-g2-lSb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1178" y="2710"/>
+        </scene>
+        <!--Terms View Controller-->
         <scene sceneID="3zl-Zu-y6H">
             <objects>
-                <viewController id="NwK-uB-ZBx" sceneMemberID="viewController">
+                <viewController id="NwK-uB-ZBx" customClass="TermsViewController" customModule="ProAcademy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="O3Z-b7-Lx0"/>
                         <viewControllerLayoutGuide type="bottom" id="ih1-Ib-Zqg"/>
@@ -1474,7 +1487,7 @@ e-mail: kontakt@pro-academy.pl</string>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kJ2-hV-qSJ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="439"/>
-                                <color key="backgroundColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
                                     <fragment content="1. Title">
                                         <attributes>
@@ -1546,20 +1559,42 @@ e-mail: kontakt@pro-academy.pl</string>
                             <constraint firstAttribute="trailing" secondItem="kJ2-hV-qSJ" secondAttribute="trailing" id="l5y-YG-KSz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="termsText" destination="kJ2-hV-qSJ" id="F4t-I8-k5e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="adP-S7-7Nj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1740" y="2026"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MOe-uw-akt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qMd-LV-bk9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="k47-RQ-kHe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fNo-v1-pCZ" kind="relationship" relationship="rootViewController" id="cSO-yA-D3f"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BV0-j0-1tt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4148" y="1528"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Chevron-Dn-Wht" width="22" height="22"/>
         <image name="icons8-Heart Outline-50" width="50" height="50"/>
         <image name="pa_title" width="118" height="33"/>
         <image name="pro-academy-miss-lula-150x150" width="150" height="150"/>
-        <image name="pro-academy-natalia-stawiarska-profile-150x150" width="149" height="74"/>
+        <image name="pro-academy-natalia-stawiarska-150x150" width="150" height="150"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="4UW-ki-Md9"/>
         <segue reference="A7N-ZV-Xin"/>
-        <segue reference="Wf4-e5-mdO"/>
     </inferredMetricsTieBreakers>
 </document>

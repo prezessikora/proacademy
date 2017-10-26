@@ -33,6 +33,15 @@ class ProAcademyTests: XCTestCase {
         print("Uh oh, something went wrong. You can do what you want with this \(error)")
     }
     
+    func testArtistsService() {
+        let service = ContentfulArtistsService()
+        let artists = service.fetchArtists()
+        
+        XCTAssertEqual(2, artists.count)
+        XCTAssertEqual(artists[0].name,"Miss Lula")
+
+    }
+    
     func fetchSpace() {
         
         let expectation = XCTestExpectation(description: "Download space from Contentful")
