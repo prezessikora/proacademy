@@ -16,7 +16,9 @@ class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDel
 
     var tilt: CGFloat = 0.5
 
-    let flipPresentAnimationController = FlipPresentAnimationController()
+    let flipPresentAnimationController = FadePresentAnimationController()
+    
+    let fadeDismissAnimationController = FadeDismissAnimationController()
     
 //    let artists = [
 //        Artist(name: "Miss Lula", title: "Pani Dyrektor p:a", quote: "", description: "", image: UIImage(named: "pro-academy-miss-lula-150x150")!),
@@ -48,8 +50,6 @@ class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDel
     
     override func viewWillAppear(_ animated: Bool) {
         loadData()
-        carousel.isHidden = false
-        setTabBarVisible(visible: true, animated: true) { _ in }
     }
 
     func loadData() {
@@ -119,6 +119,10 @@ class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDel
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = imageView.frame.height/2
         imageView.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    func currentCardSnapShot() -> UIView {
+        return self.createCard(index: currentCardIndex).snapshotView(afterScreenUpdates: true)!
     }
     
     func createCard(index: Int) -> UIView {
@@ -195,13 +199,10 @@ class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDel
         view.addSubview(card)
 
         card.translatesAutoresizingMaskIntoConstraints = false
-
         card.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        
         let c = card.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         c.constant = 16
         c.isActive = true
-
         card.widthAnchor.constraint(equalToConstant: (currentCard?.frame.width)!).isActive = true
         card.heightAnchor.constraint(equalToConstant: (currentCard?.frame.height)!).isActive = true
 
@@ -223,7 +224,13 @@ class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDel
 extension ArtistsViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         flipPresentAnimationController.originFrame = transitionCard!.frame
-        print(currentCard!.frame)
+        
         return flipPresentAnimationController
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        fadeDismissAnimationController.destinationFrame = transitionCard!.frame
+        
+        return fadeDismissAnimationController
     }
 }

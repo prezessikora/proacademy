@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		911A6344ABB5FDA59A4C906C /* Pods_ProAcademy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A944094A41DEF3A4EB9E38 /* Pods_ProAcademy.framework */; };
 		9DBD96D6B0A89CBB5CDB57A7 /* Pods_ProAcademyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC820CAC6BE073E0C6ED645 /* Pods_ProAcademyTests.framework */; };
+		B52CC0A21FA1FB4C00EB5ABB /* FadeDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52CC0A11FA1FB4C00EB5ABB /* FadeDismissAnimationController.swift */; };
 		B5437ACA1F7F9441003DB93D /* TrainingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5437AC91F7F9441003DB93D /* TrainingsViewController.swift */; };
 		B5437ACC1F7F957A003DB93D /* TrainingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5437ACB1F7F957A003DB93D /* TrainingTableViewCell.swift */; };
 		B5437ACF1F7FB9D7003DB93D /* TrainingDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5437ACE1F7FB9D7003DB93D /* TrainingDetailsViewController.swift */; };
@@ -20,7 +21,7 @@
 		B5437ADC1F863726003DB93D /* FavouriteEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5437ADB1F863726003DB93D /* FavouriteEventCell.swift */; };
 		B5437ADE1F8669E4003DB93D /* ArtistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5437ADD1F8669E4003DB93D /* ArtistCell.swift */; };
 		B54C242A1F8CDB9600DC7AF9 /* ArtistView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54C24291F8CDB9600DC7AF9 /* ArtistView.xib */; };
-		B5514CD91F9213370013A560 /* FlipPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5514CD81F9213370013A560 /* FlipPresentAnimationController.swift */; };
+		B5514CD91F9213370013A560 /* FadePresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5514CD81F9213370013A560 /* FadePresentAnimationController.swift */; };
 		B5633C2E1F8D53B7005F9BE5 /* CardArtistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5633C2D1F8D53B7005F9BE5 /* CardArtistView.swift */; };
 		B57054111F7BC98300514412 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57054101F7BC98300514412 /* AppDelegate.swift */; };
 		B57054131F7BC98300514412 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57054121F7BC98300514412 /* ViewController.swift */; };
@@ -62,6 +63,7 @@
 		68951F4B391DBD0DCAEAA963 /* Pods-ProAcademyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProAcademyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProAcademyTests/Pods-ProAcademyTests.release.xcconfig"; sourceTree = "<group>"; };
 		91A944094A41DEF3A4EB9E38 /* Pods_ProAcademy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProAcademy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8902566F9CC02EABA39599D /* Pods-ProAcademy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProAcademy.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProAcademy/Pods-ProAcademy.release.xcconfig"; sourceTree = "<group>"; };
+		B52CC0A11FA1FB4C00EB5ABB /* FadeDismissAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeDismissAnimationController.swift; sourceTree = "<group>"; };
 		B5437AC91F7F9441003DB93D /* TrainingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingsViewController.swift; sourceTree = "<group>"; };
 		B5437ACB1F7F957A003DB93D /* TrainingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingTableViewCell.swift; sourceTree = "<group>"; };
 		B5437ACE1F7FB9D7003DB93D /* TrainingDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingDetailsViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +75,7 @@
 		B5437ADB1F863726003DB93D /* FavouriteEventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteEventCell.swift; sourceTree = "<group>"; };
 		B5437ADD1F8669E4003DB93D /* ArtistCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistCell.swift; sourceTree = "<group>"; };
 		B54C24291F8CDB9600DC7AF9 /* ArtistView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistView.xib; sourceTree = "<group>"; };
-		B5514CD81F9213370013A560 /* FlipPresentAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipPresentAnimationController.swift; sourceTree = "<group>"; };
+		B5514CD81F9213370013A560 /* FadePresentAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadePresentAnimationController.swift; sourceTree = "<group>"; };
 		B5633C2D1F8D53B7005F9BE5 /* CardArtistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardArtistView.swift; sourceTree = "<group>"; };
 		B570540D1F7BC98300514412 /* ProAcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProAcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B57054101F7BC98300514412 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -170,7 +172,8 @@
 				B54C24291F8CDB9600DC7AF9 /* ArtistView.xib */,
 				B5633C2D1F8D53B7005F9BE5 /* CardArtistView.swift */,
 				B5E28BBC1F9A1EC700815E15 /* DetailCardArtistView.swift */,
-				B5514CD81F9213370013A560 /* FlipPresentAnimationController.swift */,
+				B5514CD81F9213370013A560 /* FadePresentAnimationController.swift */,
+				B52CC0A11FA1FB4C00EB5ABB /* FadeDismissAnimationController.swift */,
 			);
 			name = Artists;
 			sourceTree = "<group>";
@@ -500,11 +503,12 @@
 				B5437AD31F83A20E003DB93D /* FavouritesViewController.swift in Sources */,
 				B5437ADC1F863726003DB93D /* FavouriteEventCell.swift in Sources */,
 				B5E28BC11F9E264100815E15 /* ArtistsService.swift in Sources */,
-				B5514CD91F9213370013A560 /* FlipPresentAnimationController.swift in Sources */,
+				B5514CD91F9213370013A560 /* FadePresentAnimationController.swift in Sources */,
 				B5CD41FE1F977D6B0081151A /* FAQViewController.swift in Sources */,
 				B5CD41FC1F972ABD0081151A /* AboutViewController.swift in Sources */,
 				B5437ACF1F7FB9D7003DB93D /* TrainingDetailsViewController.swift in Sources */,
 				B5E28BB91F9A094100815E15 /* AboutUsUI.swift in Sources */,
+				B52CC0A21FA1FB4C00EB5ABB /* FadeDismissAnimationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
