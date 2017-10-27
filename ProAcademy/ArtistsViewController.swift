@@ -28,6 +28,10 @@ class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDel
     
     @IBOutlet var carousel: iCarousel!
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    @IBOutlet weak var errorMessage: UILabel!
+    
     var service : ArtistsService!
     
     // MARK: transition variables
@@ -51,30 +55,60 @@ class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDel
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        errorMessage.isHidden = true
+        carousel.isHidden = true
         loadData()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        self.activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+    }
+    
+    
     func loadData() {
         DispatchQueue.global(qos: .userInitiated).async {
-            let fetchResult = self.service.fetchArtists()
             
-            // err if nil or empty load from cache? (do it in service)
-            
-            if let fetched = fetchResult {
-                self.artists = fetched
-                DispatchQueue.main.async {
-                    // save aside as reload sets it to 0
-                    let indexValue = self.currentCardIndex
-                    self.carousel.reloadData()
-                    // after return and new entry added you might end up different card - check it
-                    
-                    if (indexValue == -1) { // first load
-                        self.carousel.scrollToItem(at: fetched.count, animated: true)
-                    } else {
-                        self.carousel.scrollToItem(at: self.currentCardIndex, animated: false)
+            do {
+                let fetchResult = try self.service.fetchArtists()
+                
+                // err if nil or empty load from cache? (do it in service)
+                
+                if let fetched = fetchResult {
+                    self.artists = fetched
+                    DispatchQueue.main.async {
+                        // save aside as reload sets it to 0
+                        let indexValue = self.currentCardIndex
+                        self.carousel.reloadData()
+                        self.activityIndicator.stopAnimating()
+                        self.activityIndicator.isHidden = true
+                        self.carousel.isHidden = false
+                        // after return and new entry added you might end up different card - check it
+                        
+                        if (indexValue == -1) { // first load
+                            self.carousel.scrollToItem(at: fetched.count, animated: true)
+                        } else {
+                            self.carousel.scrollToItem(at: self.currentCardIndex, animated: false)
+                        }
                     }
                 }
+                
+            } catch ServiceError.CouldNotFetchData(let message) {
+                DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()
+                    self.activityIndicator.isHidden = true
+                    self.errorMessage.text = "\(self.errorMessage.text!)\n\(message)"
+                    self.errorMessage.isHidden = false
+                }
             }
+            catch is Error {
+                DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()
+                    self.activityIndicator.isHidden = true
+                    self.errorMessage.isHidden = false
+                }
+            }
+            
         }
     }
 

@@ -9,8 +9,13 @@
 import Contentful
 import Interstellar
 
+enum ServiceError : Error {
+    case CouldNotFetchData(message: String)
+
+}
+
 protocol ArtistsService {
-    func fetchArtists() -> [Artist]?
+    func fetchArtists() throws -> [Artist]?
 }
 
 class ContentfulArtistsService: ArtistsService {
@@ -26,7 +31,7 @@ class ContentfulArtistsService: ArtistsService {
     
 
     // TODO: proper error handling
-    func fetchArtists() -> [Artist]? {
+    func fetchArtists() throws -> [Artist]?  {
         let query = Query(where: "content_type", .equals("artist"))
 
         var resultItems : [Entry]?
@@ -35,6 +40,8 @@ class ContentfulArtistsService: ArtistsService {
         let dispatchGroup = DispatchGroup()
         
         dispatchGroup.enter()
+        
+        var errorMessage : String?
         
         client?.fetchEntries(with: query) { (result: Result<ArrayResponse<Entry>>) in
             switch result {
@@ -46,23 +53,30 @@ class ContentfulArtistsService: ArtistsService {
 
                 case .error(let error):
                     print("Someting went wrong \(error.localizedDescription)")
+                    errorMessage = error.localizedDescription
             }
             dispatchGroup.leave()
         }
         let result = dispatchGroup.wait(timeout: DispatchTime.now() + 3)
         
-        guard let results = resultItems else {
-            // err
-            return fetchedArtists
-        }
         
         switch (result) {
-            case .success:
-                break
-            case .timedOut:
-                // err
-                return fetchedArtists
+        case .success:
+            break
+        case .timedOut:
+            // err
+            throw ServiceError.CouldNotFetchData(message: "Request timed out.")
         }
+        
+        guard let results = resultItems else {
+            if let message = errorMessage {
+                throw ServiceError.CouldNotFetchData(message: message)
+            } else {
+                throw ServiceError.CouldNotFetchData(message: "")
+            }
+        }
+        
+
         
         
         for item in results {

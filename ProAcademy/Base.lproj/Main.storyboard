@@ -383,24 +383,46 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="TbP-HF-6gb">
+                                <rect key="frame" x="135" y="259" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TbP-HF-6gb" secondAttribute="height" multiplier="1:1" id="Vj4-IT-VEy"/>
+                                    <constraint firstAttribute="width" constant="50" id="g0P-Ye-BFG"/>
+                                </constraints>
+                                <color key="color" cocoaTouchSystemColor="darkTextColor"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nie można załadować danych artystów." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sg7-hw-4IJ">
+                                <rect key="frame" x="36" y="259" width="248" height="50.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Sg7-hw-4IJ" secondAttribute="trailing" constant="20" id="2FC-28-zYZ"/>
+                            <constraint firstItem="Sg7-hw-4IJ" firstAttribute="leading" secondItem="n97-kS-w03" secondAttribute="leadingMargin" constant="20" id="3Nu-me-LEd"/>
                             <constraint firstAttribute="trailing" secondItem="GzC-hq-j1z" secondAttribute="trailing" id="Exg-os-EGk"/>
+                            <constraint firstItem="TbP-HF-6gb" firstAttribute="centerX" secondItem="n97-kS-w03" secondAttribute="centerX" id="d1c-cI-A1v"/>
                             <constraint firstItem="GzC-hq-j1z" firstAttribute="leading" secondItem="n97-kS-w03" secondAttribute="leading" id="gFA-KV-ecx"/>
+                            <constraint firstItem="TbP-HF-6gb" firstAttribute="centerY" secondItem="n97-kS-w03" secondAttribute="centerY" id="haI-pg-dM8"/>
                             <constraint firstItem="GzC-hq-j1z" firstAttribute="top" secondItem="OpO-zl-bLM" secondAttribute="bottom" id="iUX-yD-lGU"/>
+                            <constraint firstItem="Sg7-hw-4IJ" firstAttribute="centerX" secondItem="n97-kS-w03" secondAttribute="centerX" id="nNs-Oy-wZU"/>
+                            <constraint firstItem="Sg7-hw-4IJ" firstAttribute="centerY" secondItem="n97-kS-w03" secondAttribute="centerY" id="pnt-OG-DZU"/>
                             <constraint firstItem="bQ4-qp-cUl" firstAttribute="top" secondItem="GzC-hq-j1z" secondAttribute="bottom" id="tQh-TM-vzk"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Artyści" id="nvw-DF-Zws"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="TbP-HF-6gb" id="oK7-sF-K27"/>
                         <outlet property="carousel" destination="AaF-SM-SRz" id="YF7-N5-Bce"/>
+                        <outlet property="errorMessage" destination="Sg7-hw-4IJ" id="P08-TW-VpE"/>
                         <segue destination="qMd-LV-bk9" kind="presentation" identifier="showDetails" id="ftu-MR-spp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cWh-mH-lCN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2691" y="1349"/>
+            <point key="canvasLocation" x="2690.625" y="1348.943661971831"/>
         </scene>
         <!--Artist-->
         <scene sceneID="5MR-Ng-4wZ">
@@ -1573,7 +1595,7 @@ e-mail: kontakt@pro-academy.pl</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qMd-LV-bk9" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="k47-RQ-kHe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1594,7 +1616,7 @@ e-mail: kontakt@pro-academy.pl</string>
         <image name="pro-academy-natalia-stawiarska-150x150" width="150" height="150"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4UW-ki-Md9"/>
+        <segue reference="ftu-MR-spp"/>
         <segue reference="A7N-ZV-Xin"/>
     </inferredMetricsTieBreakers>
 </document>
