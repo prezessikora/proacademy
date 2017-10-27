@@ -14,9 +14,7 @@ import iCarousel
 
 class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDelegate {
 
-    var tilt: CGFloat = 0.5
-
-    let flipPresentAnimationController = FadePresentAnimationController()
+    let fadePresentAnimationController = FadePresentAnimationController()
     
     let fadeDismissAnimationController = FadeDismissAnimationController()
     
@@ -36,9 +34,7 @@ class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDel
     
     var currentCardIndex = -1
     
-    var currentCard : UIView?
-    
-    var transitionCard : UIView?
+    var cardFame: CGRect?
     
     // MARK: init
     
@@ -105,11 +101,9 @@ class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDel
         if let fetchedArtists = artists {
             return fetchedArtists.count
         }
-        return 0
-        
+        return 0        
     }
     
-
     
     func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
         
@@ -119,7 +113,7 @@ class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDel
     func carousel(_ carousel: iCarousel, valueFor option: iCarouselOption, withDefault value: CGFloat) -> CGFloat {
         
         if (option == .tilt) {
-            return tilt
+            return 0.5
         }
         return value
     }
@@ -161,7 +155,7 @@ class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDel
     
     func carouselCurrentItemIndexDidChange(_ carousel: iCarousel) {
         currentCardIndex = carousel.currentItemIndex
-        currentCard = carousel.currentItemView
+        //currentCard = carousel.currentItemView
     }
     
     
@@ -203,39 +197,28 @@ class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDel
             return
         }
         
-        let card = createCard(index: currentCardIndex)
-        view.addSubview(card)
-
-        card.translatesAutoresizingMaskIntoConstraints = false
-        card.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        let c = card.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        c.constant = 16
-        c.isActive = true
-        card.widthAnchor.constraint(equalToConstant: (currentCard?.frame.width)!).isActive = true
-        card.heightAnchor.constraint(equalToConstant: (currentCard?.frame.height)!).isActive = true
-
-
-        transitionCard = card
-
+        let currentCard = carousel.currentItemView
+        
+        cardFame = currentCard?.superview?.convert((currentCard?.frame)!,to: self.view)
+        
         setTabBarVisible(visible: false, animated: true) {_ in
             self.performSegue(withIdentifier: "showDetails", sender: self)
         }
-
     }
-   
 }
-
-
 
 extension ArtistsViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        flipPresentAnimationController.originFrame = transitionCard!.frame
+        fadePresentAnimationController.originFrame = cardFame!
+        fadePresentAnimationController.cardSnapshot = currentCardSnapShot()
         
-        return flipPresentAnimationController
+        
+        return fadePresentAnimationController
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        fadeDismissAnimationController.destinationFrame = transitionCard!.frame
+        fadeDismissAnimationController.destinationFrame = cardFame!
+        fadeDismissAnimationController.cardSnapshot = currentCardSnapShot()
         
         return fadeDismissAnimationController
     }

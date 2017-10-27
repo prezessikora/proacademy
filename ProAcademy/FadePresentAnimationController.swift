@@ -11,13 +11,13 @@ import UIKit
 class FadePresentAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
     var originFrame = CGRect.zero
     
+    var cardSnapshot: UIView!
+    
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.6
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        
-        
         let fromVC = transitionContext.viewController(forKey: .from)! as! UITabBarController
         let artistsVC = fromVC.selectedViewController as! ArtistsViewController
         let toVC = transitionContext.viewController(forKey: .to)!
@@ -27,7 +27,6 @@ class FadePresentAnimationController: NSObject, UIViewControllerAnimatedTransiti
         let initialFrame = originFrame
         let finalFrame = transitionContext.finalFrame(for: toVC)
         
-        let cardSnapshot = artistsVC.currentCardSnapShot()
         let snapshot = toVC.view.snapshotView(afterScreenUpdates: true)
         snapshot?.frame = initialFrame
         cardSnapshot.frame = initialFrame
@@ -42,25 +41,18 @@ class FadePresentAnimationController: NSObject, UIViewControllerAnimatedTransiti
         snapshot?.alpha = 0.0
         
         containerView.addSubview(cardSnapshot)
-        cardSnapshot.translatesAutoresizingMaskIntoConstraints = false
-        cardSnapshot.centerXAnchor.constraint(equalTo: (snapshot?.centerXAnchor)!).isActive = true
-        cardSnapshot.centerYAnchor.constraint(equalTo: (snapshot?.centerYAnchor)!).isActive = true
-        cardSnapshot.widthAnchor.constraint(equalTo: (snapshot?.widthAnchor)!).isActive = true
-        cardSnapshot.heightAnchor.constraint(equalTo: (snapshot?.heightAnchor)!).isActive = true
-        
-        artistsVC.transitionCard?.removeFromSuperview()
-        
+
         let duration = transitionDuration(using: transitionContext)
 
         UIView.animate(withDuration: duration, delay: 0.0, options: [.curveEaseOut], animations: {
             snapshot?.frame = finalFrame
             snapshot?.alpha = 1.0
-            cardSnapshot.alpha = 0.0
-            cardSnapshot.frame = finalFrame
+            self.cardSnapshot.alpha = 0.0
+            self.cardSnapshot.frame = finalFrame
         }, completion: { _ in
             toVC.view.isHidden = false
             snapshot?.removeFromSuperview()
-            cardSnapshot.removeFromSuperview()
+            self.cardSnapshot.removeFromSuperview()
             transitionContext.completeTransition(true)
         })
         
