@@ -13,30 +13,16 @@ import iCarousel
 
 
 class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDelegate {
-
-    let fadePresentAnimationController = FadePresentAnimationController()
-    
-    let fadeDismissAnimationController = FadeDismissAnimationController()
-    
-//    let artists = [
-//        Artist(name: "Miss Lula", title: "Pani Dyrektor p:a", quote: "", description: "", image: UIImage(named: "pro-academy-miss-lula-150x150")!),
-//        Artist(name: "Natalia Stawiarska", title: "Make up & CEO", quote: "", description: "", image: UIImage(named: "pro-academy-natalia-stawiarska-150x150")!),
-//        Artist(name: "Krzysztof Sikora", title: "Pan Krzysztof", quote: "", description: "", image: UIImage(named: "krzysztof")!),
-//        Artist(name: "Sandra Sikora", title: "Design Love CEO", quote: "", description: "", image: UIImage(named: "sandra")!)]
-
-    var artists : [Artist]?
     
     @IBOutlet var carousel: iCarousel!
-
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
     @IBOutlet weak var errorMessage: UILabel!
+
+    let fadePresentAnimationController = FadePresentAnimationController()
+    let fadeDismissAnimationController = FadeDismissAnimationController()
     
+    var artists : [Artist]?
     var service : ArtistsService!
-    
-    // MARK: transition variables
-    
-    var currentCardIndex = -1
     
     var cardFame: CGRect?
     
@@ -57,59 +43,42 @@ class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDel
     override func viewWillAppear(_ animated: Bool) {
         errorMessage.isHidden = true
         carousel.isHidden = true
+        activityIndicator.startAnimating()
         loadData()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        self.activityIndicator.isHidden = false
-        activityIndicator.startAnimating()
-    }
-    
-    
     func loadData() {
         DispatchQueue.global(qos: .userInitiated).async {
             
-            do {
-                let fetchResult = try self.service.fetchArtists()
-                
-                // err if nil or empty load from cache? (do it in service)
-                
-                if let fetched = fetchResult {
-                    self.artists = fetched
-                    DispatchQueue.main.async {
-                        // save aside as reload sets it to 0
-                        let indexValue = self.currentCardIndex
-                        self.carousel.reloadData()
-                        self.activityIndicator.stopAnimating()
-                        self.activityIndicator.isHidden = true
-                        self.carousel.isHidden = false
-                        // after return and new entry added you might end up different card - check it
-                        
-                        if (indexValue == -1) { // first load
-                            self.carousel.scrollToItem(at: fetched.count, animated: true)
-                        } else {
-                            self.carousel.scrollToItem(at: self.currentCardIndex, animated: false)
-                        }
+            let fetchResult = self.service.fetchArtists()
+            
+            // err if nil or empty load from cache? (do it in service)
+            
+            if let fetched = fetchResult {
+                self.artists = fetched
+                DispatchQueue.main.async {
+                    // save aside as reload sets it to 0
+                    let indexValue = self.carousel.currentItemIndex
+                    self.carousel.reloadData()
+                    self.activityIndicator.stopAnimating()
+                    
+                    self.carousel.isHidden = false
+                    // after return and new entry added you might end up different card - check it
+                    
+                    if (indexValue == -1) { // first load
+                        self.carousel.scrollToItem(at: fetched.count, animated: true)
+                    } else {
+                        self.carousel.scrollToItem(at: self.carousel.currentItemIndex, animated: false)
                     }
                 }
-                
-            } catch ServiceError.CouldNotFetchData(let message) {
+            } else { // there is no return
                 DispatchQueue.main.async {
-                    self.activityIndicator.stopAnimating()
-                    self.activityIndicator.isHidden = true
-                    self.errorMessage.text = "\(self.errorMessage.text!)\n\(message)"
+                    self.activityIndicator.stopAnimating()                    
                     self.errorMessage.isHidden = false
                 }
             }
-            catch is Error {
-                DispatchQueue.main.async {
-                    self.activityIndicator.stopAnimating()
-                    self.activityIndicator.isHidden = true
-                    self.errorMessage.isHidden = false
-                }
-            }
-            
         }
+        
     }
 
     func colorForCard(at index: Int) -> UIColor {
@@ -136,8 +105,7 @@ class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDel
             return fetchedArtists.count
         }
         return 0        
-    }
-    
+    }    
     
     func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
         
@@ -160,7 +128,7 @@ class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDel
     }
     
     func currentCardSnapShot() -> UIView {
-        return self.createCard(index: currentCardIndex).snapshotView(afterScreenUpdates: true)!
+        return self.createCard(index: self.carousel.currentItemIndex).snapshotView(afterScreenUpdates: true)!
     }
     
     func createCard(index: Int) -> UIView {
@@ -183,15 +151,8 @@ class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDel
         
         return card
     }
+    
     // MARK: transition
-    
-    
-    
-    func carouselCurrentItemIndexDidChange(_ carousel: iCarousel) {
-        currentCardIndex = carousel.currentItemIndex
-        //currentCard = carousel.currentItemView
-    }
-    
     
     func setTabBarVisible(visible: Bool, animated: Bool, completion:@escaping (Bool)->Void) {
         
@@ -221,13 +182,18 @@ class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDel
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationViewController = segue.destination
-        destinationViewController.transitioningDelegate = self
+        let destination = segue.destination
+        destination.transitioningDelegate = self
+        
+        let artistDetailsController = (destination as! UINavigationController).viewControllers.first as! ArtistDetailsViewController
+        artistDetailsController.artistModel = artists![carousel.currentItemIndex]
+        
+        
     }
     
     func carousel(_ carousel: iCarousel, didSelectItemAt index: Int) {
         
-        if (index != currentCardIndex) {
+        if (index != self.carousel.currentItemIndex) {
             return
         }
         

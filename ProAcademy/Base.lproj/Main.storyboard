@@ -110,7 +110,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="sJ1-P5-0c6" customClass="WelcomePageViewController" customModule="ProAcademy" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fjl-8W-rkR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-191" y="270"/>
+            <point key="canvasLocation" x="26" y="248"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="esG-by-aCi">
@@ -153,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wjW-ad-sRR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-996" y="269"/>
+            <point key="canvasLocation" x="-998" y="274"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="WbB-yg-z4S">
@@ -427,7 +427,7 @@
         <!--Artist-->
         <scene sceneID="5MR-Ng-4wZ">
             <objects>
-                <viewController title="Natalia Stawiarska" id="fNo-v1-pCZ" userLabel="Artist" customClass="ArtistViewController" customModule="ProAcademy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Natalia Stawiarska" id="fNo-v1-pCZ" userLabel="Artist" customClass="ArtistDetailsViewController" customModule="ProAcademy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="raJ-ci-4t5"/>
                         <viewControllerLayoutGuide type="bottom" id="A27-h0-6am"/>
@@ -520,10 +520,10 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="595"/>
                     <connections>
-                        <outlet property="companyTitle" destination="Pq0-WQ-cUh" id="uvn-3G-2t1"/>
+                        <outlet property="artistDescription" destination="Hg3-VJ-Iva" id="X8a-jx-ulF"/>
+                        <outlet property="artistTitle" destination="Pq0-WQ-cUh" id="uvn-3G-2t1"/>
                         <outlet property="fbButton" destination="3fT-w4-ORp" id="MOq-pe-vXj"/>
                         <outlet property="imageView" destination="zVQ-Jd-3Mo" id="1Lc-qF-eLH"/>
-                        <outlet property="info" destination="Hg3-VJ-Iva" id="X8a-jx-ulF"/>
                         <outlet property="linkedButton" destination="f82-BD-68Y" id="xCy-NL-zy9"/>
                     </connections>
                 </viewController>
@@ -599,7 +599,7 @@
                                     <outlet property="image" destination="6UH-M5-QFX" id="KCT-T8-HKa"/>
                                     <outlet property="name" destination="KIV-ub-Ku8" id="csV-xo-jC8"/>
                                     <outlet property="title" destination="fW4-ZA-RIG" id="8Fr-JA-8PO"/>
-                                    <segue destination="qMd-LV-bk9" kind="show" id="4UW-ki-Md9"/>
+                                    <segue destination="qMd-LV-bk9" kind="presentation" modalTransitionStyle="coverVertical" id="4UW-ki-Md9"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -1595,7 +1595,7 @@ e-mail: kontakt@pro-academy.pl</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qMd-LV-bk9" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="k47-RQ-kHe">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1616,7 +1616,7 @@ e-mail: kontakt@pro-academy.pl</string>
         <image name="pro-academy-natalia-stawiarska-150x150" width="150" height="150"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ftu-MR-spp"/>
+        <segue reference="4UW-ki-Md9"/>
         <segue reference="A7N-ZV-Xin"/>
     </inferredMetricsTieBreakers>
 </document>

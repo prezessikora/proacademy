@@ -8,49 +8,51 @@
 
 import UIKit
 
-class ArtistViewController: UIViewController {
+class ArtistDetailsViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
-    
-    @IBOutlet weak var companyTitle: UILabel!
-    
+    @IBOutlet weak var artistTitle: UILabel!
     @IBOutlet weak var fbButton: UIButton!
-    
-    @IBOutlet weak var info: UITextView!
-    
+    @IBOutlet weak var artistDescription: UITextView!
     @IBOutlet weak var linkedButton: UIButton!
+    
+    var artistModel: Artist?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
-        self.title = "Natalia Stawiarska"
+        if let a = artistModel {
+            self.title = a.name
+            self.imageView.image = a.image
+            self.artistTitle.text = a.title
+            self.artistDescription.text = a.description
+            
+        } else  { // else should not happen but detault to?
+            self.title = "Natalia Stawiarska"
+        }
         let navBarbutton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.stop, target: self, action: #selector(close))
         self.navigationItem.rightBarButtonItem = navBarbutton
         
     }
     
-    @IBAction func close(_ sender: Any) {
+    func close() {
         dismiss(animated: true, completion: nil)
-        
     }
     
- 
-
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
         
-        configureButton(button: fbButton)
-        configureButton(button: linkedButton)
-
+        roundButton(ofButton: fbButton)
+        roundButton(ofButton: linkedButton)
     }
     
-    func configureButton(button: UIButton) {
-        button.layer.masksToBounds = false
-        button.clipsToBounds = true
-        button.layer.cornerRadius = fbButton.frame.height/2
-        button.backgroundColor = UIColor.lightGray
-        button.setTitleColor(UIColor.black, for: .normal)
+    func roundButton(ofButton: UIButton) {
+        ofButton.layer.masksToBounds = false
+        ofButton.clipsToBounds = true
+        ofButton.layer.cornerRadius = fbButton.frame.height/2
+        ofButton.backgroundColor = UIColor.lightGray
+        ofButton.setTitleColor(UIColor.black, for: .normal)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

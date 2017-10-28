@@ -6,26 +6,13 @@
          contextName = "closure #1 in ArtistsViewController.loadData():ArtistsViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "ArtistsViewController.carouselCurrentItemIndexDidChange(_:):ArtistsViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "carousel.currentItemView?">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "ArtistsViewController.viewWillAppear(_:):ArtistsViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "FlipPresentAnimationController.animateTransition(using:):FlipPresentAnimationController.swift">
+         contextName = "ArtistsViewController.prepare(for:sender:):ArtistsViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "fromVC.dynamicType">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ArtistsViewController.viewDidLoad():ArtistsViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "backgrounds">
+               value = "(segue.destination as! UINavigationController).viewControllers.first as! ArtistViewController">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -65,7 +52,31 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ArtistsViewController.viewWillAppear(_:):ArtistsViewController.swift">
+         contextName = "ArtistsViewController.viewDidLoad():ArtistsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "backgrounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in ArtistsViewController.loadData():ArtistsViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "FlipPresentAnimationController.animateTransition(using:):FlipPresentAnimationController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "fromVC.dynamicType">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ArtistsViewController.carouselCurrentItemIndexDidChange(_:):ArtistsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "carousel.currentItemView?">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>

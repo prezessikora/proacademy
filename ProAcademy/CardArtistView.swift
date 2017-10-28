@@ -9,10 +9,8 @@
 import UIKit
 
 class CardArtistView: UIView {
-
     
     @IBOutlet var contentView: UIView!
-    
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -21,8 +19,7 @@ class CardArtistView: UIView {
     
     @IBOutlet weak var quote: UILabel!
     @IBOutlet weak var title: UILabel!
-    
-    
+        
     override init(frame: CGRect) { // for using in code
         super.init(frame: frame)
         commonInit()
