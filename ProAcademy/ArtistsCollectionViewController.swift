@@ -9,24 +9,30 @@
 import UIKit
 
 
-class ArtistsCollectionViewController: FavouritesCollection {
+protocol ReloadCallback {
+    func reload()
+}
+
+class ArtistsCollectionViewController: FavouritesCollection, ReloadCallback {
 
     fileprivate let reuseIdentifier = "ArtistCell"
 
-    let artists = [
-        Artist(id: "1", name: "Miss Lula", title: "Pani Dyrektor p:a", quote: "", description: "", image: UIImage(named: "pro-academy-miss-lula-150x150")!),
-        Artist(id: "2", name: "Natalia Stawiarska", title: "Make up & CEO", quote: "", description: "", image: UIImage(named: "pro-academy-natalia-stawiarska-150x150")!)]
+    var favouritesService : FavouritesService {
+        get {
+            return Utils.application().favouritesService!
+        }
+    }
+
+    func reload() {
+        collectionView?.reloadData()
+    }
     
-    
-    
+    override func viewWillAppear(_ animated: Bool) {
+        reload()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -34,18 +40,20 @@ class ArtistsCollectionViewController: FavouritesCollection {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return artists.count
+        return favouritesService.favouriteArtists().count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ArtistCell
         
+        let artist = favouritesService.favouriteArtists()[indexPath.row]
+        
         // Configure the cell
         cell.backgroundColor = UIColor.white
-        cell.name.text = artists[indexPath.row].name
-        cell.title.text = artists[indexPath.row].title
+        cell.name.text = artist.name
+        cell.title.text = artist.title
         
-        cell.image.image = artists[indexPath.row].image
+        cell.image.image = artist.image
         cell.image.layer.borderWidth = 0
         cell.image.layer.masksToBounds = false
         cell.image.layer.borderColor = UIColor.black.cgColor

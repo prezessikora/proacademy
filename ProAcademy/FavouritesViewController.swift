@@ -16,6 +16,8 @@ class Tab {
     var constraintLow: NSLayoutConstraint
     var constraintHigh: NSLayoutConstraint
     
+    var reloadCallback: ReloadCallback?
+    
     init(button: UIButton, bar: UIView, container: UIView) {
         self.button = button
         self.bar = bar
@@ -31,6 +33,9 @@ class Tab {
 
         constraintLow.isActive = false
         constraintHigh.isActive = true
+        if let reload = reloadCallback {
+            reload.reload()
+        }
         
     }
     
@@ -68,6 +73,7 @@ class FavouritesViewController: TabBasedViewController {
     @IBOutlet weak var eventsButton: UIButton!
     @IBOutlet weak var eventsBar: UIView!
     @IBOutlet weak var trainingsContainer: UIView!
+    var artistsTabReloadCallback: ReloadCallback?
   
     var eventsTab: Tab!
     @IBOutlet weak var artistsButton: UIButton!
@@ -79,7 +85,9 @@ class FavouritesViewController: TabBasedViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         eventsTab = Tab(button: eventsButton, bar: eventsBar, container: trainingsContainer)
+        
         artistsTab = Tab(button: artistsButton, bar: artistsBar, container: artistsContainer)
+        artistsTab.reloadCallback = artistsTabReloadCallback
         
         changeState(active: eventsTab, inactive: artistsTab)
     }
@@ -92,4 +100,15 @@ class FavouritesViewController: TabBasedViewController {
         changeState(active: artistsTab, inactive: eventsTab)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let id = segue.identifier {
+            if id == "showFavouriteEvents" {
+                
+            }
+            if id == "showFavouriteArtists" {
+                let vc = segue.destination as! ArtistsCollectionViewController
+                artistsTabReloadCallback = vc
+            }
+        }
+    }
 }

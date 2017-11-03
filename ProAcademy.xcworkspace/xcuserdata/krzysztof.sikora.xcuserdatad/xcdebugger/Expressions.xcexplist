@@ -3,16 +3,16 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "closure #1 in ArtistsViewController.loadData():ArtistsViewController.swift">
-      </ContextState>
-      <ContextState
          contextName = "ArtistsViewController.viewWillAppear(_:):ArtistsViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "ArtistsViewController.prepare(for:sender:):ArtistsViewController.swift">
+         contextName = "closure #1 in ArtistsViewController.loadData():ArtistsViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ArtistsViewController.carouselCurrentItemIndexDidChange(_:):ArtistsViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "(segue.destination as! UINavigationController).viewControllers.first as! ArtistViewController">
+               value = "carousel.currentItemView?">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -20,10 +20,10 @@
          contextName = "ArtistsViewController.carousel(_:didSelectItemAt:):ArtistsViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "currentCard.frame.width">
+               value = "">
             </PersistentString>
             <PersistentString
-               value = "">
+               value = "transitionCard.center">
             </PersistentString>
             <PersistentString
                value = "carousel.currentItemView">
@@ -38,6 +38,9 @@
                value = "carousel.currentItemIndex">
             </PersistentString>
             <PersistentString
+               value = "currentCard.frame.width">
+            </PersistentString>
+            <PersistentString
                value = "currentCard.frame">
             </PersistentString>
             <PersistentString
@@ -46,9 +49,6 @@
             <PersistentString
                value = "carousel.itemView(at: 2)">
             </PersistentString>
-            <PersistentString
-               value = "transitionCard.center">
-            </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
@@ -56,6 +56,14 @@
          <PersistentStrings>
             <PersistentString
                value = "backgrounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FavouritesViewController.prepare(for:sender:):FavouritesViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "segue.destination">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -71,10 +79,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ArtistsViewController.carouselCurrentItemIndexDidChange(_:):ArtistsViewController.swift">
+         contextName = "ArtistsViewController.prepare(for:sender:):ArtistsViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "carousel.currentItemView?">
+               value = "(segue.destination as! UINavigationController).viewControllers.first as! ArtistViewController">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
