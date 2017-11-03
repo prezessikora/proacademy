@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WelcomePageViewController: UIPageViewController {
+class WelcomePagesViewController: UIPageViewController {
 
     weak var welcomeDelegate: WelcomePageViewControllerDelegate?
     
@@ -26,7 +26,6 @@ class WelcomePageViewController: UIPageViewController {
         super.viewDidLoad()
 
         delegate = self
-        
         dataSource = self
         
         if let firstVC = orderedViewControllers.first {
@@ -39,7 +38,7 @@ class WelcomePageViewController: UIPageViewController {
 }
 
 
-extension WelcomePageViewController: UIPageViewControllerDelegate {
+extension WelcomePagesViewController: UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController,
                             didFinishAnimating finished: Bool,
                             previousViewControllers: [UIViewController],
@@ -60,7 +59,7 @@ protocol WelcomePageViewControllerDelegate: class {
      - parameter tutorialPageViewController: the TutorialPageViewController instance
      - parameter count: the total number of pages.
      */
-    func welcomePageViewController(welcomePageViewController: WelcomePageViewController,
+    func welcomePageViewController(welcomePageViewController: WelcomePagesViewController,
                                     didUpdatePageCount count: Int)
     
     /**
@@ -69,12 +68,12 @@ protocol WelcomePageViewControllerDelegate: class {
      - parameter tutorialPageViewController: the TutorialPageViewController instance
      - parameter index: the index of the currently visible page.
      */
-    func welcomePageViewController(welcomePageViewController: WelcomePageViewController,
+    func welcomePageViewController(welcomePageViewController: WelcomePagesViewController,
                                     didUpdatePageIndex index: Int)
     
 }
 
-extension WelcomePageViewController : UIPageViewControllerDataSource {
+extension WelcomePagesViewController : UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         guard let currentIndex = orderedViewControllers.index(of: viewController) else {

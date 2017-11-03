@@ -14,14 +14,13 @@ class WelcomeViewController: UIViewController {
     
     @IBOutlet weak var pageControl: UIPageControl!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+    // It is hidden in Info.plist by default for launch screen
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let welcomePageViewController = segue.destination as? WelcomePageViewController {
+        if let welcomePageViewController = segue.destination as? WelcomePagesViewController {
             welcomePageViewController.welcomeDelegate = self
         }
 
@@ -30,12 +29,12 @@ class WelcomeViewController: UIViewController {
 
 extension WelcomeViewController: WelcomePageViewControllerDelegate {
     
-    func welcomePageViewController(welcomePageViewController: WelcomePageViewController,
+    func welcomePageViewController(welcomePageViewController: WelcomePagesViewController,
                                     didUpdatePageCount count: Int) {
         pageControl.numberOfPages = count
     }
     
-    func welcomePageViewController(welcomePageViewController: WelcomePageViewController,
+    func welcomePageViewController(welcomePageViewController: WelcomePagesViewController,
                                     didUpdatePageIndex index: Int) {
         pageControl.currentPage = index
     }
