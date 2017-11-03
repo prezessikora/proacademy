@@ -91,7 +91,7 @@ class ContentfulArtistsService: ArtistsService {
                     }
                     
                     let artist =
-                        Artist(name: name, title: title, quote: quote, description: description,image: i)
+                        Artist(id: item.id, name: name, title: title, quote: quote, description: description, image: i)
                     fetchedArtists.append(artist)
                     
                     dispatchGroup.leave()

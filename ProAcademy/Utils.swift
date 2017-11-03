@@ -25,6 +25,10 @@ class Utils  {
         
         return nil
     }
+    
+    static func application() -> AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
 }
 
 extension UIColor {

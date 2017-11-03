@@ -131,13 +131,20 @@ class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDel
         return self.createCard(index: self.carousel.currentItemIndex).snapshotView(afterScreenUpdates: true)!
     }
     
+    var favouritesService : FavouritesService {
+        get {
+            return Utils.application().favouritesService!
+        }
+    }
+    
     func createCard(index: Int) -> UIView {
 
         let artist = artists![index]
         
         let card = CardArtistView(frame: CGRect(x: 0, y: 0, width: 250, height: 400))
         //card.view.backgroundColor = colorForCard(at: index)
-        
+        card.artist = artist
+                
         card.layer.borderColor = UIColor.lightGray.cgColor
         card.layer.borderWidth = 1.0
         
@@ -148,9 +155,10 @@ class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDel
         card.quote.text = artist.quote
         
         circledImage(card.imageView)
-        
+        card.updateFavouriteState()
         return card
     }
+    
     
     // MARK: transition
     

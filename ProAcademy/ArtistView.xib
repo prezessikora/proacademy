@@ -15,6 +15,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardArtistView" customModule="ProAcademy" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="X1L-Og-6FI"/>
+                <outlet property="favouriteButton" destination="6cp-hC-wag" id="gCf-Uc-bH0"/>
                 <outlet property="imageView" destination="kQR-H8-CVR" id="FcD-KK-tja"/>
                 <outlet property="name" destination="fnx-ds-SCT" id="j5W-8D-H0a"/>
                 <outlet property="quote" destination="Lfl-SF-2HB" id="UUb-Zi-mdj"/>
@@ -29,13 +30,6 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nAM-iU-D7F">
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-Heart Outline-50" translatesAutoresizingMaskIntoConstraints="NO" id="zpv-dD-m5h">
-                            <rect key="frame" x="337.5" y="17.5" width="30" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="30" id="e8m-Et-5IW"/>
-                                <constraint firstAttribute="height" constant="30" id="wGS-Bd-bqV"/>
-                            </constraints>
-                        </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pro-academy-natalia-stawiarska-150x150" translatesAutoresizingMaskIntoConstraints="NO" id="kQR-H8-CVR">
                             <rect key="frame" x="187.5" y="119" width="150" height="150"/>
                             <constraints>
@@ -66,16 +60,27 @@
                                 </label>
                             </subviews>
                         </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cp-hC-wag">
+                            <rect key="frame" x="337.5" y="12.5" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="2C6-9F-oro"/>
+                                <constraint firstAttribute="width" secondItem="6cp-hC-wag" secondAttribute="height" multiplier="1:1" id="GOg-Tr-0zw"/>
+                            </constraints>
+                            <state key="normal" image="icons8-Heart Outline-50"/>
+                            <connections>
+                                <action selector="onFavourite:" destination="-1" eventType="touchUpInside" id="tSD-I0-8XN"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="lNl-4v-maj" firstAttribute="leading" secondItem="nAM-iU-D7F" secondAttribute="leading" constant="10" id="CtF-UL-K1s"/>
                         <constraint firstItem="lNl-4v-maj" firstAttribute="centerY" secondItem="nAM-iU-D7F" secondAttribute="centerY" multiplier="1.5" id="GwC-Cb-3h5"/>
+                        <constraint firstItem="6cp-hC-wag" firstAttribute="centerY" secondItem="nAM-iU-D7F" secondAttribute="centerY" multiplier="0.1" id="HoK-oy-VJe"/>
                         <constraint firstItem="kQR-H8-CVR" firstAttribute="centerY" secondItem="nAM-iU-D7F" secondAttribute="centerY" multiplier="0.6" id="Jtp-It-01H"/>
+                        <constraint firstItem="6cp-hC-wag" firstAttribute="centerX" secondItem="nAM-iU-D7F" secondAttribute="centerX" multiplier="1.8" id="RLo-Br-A7P"/>
                         <constraint firstItem="kQR-H8-CVR" firstAttribute="centerX" secondItem="nAM-iU-D7F" secondAttribute="centerX" id="cPO-1t-97q"/>
-                        <constraint firstItem="zpv-dD-m5h" firstAttribute="centerY" secondItem="nAM-iU-D7F" secondAttribute="centerY" multiplier="0.1" id="hf0-Dy-bf4"/>
                         <constraint firstAttribute="trailing" secondItem="lNl-4v-maj" secondAttribute="trailing" constant="10" id="sL6-fi-Dol"/>
-                        <constraint firstItem="zpv-dD-m5h" firstAttribute="centerX" secondItem="nAM-iU-D7F" secondAttribute="centerX" multiplier="1.8" id="uhq-ge-Cou"/>
                     </constraints>
                 </view>
             </subviews>

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		911A6344ABB5FDA59A4C906C /* Pods_ProAcademy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A944094A41DEF3A4EB9E38 /* Pods_ProAcademy.framework */; };
 		9DBD96D6B0A89CBB5CDB57A7 /* Pods_ProAcademyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC820CAC6BE073E0C6ED645 /* Pods_ProAcademyTests.framework */; };
+		B5064C5C1FAB24E3001E3BB0 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5064C5B1FAB24E3001E3BB0 /* Artist.swift */; };
+		B5064C5E1FAB2555001E3BB0 /* FavouritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5064C5D1FAB2555001E3BB0 /* FavouritesService.swift */; };
 		B52CC0A21FA1FB4C00EB5ABB /* FadeDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52CC0A11FA1FB4C00EB5ABB /* FadeDismissAnimationController.swift */; };
 		B5437ACA1F7F9441003DB93D /* TrainingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5437AC91F7F9441003DB93D /* TrainingsViewController.swift */; };
 		B5437ACC1F7F957A003DB93D /* TrainingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5437ACB1F7F957A003DB93D /* TrainingTableViewCell.swift */; };
@@ -61,6 +63,8 @@
 		68951F4B391DBD0DCAEAA963 /* Pods-ProAcademyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProAcademyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProAcademyTests/Pods-ProAcademyTests.release.xcconfig"; sourceTree = "<group>"; };
 		91A944094A41DEF3A4EB9E38 /* Pods_ProAcademy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProAcademy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8902566F9CC02EABA39599D /* Pods-ProAcademy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProAcademy.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProAcademy/Pods-ProAcademy.release.xcconfig"; sourceTree = "<group>"; };
+		B5064C5B1FAB24E3001E3BB0 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		B5064C5D1FAB2555001E3BB0 /* FavouritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesService.swift; sourceTree = "<group>"; };
 		B52CC0A11FA1FB4C00EB5ABB /* FadeDismissAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeDismissAnimationController.swift; sourceTree = "<group>"; };
 		B5437AC91F7F9441003DB93D /* TrainingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingsViewController.swift; sourceTree = "<group>"; };
 		B5437ACB1F7F957A003DB93D /* TrainingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingTableViewCell.swift; sourceTree = "<group>"; };
@@ -252,6 +256,8 @@
 			isa = PBXGroup;
 			children = (
 				B5E28BC01F9E264100815E15 /* ArtistsService.swift */,
+				B5064C5B1FAB24E3001E3BB0 /* Artist.swift */,
+				B5064C5D1FAB2555001E3BB0 /* FavouritesService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -480,9 +486,11 @@
 				B57054351F7E344C00514412 /* WelcomeViewController.swift in Sources */,
 				B5437ACA1F7F9441003DB93D /* TrainingsViewController.swift in Sources */,
 				B5633C2E1F8D53B7005F9BE5 /* CardArtistView.swift in Sources */,
+				B5064C5C1FAB24E3001E3BB0 /* Artist.swift in Sources */,
 				B57054311F7E247600514412 /* WelcomePageViewController.swift in Sources */,
 				B57054131F7BC98300514412 /* ViewController.swift in Sources */,
 				B5437ACC1F7F957A003DB93D /* TrainingTableViewCell.swift in Sources */,
+				B5064C5E1FAB2555001E3BB0 /* FavouritesService.swift in Sources */,
 				B5437ADE1F8669E4003DB93D /* ArtistCell.swift in Sources */,
 				B5CD42001F9907770081151A /* FAQAnwserCellTableViewCell.swift in Sources */,
 				B5842B9E1F8B52F400E6B573 /* ArtistsViewController.swift in Sources */,
