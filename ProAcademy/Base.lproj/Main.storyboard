@@ -12,10 +12,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Welcome Page1 View Controller-->
+        <!--View Controller-->
         <scene sceneID="NZZ-7y-9GW">
             <objects>
-                <viewController storyboardIdentifier="welcomePage1" id="7HQ-B8-itV" customClass="WelcomePage1ViewController" customModule="ProAcademy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="welcomePage1" id="7HQ-B8-itV" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TKA-zN-6QY"/>
                         <viewControllerLayoutGuide type="bottom" id="wXO-6r-hcy"/>
@@ -27,31 +27,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Walktrough_1" translatesAutoresizingMaskIntoConstraints="NO" id="kBL-Q1-sLt">
                                 <rect key="frame" x="5" y="5" width="310" height="558"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSz-Zj-8wb">
-                                <rect key="frame" x="5" y="513" width="310" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="dxC-Qw-dHh"/>
-                                </constraints>
-                                <state key="normal" title="ZACZYNAMY"/>
-                                <connections>
-                                    <segue destination="m8z-m2-vyE" kind="presentation" modalTransitionStyle="crossDissolve" id="KxV-oi-Iuu"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dSz-Zj-8wb" firstAttribute="leading" secondItem="EX6-a6-QQa" secondAttribute="leading" constant="5" id="26r-ez-YK0"/>
                             <constraint firstItem="kBL-Q1-sLt" firstAttribute="top" secondItem="EX6-a6-QQa" secondAttribute="top" constant="5" id="bFv-aW-Evb"/>
                             <constraint firstItem="wXO-6r-hcy" firstAttribute="top" secondItem="kBL-Q1-sLt" secondAttribute="bottom" constant="5" id="ei6-DE-z6a"/>
                             <constraint firstAttribute="trailing" secondItem="kBL-Q1-sLt" secondAttribute="trailing" constant="5" id="eyp-tz-Km8"/>
                             <constraint firstItem="kBL-Q1-sLt" firstAttribute="leading" secondItem="EX6-a6-QQa" secondAttribute="leading" constant="5" id="oSn-8K-t6m"/>
-                            <constraint firstItem="wXO-6r-hcy" firstAttribute="top" secondItem="dSz-Zj-8wb" secondAttribute="bottom" constant="5" id="rPK-Im-laa"/>
-                            <constraint firstAttribute="trailing" secondItem="dSz-Zj-8wb" secondAttribute="trailing" constant="5" id="xvF-iy-FAB"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="skipButton" destination="dSz-Zj-8wb" id="ehn-Sh-Dtg"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eds-Pg-mam" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -92,7 +76,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="sJ1-P5-0c6" customClass="WelcomePagesViewController" customModule="ProAcademy" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fjl-8W-rkR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-19" y="318"/>
+            <point key="canvasLocation" x="-1609" y="1058"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="esG-by-aCi">
@@ -117,25 +101,39 @@
                                 <color key="pageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D17-qP-jjA">
+                                <rect key="frame" x="5" y="513" width="310" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="lHq-DB-7Y1"/>
+                                </constraints>
+                                <state key="normal" title="ZACZYNAMY"/>
+                                <connections>
+                                    <segue destination="m8z-m2-vyE" kind="show" id="Hx7-EL-Iqh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="D17-qP-jjA" firstAttribute="leading" secondItem="lWl-h7-KLa" secondAttribute="leading" constant="5" id="3ih-eU-pGo"/>
                             <constraint firstAttribute="trailing" secondItem="Hrf-Es-SrQ" secondAttribute="trailing" id="EIk-lG-ugM"/>
                             <constraint firstItem="gyF-00-7Hd" firstAttribute="centerX" secondItem="lWl-h7-KLa" secondAttribute="centerX" id="I3C-yc-YOl"/>
                             <constraint firstItem="Hrf-Es-SrQ" firstAttribute="leading" secondItem="lWl-h7-KLa" secondAttribute="leading" id="Osz-Td-gZX"/>
                             <constraint firstItem="Hrf-Es-SrQ" firstAttribute="top" secondItem="7XS-qj-uA5" secondAttribute="bottom" id="ZV5-J2-dZS"/>
+                            <constraint firstItem="bJV-Ke-Co3" firstAttribute="top" secondItem="D17-qP-jjA" secondAttribute="bottom" constant="5" id="ZgQ-DF-xYJ"/>
                             <constraint firstItem="bJV-Ke-Co3" firstAttribute="top" secondItem="gyF-00-7Hd" secondAttribute="bottom" constant="50" id="mya-ya-U9d"/>
+                            <constraint firstAttribute="trailing" secondItem="D17-qP-jjA" secondAttribute="trailing" constant="5" id="o8L-Mb-cRC"/>
                             <constraint firstItem="bJV-Ke-Co3" firstAttribute="top" secondItem="Hrf-Es-SrQ" secondAttribute="bottom" id="uHF-Ff-prt"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="beginButton" destination="D17-qP-jjA" id="Onm-3O-64S"/>
                         <outlet property="container" destination="Hrf-Es-SrQ" id="0hP-4M-i46"/>
                         <outlet property="pageControl" destination="gyF-00-7Hd" id="WAI-M4-2gU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wjW-ad-sRR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1022" y="346"/>
+            <point key="canvasLocation" x="-883" y="274"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="WbB-yg-z4S">
@@ -1464,16 +1462,29 @@ e-mail: kontakt@pro-academy.pl</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron-Dn-Wht" translatesAutoresizingMaskIntoConstraints="NO" id="afI-rt-wg6">
-                                <rect key="frame" x="40" y="276" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k7E-YD-2wa" customClass="Rectangle" customModule="ProAcademy" customModuleProvider="target">
+                                <rect key="frame" x="40" y="164" width="240" height="240"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="k7E-YD-2wa" secondAttribute="height" multiplier="1:1" id="6AG-gI-UpA"/>
+                                    <constraint firstAttribute="width" constant="240" id="Q60-Z1-BIZ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="width">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="k7E-YD-2wa" firstAttribute="centerX" secondItem="uBE-yI-fV3" secondAttribute="centerX" id="6ja-SM-BeH"/>
+                            <constraint firstItem="k7E-YD-2wa" firstAttribute="centerY" secondItem="uBE-yI-fV3" secondAttribute="centerY" id="Vr0-N2-Iyz"/>
+                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="image" destination="afI-rt-wg6" id="cxZ-L5-357"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uvu-g2-lSb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1593,7 +1604,6 @@ e-mail: kontakt@pro-academy.pl</string>
         </scene>
     </scenes>
     <resources>
-        <image name="Chevron-Dn-Wht" width="22" height="22"/>
         <image name="Walktrough_1" width="375" height="667"/>
         <image name="Walktrough_2" width="375" height="667"/>
         <image name="Walktrough_3" width="375" height="667"/>

@@ -33,7 +33,6 @@
 		B570541B1F7BC98300514412 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B57054191F7BC98300514412 /* LaunchScreen.storyboard */; };
 		B57054261F7BC98300514412 /* ProAcademyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57054251F7BC98300514412 /* ProAcademyTests.swift */; };
 		B57054311F7E247600514412 /* WelcomePagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57054301F7E247600514412 /* WelcomePagesViewController.swift */; };
-		B57054331F7E29B600514412 /* WelcomePage1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57054321F7E29B600514412 /* WelcomePage1ViewController.swift */; };
 		B57054351F7E344C00514412 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57054341F7E344C00514412 /* WelcomeViewController.swift */; };
 		B5842B9E1F8B52F400E6B573 /* ArtistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5842B9D1F8B52F400E6B573 /* ArtistsViewController.swift */; };
 		B5CAC3DD1F875B72009B2A4D /* ArtistDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CAC3DC1F875B72009B2A4D /* ArtistDetailsViewController.swift */; };
@@ -44,6 +43,7 @@
 		B5E28BB71F9A081200815E15 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E28BB61F9A081200815E15 /* AboutUsViewController.swift */; };
 		B5E28BB91F9A094100815E15 /* AboutUsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E28BB81F9A094100815E15 /* AboutUsUI.swift */; };
 		B5E28BC11F9E264100815E15 /* ArtistsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E28BC01F9E264100815E15 /* ArtistsService.swift */; };
+		B5EF98081FAF60D600D4A417 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EF98071FAF60D600D4A417 /* Rectangle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,7 +92,6 @@
 		B57054251F7BC98300514412 /* ProAcademyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProAcademyTests.swift; sourceTree = "<group>"; };
 		B57054271F7BC98300514412 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B57054301F7E247600514412 /* WelcomePagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePagesViewController.swift; sourceTree = "<group>"; };
-		B57054321F7E29B600514412 /* WelcomePage1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePage1ViewController.swift; sourceTree = "<group>"; };
 		B57054341F7E344C00514412 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		B5842B9D1F8B52F400E6B573 /* ArtistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsViewController.swift; sourceTree = "<group>"; };
 		B5CAC3DC1F875B72009B2A4D /* ArtistDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistDetailsViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +102,7 @@
 		B5E28BB61F9A081200815E15 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		B5E28BB81F9A094100815E15 /* AboutUsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsUI.swift; sourceTree = "<group>"; };
 		B5E28BC01F9E264100815E15 /* ArtistsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsService.swift; sourceTree = "<group>"; };
+		B5EF98071FAF60D600D4A417 /* Rectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +219,7 @@
 				B5437AD41F83A265003DB93D /* Utils.swift */,
 				B5633C2F1F8E2D0F005F9BE5 /* Artists */,
 				B5CD42011F9907B50081151A /* AboutUs */,
+				B5EF98071FAF60D600D4A417 /* Rectangle.swift */,
 			);
 			path = ProAcademy;
 			sourceTree = "<group>";
@@ -236,7 +237,6 @@
 			isa = PBXGroup;
 			children = (
 				B57054301F7E247600514412 /* WelcomePagesViewController.swift */,
-				B57054321F7E29B600514412 /* WelcomePage1ViewController.swift */,
 				B57054341F7E344C00514412 /* WelcomeViewController.swift */,
 			);
 			name = Welcome;
@@ -483,7 +483,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B57054331F7E29B600514412 /* WelcomePage1ViewController.swift in Sources */,
+				B5EF98081FAF60D600D4A417 /* Rectangle.swift in Sources */,
 				B5437ADA1F85260A003DB93D /* ArtistsCollectionViewController.swift in Sources */,
 				B5437AD11F8213A8003DB93D /* BookingViewController.swift in Sources */,
 				B57054351F7E344C00514412 /* WelcomeViewController.swift in Sources */,

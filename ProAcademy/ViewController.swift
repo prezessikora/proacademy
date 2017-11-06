@@ -14,8 +14,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var image: UIImageView!
     
     override func viewDidLoad() {
-        image.image? = (image.image?.withRenderingMode(.alwaysTemplate))!
-        image.tintColor = UIColor.black
     }
     
 }

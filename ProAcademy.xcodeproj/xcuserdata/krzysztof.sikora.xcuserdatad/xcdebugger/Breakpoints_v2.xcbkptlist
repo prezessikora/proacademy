@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProAcademy/WelcomeViewController.swift"
-            timestampString = "531425263.578303"
+            timestampString = "531590445.364561"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "welcomePageViewController(welcomePageViewController:didUpdatePageIndex:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProAcademy/WelcomeViewController.swift"
-            timestampString = "531425263.578346"
+            timestampString = "531590445.364612"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "welcomePageViewController(welcomePageViewController:didUpdatePageIndex:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProAcademy/WelcomeViewController.swift"
-            timestampString = "531425263.578386"
+            timestampString = "531590445.364659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "welcomePageViewController(welcomePageViewController:didUpdatePageIndex:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProAcademy/WelcomeViewController.swift"
-            timestampString = "531425263.578425"
+            timestampString = "531590445.364702"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
             <Locations>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProAcademy/WelcomeViewController.swift"
-            timestampString = "531425263.578498"
+            timestampString = "531590445.36476"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "welcomePageViewController(welcomePageViewController:didUpdatePageCount:)"
             landmarkType = "7">
          </BreakpointContent>
