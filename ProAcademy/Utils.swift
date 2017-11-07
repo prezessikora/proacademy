@@ -8,6 +8,12 @@
 
 import UIKit
 
+struct Icons {
+    
+    static let favouriteSetImage: UIImage? = UIImage(named: "icons8-heart-outline-red")
+    static let favouriteNotSetImage: UIImage? = UIImage(named: "icons8-Heart Outline-50")
+}
+
 class Utils  {
     static func imageFrom(systemItem: UIBarButtonSystemItem)-> UIImage? {
         let tempItem = UIBarButtonItem(barButtonSystemItem: systemItem, target: nil, action: nil)

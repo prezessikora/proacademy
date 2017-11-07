@@ -16,21 +16,19 @@ class FavouritesCollection : UICollectionViewController {
     fileprivate let itemsPerRow: CGFloat = 2    
 }
 
-class EventsCollectionViewController: FavouritesCollection {
+class EventsCollectionViewController: FavouritesCollection, ReloadCallback {
 
-    
+
     fileprivate let reuseIdentifier = "EventCell"
 
-    
-    let trainings = [Training(title: "CAT EYES",trainer: "Jagoda Wrześniewska"),Training(title: "PERFEKCYJNE BRWI",trainer: "Krzysztof Sikora"),
-                     Training(title: "ZMYSŁOWE USTA",trainer: "Sandra Sikora")]
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
+    var favouritesService : FavouritesService {
+        get {
+            return Utils.application().favouritesService!
+        }
+    }
+        
+    func reload() {
+        collectionView?.reloadData()
     }
    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -38,17 +36,19 @@ class EventsCollectionViewController: FavouritesCollection {
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return trainings.count
+        return favouritesService.favouriteTrainings().count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FavouriteEventCell
-    
-        // Configure the cell
+        
+        let training = favouritesService.favouriteTrainings()[indexPath.row]
+        
         cell.backgroundColor = UIColor.white
-        cell.title.text = trainings[indexPath.row].title
-        cell.trainer.text = trainings[indexPath.row].trainer
-    
+        cell.title.text = training.title
+        cell.trainer.text = training.trainer        
+
         return cell
     }   
 }

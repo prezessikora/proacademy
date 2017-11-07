@@ -9,9 +9,7 @@
 import UIKit
 
 
-protocol ReloadCallback {
-    func reload()
-}
+
 
 class ArtistsCollectionViewController: FavouritesCollection, ReloadCallback {
 

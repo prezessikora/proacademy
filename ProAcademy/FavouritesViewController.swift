@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ReloadCallback {
+    func reload()
+}
+
 class Tab {
     
     let button: UIButton
@@ -79,12 +83,14 @@ class FavouritesViewController: TabBasedViewController {
     @IBOutlet weak var artistsButton: UIButton!
     @IBOutlet weak var artistsBar: UIView!
     @IBOutlet weak var artistsContainer: UIView!
+    var traningsReloadCallback: ReloadCallback?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         eventsTab = Tab(button: eventsButton, bar: eventsBar, container: trainingsContainer)
+        eventsTab.reloadCallback = traningsReloadCallback
         
         artistsTab = Tab(button: artistsButton, bar: artistsBar, container: artistsContainer)
         artistsTab.reloadCallback = artistsTabReloadCallback
@@ -103,7 +109,8 @@ class FavouritesViewController: TabBasedViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let id = segue.identifier {
             if id == "showFavouriteEvents" {
-                
+                let vc = segue.destination as! EventsCollectionViewController
+                traningsReloadCallback = vc
             }
             if id == "showFavouriteArtists" {
                 let vc = segue.destination as! ArtistsCollectionViewController

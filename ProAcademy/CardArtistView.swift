@@ -8,10 +8,8 @@
 
 import UIKit
 
-class CardArtistView: UIView {
-    
-    static let favouriteSetImage: UIImage? = UIImage(named: "icons8-heart-outline-red")
-    static let favouriteNotSetImage: UIImage? = UIImage(named: "icons8-Heart Outline-50")
+
+class CardArtistView: UIView  {
     
     @IBOutlet var contentView: UIView!
     
@@ -23,13 +21,14 @@ class CardArtistView: UIView {
     @IBOutlet weak var favouriteButton: UIButton!
     
     var artist: Artist?
-    
+
     var favouritesService : FavouritesService {
         get {
             return Utils.application().favouritesService!
         }
     }
-
+    
+    
     override init(frame: CGRect) { // for using in code
         super.init(frame: frame)
         commonInit()
@@ -41,12 +40,13 @@ class CardArtistView: UIView {
     }
     
     func updateFavouriteState() {
-        if let _ = artist, favouritesService.isFavourite(artist: artist!) {
-            self.favouriteButton.setImage(CardArtistView.favouriteSetImage, for: .normal)
+        if let a = artist, favouritesService.isFavourite(artist: a) {
+            self.favouriteButton.setImage(Icons.favouriteSetImage, for: .normal)
         } else {
-            self.favouriteButton.setImage(CardArtistView.favouriteNotSetImage, for: .normal)
+            self.favouriteButton.setImage(Icons.favouriteNotSetImage, for: .normal)
         }
     }
+
     
     func commonInit() {
         Bundle.main.loadNibNamed("ArtistView", owner: self, options: nil)
@@ -64,13 +64,17 @@ class CardArtistView: UIView {
     }
 
     @IBAction func onFavourite(_ sender: UIButton) {
-        if favouritesService.updateFavourite(artist: artist!) {
+        guard let a = artist else {
+            return
+        }
+        
+        if favouritesService.updateFavourite(artist: a) {
             UIView.animate(withDuration: 0.5) {
-                self.favouriteButton.setImage(CardArtistView.favouriteSetImage, for: .normal)
+                self.favouriteButton.setImage(Icons.favouriteSetImage, for: .normal)
             }
         } else {
             UIView.animate(withDuration: 0.5) {
-                self.favouriteButton.setImage(CardArtistView.favouriteNotSetImage, for: .normal)
+                self.favouriteButton.setImage(Icons.favouriteNotSetImage, for: .normal)
             }
         }
     }

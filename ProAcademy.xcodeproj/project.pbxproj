@@ -23,11 +23,13 @@
 		B5437ADA1F85260A003DB93D /* ArtistsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5437AD91F85260A003DB93D /* ArtistsCollectionViewController.swift */; };
 		B5437ADC1F863726003DB93D /* FavouriteEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5437ADB1F863726003DB93D /* FavouriteEventCell.swift */; };
 		B5437ADE1F8669E4003DB93D /* ArtistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5437ADD1F8669E4003DB93D /* ArtistCell.swift */; };
+		B546FD351FB09ECB00E40482 /* InMemoryTrainingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B546FD341FB09ECB00E40482 /* InMemoryTrainingsService.swift */; };
+		B546FD371FB09F7900E40482 /* Training.swift in Sources */ = {isa = PBXBuildFile; fileRef = B546FD361FB09F7900E40482 /* Training.swift */; };
+		B546FD3A1FB1C1D600E40482 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B546FD381FB1C1D500E40482 /* Model.xcdatamodeld */; };
 		B54C242A1F8CDB9600DC7AF9 /* ArtistView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54C24291F8CDB9600DC7AF9 /* ArtistView.xib */; };
 		B5514CD91F9213370013A560 /* FadePresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5514CD81F9213370013A560 /* FadePresentAnimationController.swift */; };
 		B5633C2E1F8D53B7005F9BE5 /* CardArtistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5633C2D1F8D53B7005F9BE5 /* CardArtistView.swift */; };
 		B57054111F7BC98300514412 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57054101F7BC98300514412 /* AppDelegate.swift */; };
-		B57054131F7BC98300514412 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57054121F7BC98300514412 /* ViewController.swift */; };
 		B57054161F7BC98300514412 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B57054141F7BC98300514412 /* Main.storyboard */; };
 		B57054181F7BC98300514412 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B57054171F7BC98300514412 /* Assets.xcassets */; };
 		B570541B1F7BC98300514412 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B57054191F7BC98300514412 /* LaunchScreen.storyboard */; };
@@ -78,12 +80,14 @@
 		B5437AD91F85260A003DB93D /* ArtistsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsCollectionViewController.swift; sourceTree = "<group>"; };
 		B5437ADB1F863726003DB93D /* FavouriteEventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteEventCell.swift; sourceTree = "<group>"; };
 		B5437ADD1F8669E4003DB93D /* ArtistCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistCell.swift; sourceTree = "<group>"; };
+		B546FD341FB09ECB00E40482 /* InMemoryTrainingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryTrainingsService.swift; sourceTree = "<group>"; };
+		B546FD361FB09F7900E40482 /* Training.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Training.swift; sourceTree = "<group>"; };
+		B546FD391FB1C1D600E40482 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		B54C24291F8CDB9600DC7AF9 /* ArtistView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistView.xib; sourceTree = "<group>"; };
 		B5514CD81F9213370013A560 /* FadePresentAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadePresentAnimationController.swift; sourceTree = "<group>"; };
 		B5633C2D1F8D53B7005F9BE5 /* CardArtistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardArtistView.swift; sourceTree = "<group>"; };
 		B570540D1F7BC98300514412 /* ProAcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProAcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B57054101F7BC98300514412 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B57054121F7BC98300514412 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B57054151F7BC98300514412 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B57054171F7BC98300514412 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B570541A1F7BC98300514412 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -151,6 +155,8 @@
 			children = (
 				B5437AC91F7F9441003DB93D /* TrainingsViewController.swift */,
 				B5437ACB1F7F957A003DB93D /* TrainingTableViewCell.swift */,
+				B5437ACE1F7FB9D7003DB93D /* TrainingDetailsViewController.swift */,
+				B5437AD01F8213A8003DB93D /* BookingViewController.swift */,
 			);
 			name = Trainings;
 			sourceTree = "<group>";
@@ -205,7 +211,6 @@
 			children = (
 				B5E28BC21F9E2D8700815E15 /* Services */,
 				B57054101F7BC98300514412 /* AppDelegate.swift */,
-				B57054121F7BC98300514412 /* ViewController.swift */,
 				B57054141F7BC98300514412 /* Main.storyboard */,
 				B53F13811FACE21D00A776C5 /* MainTabBarViewController.swift */,
 				B57054171F7BC98300514412 /* Assets.xcassets */,
@@ -213,13 +218,12 @@
 				B570541C1F7BC98300514412 /* Info.plist */,
 				B57054361F7E43D600514412 /* Welcome */,
 				B5437ACD1F7F95D7003DB93D /* Trainings */,
-				B5437ACE1F7FB9D7003DB93D /* TrainingDetailsViewController.swift */,
-				B5437AD01F8213A8003DB93D /* BookingViewController.swift */,
 				B5437AD81F8525CF003DB93D /* Favourites */,
 				B5437AD41F83A265003DB93D /* Utils.swift */,
 				B5633C2F1F8E2D0F005F9BE5 /* Artists */,
 				B5CD42011F9907B50081151A /* AboutUs */,
 				B5EF98071FAF60D600D4A417 /* Rectangle.swift */,
+				B546FD381FB1C1D500E40482 /* Model.xcdatamodeld */,
 			);
 			path = ProAcademy;
 			sourceTree = "<group>";
@@ -260,7 +264,9 @@
 			children = (
 				B5E28BC01F9E264100815E15 /* ArtistsService.swift */,
 				B5064C5B1FAB24E3001E3BB0 /* Artist.swift */,
+				B546FD361FB09F7900E40482 /* Training.swift */,
 				B5064C5D1FAB2555001E3BB0 /* FavouritesService.swift */,
+				B546FD341FB09ECB00E40482 /* InMemoryTrainingsService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -488,10 +494,11 @@
 				B5437AD11F8213A8003DB93D /* BookingViewController.swift in Sources */,
 				B57054351F7E344C00514412 /* WelcomeViewController.swift in Sources */,
 				B5437ACA1F7F9441003DB93D /* TrainingsViewController.swift in Sources */,
+				B546FD371FB09F7900E40482 /* Training.swift in Sources */,
 				B5633C2E1F8D53B7005F9BE5 /* CardArtistView.swift in Sources */,
 				B5064C5C1FAB24E3001E3BB0 /* Artist.swift in Sources */,
 				B57054311F7E247600514412 /* WelcomePagesViewController.swift in Sources */,
-				B57054131F7BC98300514412 /* ViewController.swift in Sources */,
+				B546FD351FB09ECB00E40482 /* InMemoryTrainingsService.swift in Sources */,
 				B5437ACC1F7F957A003DB93D /* TrainingTableViewCell.swift in Sources */,
 				B5064C5E1FAB2555001E3BB0 /* FavouritesService.swift in Sources */,
 				B5437ADE1F8669E4003DB93D /* ArtistCell.swift in Sources */,
@@ -509,6 +516,7 @@
 				B5514CD91F9213370013A560 /* FadePresentAnimationController.swift in Sources */,
 				B5CD41FE1F977D6B0081151A /* FAQViewController.swift in Sources */,
 				B5CD41FC1F972ABD0081151A /* AboutViewController.swift in Sources */,
+				B546FD3A1FB1C1D600E40482 /* Model.xcdatamodeld in Sources */,
 				B5437ACF1F7FB9D7003DB93D /* TrainingDetailsViewController.swift in Sources */,
 				B5E28BB91F9A094100815E15 /* AboutUsUI.swift in Sources */,
 				B53F13821FACE21D00A776C5 /* MainTabBarViewController.swift in Sources */,
@@ -744,6 +752,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B546FD381FB1C1D500E40482 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B546FD391FB1C1D600E40482 /* Model.xcdatamodel */,
+			);
+			currentVersion = B546FD391FB1C1D600E40482 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B57054051F7BC98300514412 /* Project object */;
 }

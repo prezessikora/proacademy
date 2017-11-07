@@ -8,16 +8,14 @@
 
 import UIKit
 
-struct Training {
-    let title: String
-    let trainer: String
-    
-}
 
 class TrainingsViewController: UITableViewController {
-
-    let trainings = [Training(title: "CAT EYES",trainer: "Jagoda Wrześniewska"),Training(title: "PERFEKCYJNE BRWI",trainer: "Krzysztof Sikora"),
-                     Training(title: "ZMYSŁOWE USTA",trainer: "Sandra Sikora")]
+    
+    fileprivate var trainigs: TrainingsService {
+        get {
+            return Utils.application().trainingsService
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,14 +29,8 @@ class TrainingsViewController: UITableViewController {
         //self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: Utils.imageFrom(systemItem: .search), style: .plain, target: nil , action: nil)
         
         self.navigationItem.titleView = UIImageView(image:  UIImage(named: "pa_title"))
-
     }
     
-    
-    
-
-
-
 }
 
 extension TrainingsViewController {
@@ -48,14 +40,21 @@ extension TrainingsViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return trainings.count
+        if let data = trainigs.allTrainings() {
+            return data.count
+        }
+        return 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let training = trainigs.allTrainings()![indexPath.row]
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "TrainingCell") as! TrainingTableViewCell
-        cell.title.text = trainings[indexPath.row].title
-        cell.trainer.text = trainings[indexPath.row].trainer
+        cell.title.text = training.title
+        cell.trainer.text = training.trainer
+        cell.training = training
+        
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell
     
