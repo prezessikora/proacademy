@@ -3,7 +3,11 @@
     <entity name="FavouriteArtist" representedClassName="FavouriteArtist" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="FavouriteTraining" representedClassName="FavouriteTraining" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="FavouriteArtist" positionX="-63" positionY="-18" width="128" height="60"/>
+        <element name="FavouriteTraining" positionX="-63" positionY="-9" width="128" height="60"/>
     </elements>
 </model>

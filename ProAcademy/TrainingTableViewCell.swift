@@ -16,9 +16,9 @@ class TrainingTableViewCell: UITableViewCell {
     
     var training: Training?
     
-    var favouritesService : FavouritesService {
+    var favouritesService : TrainingFavouritesService {
         get {
-            return Utils.application().favouritesService!
+            return Utils.application().trainingFavouritesService!
         }
     }
     

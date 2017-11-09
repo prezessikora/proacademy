@@ -14,13 +14,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    var favouritesService: FavouritesService?
+    var artistFavouritesService: ArtistFavouritesService?
+    var trainingFavouritesService: TrainingFavouritesService?
+    
     var trainingsService: TrainingsService!
+    var artistsService: ArtistsService!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        favouritesService = InMemoryFavouritesService()
+        artistFavouritesService = OnDeviceArtistFavouritesService()
+        trainingFavouritesService = InMemoryTrainingFavouritesService()
+        
         trainingsService = InMemoryTrainingsService()
+        artistsService = ContentfulArtistsService()
         return true
     }
 
@@ -57,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
          */
-        let container = NSPersistentContainer(name: "ProAcademy")
+        let container = NSPersistentContainer(name: "Model")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.

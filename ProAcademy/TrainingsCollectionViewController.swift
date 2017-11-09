@@ -9,27 +9,33 @@
 import UIKit
 
 
-class FavouritesCollection : UICollectionViewController {
+class FavouritesCollection : UICollectionViewController, ReloadCallback {
     
     fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
 
-    fileprivate let itemsPerRow: CGFloat = 2    
+    fileprivate let itemsPerRow: CGFloat = 2
+        
+    override func viewWillAppear(_ animated: Bool) {
+        reload()
+    }
+    
+    func reload() {
+        collectionView?.reloadData()
+    }
 }
 
-class EventsCollectionViewController: FavouritesCollection, ReloadCallback {
+class TrainingsCollectionViewController: FavouritesCollection {
 
 
     fileprivate let reuseIdentifier = "EventCell"
 
-    var favouritesService : FavouritesService {
+    var favouritesService : TrainingFavouritesService {
         get {
-            return Utils.application().favouritesService!
+            return Utils.application().trainingFavouritesService!
         }
     }
         
-    func reload() {
-        collectionView?.reloadData()
-    }
+
    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1

@@ -3,7 +3,7 @@
 
 target 'ProAcademy' do
   use_frameworks!
-  
+  pod 'Auth0'
   pod 'Contentful'
   pod 'iCarousel'
   target 'ProAcademyTests' do

@@ -10,7 +10,7 @@ import Contentful
 import Interstellar
 
 protocol ArtistsService {
-    func fetchArtists() -> [Artist]?
+    func allArtists() -> [Artist]?
 }
 
 class ContentfulArtistsService: ArtistsService {
@@ -26,7 +26,7 @@ class ContentfulArtistsService: ArtistsService {
     
 
     // TODO: proper error handling
-    func fetchArtists() -> [Artist]?  {
+    func allArtists() -> [Artist]?  {
         let query = Query(where: "content_type", .equals("artist"))
 
         var resultItems : [Entry]?

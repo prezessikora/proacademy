@@ -109,7 +109,7 @@ class FavouritesViewController: TabBasedViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let id = segue.identifier {
             if id == "showFavouriteEvents" {
-                let vc = segue.destination as! EventsCollectionViewController
+                let vc = segue.destination as! TrainingsCollectionViewController
                 traningsReloadCallback = vc
             }
             if id == "showFavouriteArtists" {

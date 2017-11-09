@@ -22,9 +22,9 @@ class CardArtistView: UIView  {
     
     var artist: Artist?
 
-    var favouritesService : FavouritesService {
+    var favouritesService : ArtistFavouritesService {
         get {
-            return Utils.application().favouritesService!
+            return Utils.application().artistFavouritesService!
         }
     }
     

@@ -8,29 +8,14 @@
 
 import UIKit
 
-
-
-
-class ArtistsCollectionViewController: FavouritesCollection, ReloadCallback {
+class ArtistsCollectionViewController: FavouritesCollection {
 
     fileprivate let reuseIdentifier = "ArtistCell"
 
-    var favouritesService : FavouritesService {
+    var favouritesService : ArtistFavouritesService {
         get {
-            return Utils.application().favouritesService!
+            return Utils.application().artistFavouritesService!
         }
-    }
-
-    func reload() {
-        collectionView?.reloadData()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        reload()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {

@@ -50,7 +50,7 @@ class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDel
     func loadData() {
         DispatchQueue.global(qos: .userInitiated).async {
             
-            let fetchResult = self.service.fetchArtists()
+            let fetchResult = self.service.allArtists()
             
             // err if nil or empty load from cache? (do it in service)
             
@@ -131,9 +131,9 @@ class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDel
         return self.createCard(index: self.carousel.currentItemIndex).snapshotView(afterScreenUpdates: true)!
     }
     
-    var favouritesService : FavouritesService {
+    var favouritesService : ArtistFavouritesService {
         get {
-            return Utils.application().favouritesService!
+            return Utils.application().artistFavouritesService!
         }
     }
     

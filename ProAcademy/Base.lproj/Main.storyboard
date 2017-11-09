@@ -247,7 +247,7 @@
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5s7-9c-6nb">
-                                                        <rect key="frame" x="0.0" y="10" width="106.5" height="50"/>
+                                                        <rect key="frame" x="0.5" y="10" width="105.5" height="50"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                 </subviews>
@@ -831,10 +831,10 @@
             </objects>
             <point key="canvasLocation" x="3568.125" y="-199.64788732394368"/>
         </scene>
-        <!--Events Collection View Controller-->
+        <!--Trainings Collection View Controller-->
         <scene sceneID="KHR-v3-EpX">
             <objects>
-                <collectionViewController id="Q8q-kX-ogb" customClass="EventsCollectionViewController" customModule="ProAcademy" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="Q8q-kX-ogb" customClass="TrainingsCollectionViewController" customModule="ProAcademy" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="vep-ir-OPd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="395"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -854,7 +854,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="p:a" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cI-1f-ju5">
-                                            <rect key="frame" x="95.5" y="-54.5" width="43" height="38.5"/>
+                                            <rect key="frame" x="95" y="-54.5" width="43" height="38.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -987,31 +987,31 @@
                                                 <rect key="frame" x="8" y="8" width="304" height="282"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Perfekcyjne Brwi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fr-Cn-EYT">
-                                                        <rect key="frame" x="0.0" y="0.0" width="304" height="26.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="304" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:00 AM - 5:00 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fds-64-SR2">
-                                                        <rect key="frame" x="0.0" y="31.5" width="304" height="17"/>
+                                                        <rect key="frame" x="0.0" y="5" width="304" height="11.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kościuszki 16/3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaV-iH-cYo">
-                                                        <rect key="frame" x="0.0" y="53.5" width="304" height="17"/>
+                                                        <rect key="frame" x="0.0" y="21.5" width="304" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jagoda Wrześniawska" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qcr-Yj-kv0">
-                                                        <rect key="frame" x="0.0" y="75.5" width="304" height="17"/>
+                                                        <rect key="frame" x="0.0" y="43.5" width="304" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="itW-2A-bA5">
-                                                        <rect key="frame" x="0.0" y="97.5" width="304" height="184.5"/>
+                                                        <rect key="frame" x="0.0" y="65.5" width="304" height="216.5"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <string key="text">Jest to wspaniała okazaja aby spędzić miłe chwile w kobiecym gronie, przy okazji wynosząc przydatną widzę na temat makijażu, czyli wszystko co tygrski lubią najbardziej w jednym miejscu.</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>

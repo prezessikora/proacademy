@@ -12,6 +12,7 @@
 		B5064C5C1FAB24E3001E3BB0 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5064C5B1FAB24E3001E3BB0 /* Artist.swift */; };
 		B5064C5E1FAB2555001E3BB0 /* FavouritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5064C5D1FAB2555001E3BB0 /* FavouritesService.swift */; };
 		B52CC0A21FA1FB4C00EB5ABB /* FadeDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52CC0A11FA1FB4C00EB5ABB /* FadeDismissAnimationController.swift */; };
+		B5311C0B1FB45E270067A64D /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5311C0A1FB45E270067A64D /* Auth0.plist */; };
 		B53F13821FACE21D00A776C5 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53F13811FACE21D00A776C5 /* MainTabBarViewController.swift */; };
 		B5437ACA1F7F9441003DB93D /* TrainingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5437AC91F7F9441003DB93D /* TrainingsViewController.swift */; };
 		B5437ACC1F7F957A003DB93D /* TrainingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5437ACB1F7F957A003DB93D /* TrainingTableViewCell.swift */; };
@@ -19,7 +20,7 @@
 		B5437AD11F8213A8003DB93D /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5437AD01F8213A8003DB93D /* BookingViewController.swift */; };
 		B5437AD31F83A20E003DB93D /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5437AD21F83A20E003DB93D /* FavouritesViewController.swift */; };
 		B5437AD51F83A265003DB93D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5437AD41F83A265003DB93D /* Utils.swift */; };
-		B5437AD71F85214A003DB93D /* EventsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5437AD61F85214A003DB93D /* EventsCollectionViewController.swift */; };
+		B5437AD71F85214A003DB93D /* TrainingsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5437AD61F85214A003DB93D /* TrainingsCollectionViewController.swift */; };
 		B5437ADA1F85260A003DB93D /* ArtistsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5437AD91F85260A003DB93D /* ArtistsCollectionViewController.swift */; };
 		B5437ADC1F863726003DB93D /* FavouriteEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5437ADB1F863726003DB93D /* FavouriteEventCell.swift */; };
 		B5437ADE1F8669E4003DB93D /* ArtistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5437ADD1F8669E4003DB93D /* ArtistCell.swift */; };
@@ -44,7 +45,7 @@
 		B5E28BB51F9A07FE00815E15 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E28BB41F9A07FE00815E15 /* TermsViewController.swift */; };
 		B5E28BB71F9A081200815E15 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E28BB61F9A081200815E15 /* AboutUsViewController.swift */; };
 		B5E28BB91F9A094100815E15 /* AboutUsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E28BB81F9A094100815E15 /* AboutUsUI.swift */; };
-		B5E28BC11F9E264100815E15 /* ArtistsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E28BC01F9E264100815E15 /* ArtistsService.swift */; };
+		B5E28BC11F9E264100815E15 /* ContentfulArtistsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E28BC01F9E264100815E15 /* ContentfulArtistsService.swift */; };
 		B5EF98081FAF60D600D4A417 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EF98071FAF60D600D4A417 /* Rectangle.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		B5064C5B1FAB24E3001E3BB0 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		B5064C5D1FAB2555001E3BB0 /* FavouritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesService.swift; sourceTree = "<group>"; };
 		B52CC0A11FA1FB4C00EB5ABB /* FadeDismissAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeDismissAnimationController.swift; sourceTree = "<group>"; };
+		B5311C0A1FB45E270067A64D /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		B53F13811FACE21D00A776C5 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		B5437AC91F7F9441003DB93D /* TrainingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingsViewController.swift; sourceTree = "<group>"; };
 		B5437ACB1F7F957A003DB93D /* TrainingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingTableViewCell.swift; sourceTree = "<group>"; };
@@ -76,7 +78,7 @@
 		B5437AD01F8213A8003DB93D /* BookingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		B5437AD21F83A20E003DB93D /* FavouritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		B5437AD41F83A265003DB93D /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		B5437AD61F85214A003DB93D /* EventsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsCollectionViewController.swift; sourceTree = "<group>"; };
+		B5437AD61F85214A003DB93D /* TrainingsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingsCollectionViewController.swift; sourceTree = "<group>"; };
 		B5437AD91F85260A003DB93D /* ArtistsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsCollectionViewController.swift; sourceTree = "<group>"; };
 		B5437ADB1F863726003DB93D /* FavouriteEventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteEventCell.swift; sourceTree = "<group>"; };
 		B5437ADD1F8669E4003DB93D /* ArtistCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistCell.swift; sourceTree = "<group>"; };
@@ -105,7 +107,7 @@
 		B5E28BB41F9A07FE00815E15 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		B5E28BB61F9A081200815E15 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		B5E28BB81F9A094100815E15 /* AboutUsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsUI.swift; sourceTree = "<group>"; };
-		B5E28BC01F9E264100815E15 /* ArtistsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsService.swift; sourceTree = "<group>"; };
+		B5E28BC01F9E264100815E15 /* ContentfulArtistsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentfulArtistsService.swift; sourceTree = "<group>"; };
 		B5EF98071FAF60D600D4A417 /* Rectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,7 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				B5437AD21F83A20E003DB93D /* FavouritesViewController.swift */,
-				B5437AD61F85214A003DB93D /* EventsCollectionViewController.swift */,
+				B5437AD61F85214A003DB93D /* TrainingsCollectionViewController.swift */,
 				B5437AD91F85260A003DB93D /* ArtistsCollectionViewController.swift */,
 				B5437ADB1F863726003DB93D /* FavouriteEventCell.swift */,
 				B5437ADD1F8669E4003DB93D /* ArtistCell.swift */,
@@ -216,6 +218,7 @@
 				B57054171F7BC98300514412 /* Assets.xcassets */,
 				B57054191F7BC98300514412 /* LaunchScreen.storyboard */,
 				B570541C1F7BC98300514412 /* Info.plist */,
+				B5311C0A1FB45E270067A64D /* Auth0.plist */,
 				B57054361F7E43D600514412 /* Welcome */,
 				B5437ACD1F7F95D7003DB93D /* Trainings */,
 				B5437AD81F8525CF003DB93D /* Favourites */,
@@ -223,7 +226,6 @@
 				B5633C2F1F8E2D0F005F9BE5 /* Artists */,
 				B5CD42011F9907B50081151A /* AboutUs */,
 				B5EF98071FAF60D600D4A417 /* Rectangle.swift */,
-				B546FD381FB1C1D500E40482 /* Model.xcdatamodeld */,
 			);
 			path = ProAcademy;
 			sourceTree = "<group>";
@@ -262,7 +264,8 @@
 		B5E28BC21F9E2D8700815E15 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				B5E28BC01F9E264100815E15 /* ArtistsService.swift */,
+				B546FD381FB1C1D500E40482 /* Model.xcdatamodeld */,
+				B5E28BC01F9E264100815E15 /* ContentfulArtistsService.swift */,
 				B5064C5B1FAB24E3001E3BB0 /* Artist.swift */,
 				B546FD361FB09F7900E40482 /* Training.swift */,
 				B5064C5D1FAB2555001E3BB0 /* FavouritesService.swift */,
@@ -362,6 +365,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5311C0B1FB45E270067A64D /* Auth0.plist in Resources */,
 				B570541B1F7BC98300514412 /* LaunchScreen.storyboard in Resources */,
 				B54C242A1F8CDB9600DC7AF9 /* ArtistView.xib in Resources */,
 				B57054181F7BC98300514412 /* Assets.xcassets in Resources */,
@@ -504,7 +508,7 @@
 				B5437ADE1F8669E4003DB93D /* ArtistCell.swift in Sources */,
 				B5CD42001F9907770081151A /* FAQAnwserCellTableViewCell.swift in Sources */,
 				B5842B9E1F8B52F400E6B573 /* ArtistsViewController.swift in Sources */,
-				B5437AD71F85214A003DB93D /* EventsCollectionViewController.swift in Sources */,
+				B5437AD71F85214A003DB93D /* TrainingsCollectionViewController.swift in Sources */,
 				B5437AD51F83A265003DB93D /* Utils.swift in Sources */,
 				B5CAC3DD1F875B72009B2A4D /* ArtistDetailsViewController.swift in Sources */,
 				B5E28BB51F9A07FE00815E15 /* TermsViewController.swift in Sources */,
@@ -512,7 +516,7 @@
 				B57054111F7BC98300514412 /* AppDelegate.swift in Sources */,
 				B5437AD31F83A20E003DB93D /* FavouritesViewController.swift in Sources */,
 				B5437ADC1F863726003DB93D /* FavouriteEventCell.swift in Sources */,
-				B5E28BC11F9E264100815E15 /* ArtistsService.swift in Sources */,
+				B5E28BC11F9E264100815E15 /* ContentfulArtistsService.swift in Sources */,
 				B5514CD91F9213370013A560 /* FadePresentAnimationController.swift in Sources */,
 				B5CD41FE1F977D6B0081151A /* FAQViewController.swift in Sources */,
 				B5CD41FC1F972ABD0081151A /* AboutViewController.swift in Sources */,
