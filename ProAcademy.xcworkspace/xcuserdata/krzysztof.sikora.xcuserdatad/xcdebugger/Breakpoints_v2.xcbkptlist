@@ -314,13 +314,141 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProAcademy/FavouritesService.swift"
-            timestampString = "531837046.240497"
+            timestampString = "531932733.071626"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "170"
             endingLineNumber = "170"
             landmarkName = "unknown"
             landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProAcademy/AppDelegate.swift"
+            timestampString = "532615644.952562"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProAcademy/WelcomeViewController.swift"
+            timestampString = "532877698.372733"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "checkToken()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in ProAcademy.WelcomeViewController.(checkToken in _CE46CCF6A25EC60402EA13E8848B7879)() -&gt; ()"
+                  moduleName = "ProAcademy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krzysztof.sikora/dev/iOS/ProAcademy/ProAcademy/WelcomeViewController.swift"
+                  timestampString = "532609721.362837"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "25">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in ProAcademy.WelcomeViewController.(checkToken in _CE46CCF6A25EC60402EA13E8848B7879)() -&gt; ()"
+                  moduleName = "ProAcademy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krzysztof.sikora/dev/iOS/ProAcademy/ProAcademy/WelcomeViewController.swift"
+                  timestampString = "532609721.364092"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "23">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProAcademy/WelcomeViewController.swift"
+            timestampString = "532877698.373064"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "checkToken()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 () -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in ProAcademy.WelcomeViewController.(checkToken in _CE46CCF6A25EC60402EA13E8848B7879)() -&gt; ()"
+                  moduleName = "ProAcademy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krzysztof.sikora/dev/iOS/ProAcademy/ProAcademy/WelcomeViewController.swift"
+                  timestampString = "532609754.949968"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "139">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in ProAcademy.WelcomeViewController.(checkToken in _CE46CCF6A25EC60402EA13E8848B7879)() -&gt; ()"
+                  moduleName = "ProAcademy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krzysztof.sikora/dev/iOS/ProAcademy/ProAcademy/WelcomeViewController.swift"
+                  timestampString = "532609754.953339"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "21">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProAcademy/WelcomeViewController.swift"
+            timestampString = "532877698.373275"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "checkToken()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

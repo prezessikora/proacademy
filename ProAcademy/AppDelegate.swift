@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import Auth0
+import Lock
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,13 +22,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var trainingsService: TrainingsService!
     var artistsService: ArtistsService!
     
+    var credentialsManager: CredentialsManager!
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
+        return Lock.resumeAuth(url, options: options)
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         artistFavouritesService = OnDeviceArtistFavouritesService()
-        trainingFavouritesService = InMemoryTrainingFavouritesService()
+        trainingFavouritesService = OnDeviceTrainingFavouritesService()
         
         trainingsService = InMemoryTrainingsService()
         artistsService = ContentfulArtistsService()
+        
+        
+        
         return true
     }
 

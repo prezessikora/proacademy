@@ -136,7 +136,7 @@ class OnDeviceArtistFavouritesService: BaseFavouritesService, ArtistFavouritesSe
 class OnDeviceTrainingFavouritesService: BaseFavouritesService, TrainingFavouritesService {
     
     init() {
-        super.init(entityName: "TrainingArtist")
+        super.init(entityName: "FavouriteTraining")
     }
     
     func updateFavourite(training: Training) -> Bool {

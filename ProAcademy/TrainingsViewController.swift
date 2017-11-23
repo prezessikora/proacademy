@@ -54,6 +54,7 @@ extension TrainingsViewController {
         cell.title.text = training.title
         cell.trainer.text = training.trainer
         cell.training = training
+        cell.updateFavouriteState()
         
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell

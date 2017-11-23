@@ -13,6 +13,7 @@
 		B5064C5E1FAB2555001E3BB0 /* FavouritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5064C5D1FAB2555001E3BB0 /* FavouritesService.swift */; };
 		B52CC0A21FA1FB4C00EB5ABB /* FadeDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52CC0A11FA1FB4C00EB5ABB /* FadeDismissAnimationController.swift */; };
 		B5311C0B1FB45E270067A64D /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5311C0A1FB45E270067A64D /* Auth0.plist */; };
+		B5311C0D1FB462F60067A64D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5311C0C1FB462F60067A64D /* LoginViewController.swift */; };
 		B53F13821FACE21D00A776C5 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53F13811FACE21D00A776C5 /* MainTabBarViewController.swift */; };
 		B5437ACA1F7F9441003DB93D /* TrainingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5437AC91F7F9441003DB93D /* TrainingsViewController.swift */; };
 		B5437ACC1F7F957A003DB93D /* TrainingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5437ACB1F7F957A003DB93D /* TrainingTableViewCell.swift */; };
@@ -29,6 +30,8 @@
 		B546FD3A1FB1C1D600E40482 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B546FD381FB1C1D500E40482 /* Model.xcdatamodeld */; };
 		B54C242A1F8CDB9600DC7AF9 /* ArtistView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54C24291F8CDB9600DC7AF9 /* ArtistView.xib */; };
 		B5514CD91F9213370013A560 /* FadePresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5514CD81F9213370013A560 /* FadePresentAnimationController.swift */; };
+		B5523FD31FBEF6ED00B19FA0 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5523FD21FBEF6ED00B19FA0 /* SessionManager.swift */; };
+		B5523FD51FBEFCD000B19FA0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5523FD41FBEFCD000B19FA0 /* SettingsViewController.swift */; };
 		B5633C2E1F8D53B7005F9BE5 /* CardArtistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5633C2D1F8D53B7005F9BE5 /* CardArtistView.swift */; };
 		B57054111F7BC98300514412 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57054101F7BC98300514412 /* AppDelegate.swift */; };
 		B57054161F7BC98300514412 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B57054141F7BC98300514412 /* Main.storyboard */; };
@@ -71,6 +74,7 @@
 		B5064C5D1FAB2555001E3BB0 /* FavouritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesService.swift; sourceTree = "<group>"; };
 		B52CC0A11FA1FB4C00EB5ABB /* FadeDismissAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeDismissAnimationController.swift; sourceTree = "<group>"; };
 		B5311C0A1FB45E270067A64D /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
+		B5311C0C1FB462F60067A64D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B53F13811FACE21D00A776C5 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		B5437AC91F7F9441003DB93D /* TrainingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingsViewController.swift; sourceTree = "<group>"; };
 		B5437ACB1F7F957A003DB93D /* TrainingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingTableViewCell.swift; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 		B546FD391FB1C1D600E40482 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		B54C24291F8CDB9600DC7AF9 /* ArtistView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistView.xib; sourceTree = "<group>"; };
 		B5514CD81F9213370013A560 /* FadePresentAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadePresentAnimationController.swift; sourceTree = "<group>"; };
+		B5523FD21FBEF6ED00B19FA0 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		B5523FD41FBEFCD000B19FA0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B5633C2D1F8D53B7005F9BE5 /* CardArtistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardArtistView.swift; sourceTree = "<group>"; };
 		B570540D1F7BC98300514412 /* ProAcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProAcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B57054101F7BC98300514412 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -226,6 +232,9 @@
 				B5633C2F1F8E2D0F005F9BE5 /* Artists */,
 				B5CD42011F9907B50081151A /* AboutUs */,
 				B5EF98071FAF60D600D4A417 /* Rectangle.swift */,
+				B5311C0C1FB462F60067A64D /* LoginViewController.swift */,
+				B5523FD21FBEF6ED00B19FA0 /* SessionManager.swift */,
+				B5523FD41FBEFCD000B19FA0 /* SettingsViewController.swift */,
 			);
 			path = ProAcademy;
 			sourceTree = "<group>";
@@ -471,14 +480,20 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ProAcademy/Pods-ProAcademy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Auth0/Auth0.framework",
 				"${BUILT_PRODUCTS_DIR}/Contentful/Contentful.framework",
 				"${BUILT_PRODUCTS_DIR}/Interstellar/Interstellar.framework",
+				"${BUILT_PRODUCTS_DIR}/Lock/Lock.framework",
+				"${BUILT_PRODUCTS_DIR}/SimpleKeychain/SimpleKeychain.framework",
 				"${BUILT_PRODUCTS_DIR}/iCarousel/iCarousel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Auth0.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Contentful.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Interstellar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lock.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimpleKeychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iCarousel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,11 +524,14 @@
 				B5CD42001F9907770081151A /* FAQAnwserCellTableViewCell.swift in Sources */,
 				B5842B9E1F8B52F400E6B573 /* ArtistsViewController.swift in Sources */,
 				B5437AD71F85214A003DB93D /* TrainingsCollectionViewController.swift in Sources */,
+				B5523FD31FBEF6ED00B19FA0 /* SessionManager.swift in Sources */,
 				B5437AD51F83A265003DB93D /* Utils.swift in Sources */,
 				B5CAC3DD1F875B72009B2A4D /* ArtistDetailsViewController.swift in Sources */,
 				B5E28BB51F9A07FE00815E15 /* TermsViewController.swift in Sources */,
 				B5E28BB71F9A081200815E15 /* AboutUsViewController.swift in Sources */,
 				B57054111F7BC98300514412 /* AppDelegate.swift in Sources */,
+				B5311C0D1FB462F60067A64D /* LoginViewController.swift in Sources */,
+				B5523FD51FBEFCD000B19FA0 /* SettingsViewController.swift in Sources */,
 				B5437AD31F83A20E003DB93D /* FavouritesViewController.swift in Sources */,
 				B5437ADC1F863726003DB93D /* FavouriteEventCell.swift in Sources */,
 				B5E28BC11F9E264100815E15 /* ContentfulArtistsService.swift in Sources */,
