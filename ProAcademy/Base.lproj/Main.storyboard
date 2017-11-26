@@ -461,6 +461,8 @@
                     <tabBarItem key="tabBarItem" title="Ustawienia" id="To2-CK-JQZ"/>
                     <connections>
                         <outlet property="aboutButton" destination="WtS-fe-F1m" id="ZUd-Un-69E"/>
+                        <outlet property="emailTextField" destination="iW3-Vx-trj" id="YSw-Qq-a5J"/>
+                        <outlet property="locationTextField" destination="bfB-nm-Mvd" id="UAI-o7-VJW"/>
                         <outlet property="nameTextField" destination="lt0-O1-ARD" id="iFB-Ko-WqR"/>
                     </connections>
                 </viewController>

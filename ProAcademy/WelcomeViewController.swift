@@ -89,8 +89,6 @@ class WelcomeViewController: UIViewController {
                 style.primaryColor = UIColor.black
             }
             .onAuth { credentials in
-                print("Access token : \(credentials.accessToken)")
-                
                 if(!SessionManager.shared.store(credentials: credentials)) {
                     print("Failed to store credentials")
                 } else {

@@ -9,18 +9,29 @@
          contextName = "closure #1 in ArtistsViewController.loadData():ArtistsViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "ArtistsViewController.prepare(for:sender:):ArtistsViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "(segue.destination as! UINavigationController).viewControllers.first as! ArtistViewController">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "closure #1 in OnDeviceFavouritesService.favouriteArtists():FavouritesService.swift">
          <PersistentStrings>
             <PersistentString
                value = "e.value(forKey: &quot;id&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ArtistsViewController.carouselCurrentItemIndexDidChange(_:):ArtistsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "carousel.currentItemView?">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SettingsViewController.readProfile():SettingsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "p.email">
+            </PersistentString>
+            <PersistentString
+               value = "profile.email">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -31,7 +42,7 @@
                value = "">
             </PersistentString>
             <PersistentString
-               value = "carousel.itemView(at: 2)">
+               value = "currentCard.convert(currentCard.frame, to: carousel.contentView)">
             </PersistentString>
             <PersistentString
                value = "carousel.currentItemView">
@@ -52,10 +63,10 @@
                value = "transitionCard.center">
             </PersistentString>
             <PersistentString
-               value = "currentCard.frame">
+               value = "carousel.itemView(at: 2)">
             </PersistentString>
             <PersistentString
-               value = "currentCard.convert(currentCard.frame, to: carousel.contentView)">
+               value = "currentCard.frame">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -79,18 +90,18 @@
          contextName = "closure #1 in closure #1 in ArtistsViewController.loadData():ArtistsViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "FlipPresentAnimationController.animateTransition(using:):FlipPresentAnimationController.swift">
+         contextName = "ArtistsViewController.prepare(for:sender:):ArtistsViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "fromVC.dynamicType">
+               value = "(segue.destination as! UINavigationController).viewControllers.first as! ArtistViewController">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ArtistsViewController.carouselCurrentItemIndexDidChange(_:):ArtistsViewController.swift">
+         contextName = "FlipPresentAnimationController.animateTransition(using:):FlipPresentAnimationController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "carousel.currentItemView?">
+               value = "fromVC.dynamicType">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

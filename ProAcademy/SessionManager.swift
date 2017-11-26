@@ -28,7 +28,41 @@ class SessionManager {
         // _ = self.authentication.logging(enabled: true) // API Logging
     }
     
+    func saveToMetadata(location: String) {
+        
+        Auth0
+            .users(token: (credentials?.idToken!)!)
+            .patch((profile?.sub)!, userMetadata: ["location": location])
+            .start { result in
+                switch result {
+                case .success( _):
+                    print("Metadata saved.")
+                case .failure(let error):
+                    print("Failure on metadata update: "+error.localizedDescription)
+                }
+        }
+    }
+
+    
+    func readMetadata(processMetadata: @escaping ([String: Any]) -> Void ) {
+        Auth0
+            .users(token: (credentials?.idToken!)!)
+            .get((profile?.sub)!, fields: ["user_metadata"], include: true)
+            .start { result in
+                switch result {
+                case .success(let user):
+                    guard let userMetadata = user["user_metadata"] as? [String: Any] else {
+                        return
+                    }
+                    print("Metadata successfully read.")
+                    processMetadata(userMetadata)
+                case .failure(let error):
+                    print("Error on reading metadata: "+error.localizedDescription)
+                }
+        }
+    }
     func retrieveProfile(_ callback: @escaping (Error?) -> ()) {
+        
         guard let accessToken = self.credentials?.accessToken else {
             return callback(CredentialsManagerError.noCredentials)
         }
@@ -44,6 +78,7 @@ class SessionManager {
                     callback(error)
                 }
             }
+        
     }
     
     func renewAuth(_ callback: @escaping (Error?) -> ()) {
@@ -73,6 +108,7 @@ class SessionManager {
         // Store credentials in KeyChain
         return self.credentialsManager.store(credentials: credentials)
     }
+    
 }
 
 func plistValues(bundle: Bundle) -> (clientId: String, domain: String)? {
