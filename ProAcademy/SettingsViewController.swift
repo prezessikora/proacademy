@@ -42,14 +42,13 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     }
     
     func readProfile() {
+        emailTextField.placeholder = "loading ..."
+        nameTextField.placeholder = "loading ..."
+        locationTextField.placeholder = "loading ..."
+        
         let profile = SessionManager.shared.profile
         if let p = profile {
-            if let profileName = p.name {
-                nameTextField.text = profileName
-            } else {
-                nameTextField.text = ""
-                nameTextField.placeholder = "enter name"
-            }
+            
             
             if let profileEmail = p.email {
                 emailTextField.text = profileEmail
@@ -57,7 +56,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
                 emailTextField.text = ""
                 emailTextField.placeholder = "enter email"
             }
-            a
+            
             SessionManager.shared.readMetadata() { meta in
                 DispatchQueue.main.async {
                     if let loc = meta["location"], let locationString = loc as? String {
@@ -66,6 +65,13 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
                     } else {
                         self.locationTextField.text = ""
                         self.locationTextField.placeholder = "enter location city"
+                    }
+                    
+                    if let fn = meta["first_name"], let sn = meta["last_name"], let firstName = fn as? String, let secondName = sn as? String {
+                        self.nameTextField.text = firstName + " " + secondName
+                    } else {
+                        self.nameTextField.text = ""
+                        self.nameTextField.placeholder = "enter name"
                     }
                 }
             }

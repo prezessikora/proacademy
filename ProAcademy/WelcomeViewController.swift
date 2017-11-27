@@ -80,8 +80,12 @@ class WelcomeViewController: UIViewController {
             .classic()
             .withOptions {
                 $0.oidcConformant = true
-                $0.scope = "openid profile offline_access"
+                $0.scope = "openid profile offline_access name email"
                 $0.closable = true
+                $0.customSignupFields = [
+                    CustomTextField(name: "first_name", placeholder: "First Name", icon: LazyImage(name: "ic_person", bundle: Lock.bundle)),
+                    CustomTextField(name: "last_name", placeholder: "Last Name", icon: LazyImage(name: "ic_person", bundle: Lock.bundle))
+                ]
             }.withStyle { (style: inout Style) -> Void in
                 style.hideTitle = true
                 style.headerColor = UIColor(red: 241, green: 241, blue: 241)
