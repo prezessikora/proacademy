@@ -16,13 +16,15 @@ class Tab {
     
     let button: UIButton
     let bar: UIView
-    let container: UIView
+    let container: UIView?
     var constraintLow: NSLayoutConstraint
     var constraintHigh: NSLayoutConstraint
     
     var reloadCallback: ReloadCallback?
     
-    init(button: UIButton, bar: UIView, container: UIView) {
+    var active = false
+    
+    init(button: UIButton, bar: UIView, container: UIView? = nil) {
         self.button = button
         self.bar = bar
         self.container = container
@@ -33,23 +35,33 @@ class Tab {
     func activate() {
         self.button.setTitleColor(UIColor.black, for: .normal)
         self.bar.backgroundColor = UIColor.black
-        self.container.isHidden = false
+        
+        if let c = container {
+            c.isHidden = false
+        }
 
         constraintLow.isActive = false
         constraintHigh.isActive = true
-        if let reload = reloadCallback {
-            reload.reload()
+        
+        if let contentToReload = reloadCallback {
+            contentToReload.reload()
         }
+        active = true
         
     }
     
     func deactivate() {
         self.button.setTitleColor(UIColor.gray, for: .normal)
         self.bar.backgroundColor = UIColor.gray
-        self.container.isHidden = true
+        
+        if let c = container {
+            c.isHidden = true
+        }
 
         constraintHigh.isActive = false
         constraintLow.isActive = true
+        
+        active = false
         
     }
 

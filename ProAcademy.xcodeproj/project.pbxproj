@@ -14,6 +14,7 @@
 		B52CC0A21FA1FB4C00EB5ABB /* FadeDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52CC0A11FA1FB4C00EB5ABB /* FadeDismissAnimationController.swift */; };
 		B5311C0B1FB45E270067A64D /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5311C0A1FB45E270067A64D /* Auth0.plist */; };
 		B5311C0D1FB462F60067A64D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5311C0C1FB462F60067A64D /* LoginViewController.swift */; };
+		B5397CCE1FCECA78000D8071 /* TrainingProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5397CCD1FCECA78000D8071 /* TrainingProfileTableViewCell.swift */; };
 		B53F13821FACE21D00A776C5 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53F13811FACE21D00A776C5 /* MainTabBarViewController.swift */; };
 		B5437ACA1F7F9441003DB93D /* TrainingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5437AC91F7F9441003DB93D /* TrainingsViewController.swift */; };
 		B5437ACC1F7F957A003DB93D /* TrainingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5437ACB1F7F957A003DB93D /* TrainingTableViewCell.swift */; };
@@ -41,6 +42,7 @@
 		B57054311F7E247600514412 /* WelcomePagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57054301F7E247600514412 /* WelcomePagesViewController.swift */; };
 		B57054351F7E344C00514412 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57054341F7E344C00514412 /* WelcomeViewController.swift */; };
 		B5842B9E1F8B52F400E6B573 /* ArtistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5842B9D1F8B52F400E6B573 /* ArtistsViewController.swift */; };
+		B5A0AE211FCDB489000780E2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A0AE201FCDB489000780E2 /* ProfileViewController.swift */; };
 		B5CAC3DD1F875B72009B2A4D /* ArtistDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CAC3DC1F875B72009B2A4D /* ArtistDetailsViewController.swift */; };
 		B5CD41FC1F972ABD0081151A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CD41FB1F972ABD0081151A /* AboutViewController.swift */; };
 		B5CD41FE1F977D6B0081151A /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CD41FD1F977D6B0081151A /* FAQViewController.swift */; };
@@ -75,6 +77,7 @@
 		B52CC0A11FA1FB4C00EB5ABB /* FadeDismissAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeDismissAnimationController.swift; sourceTree = "<group>"; };
 		B5311C0A1FB45E270067A64D /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		B5311C0C1FB462F60067A64D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B5397CCD1FCECA78000D8071 /* TrainingProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingProfileTableViewCell.swift; sourceTree = "<group>"; };
 		B53F13811FACE21D00A776C5 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		B5437AC91F7F9441003DB93D /* TrainingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingsViewController.swift; sourceTree = "<group>"; };
 		B5437ACB1F7F957A003DB93D /* TrainingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingTableViewCell.swift; sourceTree = "<group>"; };
@@ -106,6 +109,7 @@
 		B57054301F7E247600514412 /* WelcomePagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePagesViewController.swift; sourceTree = "<group>"; };
 		B57054341F7E344C00514412 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		B5842B9D1F8B52F400E6B573 /* ArtistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsViewController.swift; sourceTree = "<group>"; };
+		B5A0AE201FCDB489000780E2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B5CAC3DC1F875B72009B2A4D /* ArtistDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistDetailsViewController.swift; sourceTree = "<group>"; };
 		B5CD41FB1F972ABD0081151A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		B5CD41FD1F977D6B0081151A /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
@@ -197,6 +201,7 @@
 		B57054041F7BC98300514412 = {
 			isa = PBXGroup;
 			children = (
+				B5A0AE201FCDB489000780E2 /* ProfileViewController.swift */,
 				B570540F1F7BC98300514412 /* ProAcademy */,
 				B57054241F7BC98300514412 /* ProAcademyTests */,
 				B570540E1F7BC98300514412 /* Products */,
@@ -235,6 +240,7 @@
 				B5311C0C1FB462F60067A64D /* LoginViewController.swift */,
 				B5523FD21FBEF6ED00B19FA0 /* SessionManager.swift */,
 				B5523FD41FBEFCD000B19FA0 /* SettingsViewController.swift */,
+				B5397CCD1FCECA78000D8071 /* TrainingProfileTableViewCell.swift */,
 			);
 			path = ProAcademy;
 			sourceTree = "<group>";
@@ -510,10 +516,12 @@
 			files = (
 				B5EF98081FAF60D600D4A417 /* Rectangle.swift in Sources */,
 				B5437ADA1F85260A003DB93D /* ArtistsCollectionViewController.swift in Sources */,
+				B5397CCE1FCECA78000D8071 /* TrainingProfileTableViewCell.swift in Sources */,
 				B5437AD11F8213A8003DB93D /* BookingViewController.swift in Sources */,
 				B57054351F7E344C00514412 /* WelcomeViewController.swift in Sources */,
 				B5437ACA1F7F9441003DB93D /* TrainingsViewController.swift in Sources */,
 				B546FD371FB09F7900E40482 /* Training.swift in Sources */,
+				B5A0AE211FCDB489000780E2 /* ProfileViewController.swift in Sources */,
 				B5633C2E1F8D53B7005F9BE5 /* CardArtistView.swift in Sources */,
 				B5064C5C1FAB24E3001E3BB0 /* Artist.swift in Sources */,
 				B57054311F7E247600514412 /* WelcomePagesViewController.swift in Sources */,
