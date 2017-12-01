@@ -29,6 +29,7 @@
 		B546FD351FB09ECB00E40482 /* InMemoryTrainingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B546FD341FB09ECB00E40482 /* InMemoryTrainingsService.swift */; };
 		B546FD371FB09F7900E40482 /* Training.swift in Sources */ = {isa = PBXBuildFile; fileRef = B546FD361FB09F7900E40482 /* Training.swift */; };
 		B546FD3A1FB1C1D600E40482 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B546FD381FB1C1D500E40482 /* Model.xcdatamodeld */; };
+		B54AB0601FD013F2001FFA5E /* MailgunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54AB05F1FD013F2001FFA5E /* MailgunTests.swift */; };
 		B54C242A1F8CDB9600DC7AF9 /* ArtistView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54C24291F8CDB9600DC7AF9 /* ArtistView.xib */; };
 		B5514CD91F9213370013A560 /* FadePresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5514CD81F9213370013A560 /* FadePresentAnimationController.swift */; };
 		B5523FD31FBEF6ED00B19FA0 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5523FD21FBEF6ED00B19FA0 /* SessionManager.swift */; };
@@ -92,6 +93,7 @@
 		B546FD341FB09ECB00E40482 /* InMemoryTrainingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryTrainingsService.swift; sourceTree = "<group>"; };
 		B546FD361FB09F7900E40482 /* Training.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Training.swift; sourceTree = "<group>"; };
 		B546FD391FB1C1D600E40482 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		B54AB05F1FD013F2001FFA5E /* MailgunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailgunTests.swift; sourceTree = "<group>"; };
 		B54C24291F8CDB9600DC7AF9 /* ArtistView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistView.xib; sourceTree = "<group>"; };
 		B5514CD81F9213370013A560 /* FadePresentAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadePresentAnimationController.swift; sourceTree = "<group>"; };
 		B5523FD21FBEF6ED00B19FA0 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 			children = (
 				B57054251F7BC98300514412 /* ProAcademyTests.swift */,
 				B57054271F7BC98300514412 /* Info.plist */,
+				B54AB05F1FD013F2001FFA5E /* MailgunTests.swift */,
 			);
 			path = ProAcademyTests;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ProAcademy/Pods-ProAcademy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Auth0/Auth0.framework",
 				"${BUILT_PRODUCTS_DIR}/Contentful/Contentful.framework",
 				"${BUILT_PRODUCTS_DIR}/Interstellar/Interstellar.framework",
@@ -495,6 +499,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Auth0.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Contentful.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Interstellar.framework",
@@ -559,6 +564,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B57054261F7BC98300514412 /* ProAcademyTests.swift in Sources */,
+				B54AB0601FD013F2001FFA5E /* MailgunTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

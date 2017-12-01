@@ -7,6 +7,7 @@ target 'ProAcademy' do
   pod 'Lock'
   pod 'Contentful'
   pod 'iCarousel'
+  pod 'Alamofire'
   target 'ProAcademyTests' do
       inherit! :search_paths
   end

@@ -35,10 +35,10 @@ class ProAcademyTests: XCTestCase {
     
     func testArtistsService() {
         let service = ContentfulArtistsService()
-        let artists = service.fetchArtists()
+        let artists = service.allArtists()
         
-        XCTAssertEqual(2, artists.count)
-        XCTAssertEqual(artists[0].name,"Miss Lula")
+        XCTAssertEqual(2, artists?.count)
+        XCTAssertEqual(artists![0].name,"Miss Lula")
 
     }
     
@@ -125,7 +125,7 @@ class ProAcademyTests: XCTestCase {
 
                 self.client?.fetchImage(for: asset).then( { (i: UIImage)  in
                     let artist =
-                        Artist(name: item.fields["name"] as! String,
+                        Artist(id: "x", name: item.fields["name"] as! String,
                                title: item.fields["title"] as! String,
                                quote: item.fields["quote"] as! String,
                                description: item.fields["description"] as! String,

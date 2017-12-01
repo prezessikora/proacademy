@@ -29,7 +29,12 @@ class TrainingsViewController: UITableViewController {
         //self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: Utils.imageFrom(systemItem: .search), style: .plain, target: nil , action: nil)
         
         self.navigationItem.titleView = UIImageView(image:  UIImage(named: "pa_title"))
+        
+        // unhide it if returned from reservation
+        self.tabBarController?.tabBar.isHidden = false
     }
+ 
+    
     
 }
 
