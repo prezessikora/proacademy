@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProAcademy/WelcomeViewController.swift"
-            timestampString = "533642133.386653"
+            timestampString = "534262753.93607"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160">
+            startingLineNumber = "182"
+            endingLineNumber = "182">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -24,11 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProAcademy/WelcomeViewController.swift"
-            timestampString = "533642133.386692"
+            timestampString = "534262753.936113"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160">
+            startingLineNumber = "182"
+            endingLineNumber = "182">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -38,11 +38,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProAcademy/WelcomeViewController.swift"
-            timestampString = "533642133.386732"
+            timestampString = "534262753.936155"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160">
+            startingLineNumber = "182"
+            endingLineNumber = "182">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProAcademy/WelcomeViewController.swift"
-            timestampString = "533642133.386772"
+            timestampString = "534262753.936196"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160">
+            startingLineNumber = "182"
+            endingLineNumber = "182">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -114,11 +114,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProAcademy/WelcomeViewController.swift"
-            timestampString = "533642133.386827"
+            timestampString = "534262753.936256"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160">
+            startingLineNumber = "182"
+            endingLineNumber = "182">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -128,11 +128,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProAcademy/TrainingsViewController.swift"
-            timestampString = "533824038.703696"
+            timestampString = "534262753.936302"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>

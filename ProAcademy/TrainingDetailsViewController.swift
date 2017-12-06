@@ -10,9 +10,17 @@ import UIKit
 
 class TrainingDetailsViewController: UIViewController {
 
+    var training : Training?
+    
+    @IBOutlet weak var trainer: UILabel!
+    @IBOutlet weak var trainingTitle: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Perfekcyjne Brwi"
+        self.title = training?.title
+        trainingTitle.text = training?.title
+        trainer.text = training?.trainer
+        
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
     }
@@ -22,5 +30,15 @@ class TrainingDetailsViewController: UIViewController {
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showBookingView" {
+            let bookingVC = segue.destination as! BookingViewController
+            bookingVC.training = training
+        }
+    }
+    
+    override func performSegue(withIdentifier identifier: String, sender: Any?) {
 
+    }
+    
 }

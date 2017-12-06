@@ -33,13 +33,25 @@ class TrainingsViewController: UITableViewController {
         // unhide it if returned from reservation
         self.tabBarController?.tabBar.isHidden = false
     }
- 
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showTrainingDetails" {
+            let detailsVC = segue.destination as! TrainingDetailsViewController
+            let clickedCell = sender as! TrainingTableViewCell
+            if let training = clickedCell.training {
+                detailsVC.training = training
+            } else {
+                print("ERROR - the clicked cell did not have assigned training.")
+            }
+        }
+    }
     
+   
 }
 
 extension TrainingsViewController {
     
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

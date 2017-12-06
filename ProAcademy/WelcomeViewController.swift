@@ -16,6 +16,28 @@ extension UIAlertController {
         return UIAlertController(title: "Loading", message: "Please, wait...", preferredStyle: .alert)
     }
     
+    static func bookingAlert() -> UIAlertController {
+        return UIAlertController(title: "Booking event", message: "Please, wait...", preferredStyle: .alert)
+    }
+    
+    static func bookingAlert(message: String) -> UIAlertController {
+        let alert =  UIAlertController(title: "Unable to book event", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { aa in
+                        
+        }))
+        return alert
+    }
+
+    static func bookingConfirmation() -> UIAlertController {
+        let alert =  UIAlertController(title: "Congratulations", message: "You have successfully book the event", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { aa in
+            
+        }))
+        return alert
+    }
+
+    
+    
     func presentInViewController(_ viewController: UIViewController) {
         viewController.present(self, animated: true, completion: nil)
     }

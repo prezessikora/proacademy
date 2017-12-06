@@ -29,6 +29,7 @@
 		B546FD351FB09ECB00E40482 /* InMemoryTrainingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B546FD341FB09ECB00E40482 /* InMemoryTrainingsService.swift */; };
 		B546FD371FB09F7900E40482 /* Training.swift in Sources */ = {isa = PBXBuildFile; fileRef = B546FD361FB09F7900E40482 /* Training.swift */; };
 		B546FD3A1FB1C1D600E40482 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B546FD381FB1C1D500E40482 /* Model.xcdatamodeld */; };
+		B54905381FD57FC70003B6BD /* BookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54905371FD57FC70003B6BD /* BookingService.swift */; };
 		B54AB0601FD013F2001FFA5E /* MailgunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54AB05F1FD013F2001FFA5E /* MailgunTests.swift */; };
 		B54C242A1F8CDB9600DC7AF9 /* ArtistView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54C24291F8CDB9600DC7AF9 /* ArtistView.xib */; };
 		B5514CD91F9213370013A560 /* FadePresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5514CD81F9213370013A560 /* FadePresentAnimationController.swift */; };
@@ -93,6 +94,7 @@
 		B546FD341FB09ECB00E40482 /* InMemoryTrainingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryTrainingsService.swift; sourceTree = "<group>"; };
 		B546FD361FB09F7900E40482 /* Training.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Training.swift; sourceTree = "<group>"; };
 		B546FD391FB1C1D600E40482 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		B54905371FD57FC70003B6BD /* BookingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingService.swift; sourceTree = "<group>"; };
 		B54AB05F1FD013F2001FFA5E /* MailgunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailgunTests.swift; sourceTree = "<group>"; };
 		B54C24291F8CDB9600DC7AF9 /* ArtistView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistView.xib; sourceTree = "<group>"; };
 		B5514CD81F9213370013A560 /* FadePresentAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadePresentAnimationController.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				B546FD361FB09F7900E40482 /* Training.swift */,
 				B5064C5D1FAB2555001E3BB0 /* FavouritesService.swift */,
 				B546FD341FB09ECB00E40482 /* InMemoryTrainingsService.swift */,
+				B54905371FD57FC70003B6BD /* BookingService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				B5842B9E1F8B52F400E6B573 /* ArtistsViewController.swift in Sources */,
 				B5437AD71F85214A003DB93D /* TrainingsCollectionViewController.swift in Sources */,
 				B5523FD31FBEF6ED00B19FA0 /* SessionManager.swift in Sources */,
+				B54905381FD57FC70003B6BD /* BookingService.swift in Sources */,
 				B5437AD51F83A265003DB93D /* Utils.swift in Sources */,
 				B5CAC3DD1F875B72009B2A4D /* ArtistDetailsViewController.swift in Sources */,
 				B5E28BB51F9A07FE00815E15 /* TermsViewController.swift in Sources */,

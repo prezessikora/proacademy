@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProAcademy/ArtistsViewController.swift"
-            timestampString = "533411869.377936"
+            timestampString = "534170178.541223"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProAcademy/ArtistsViewController.swift"
-            timestampString = "533411869.377994"
+            timestampString = "534170178.541288"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "95"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProAcademy/ArtistsViewController.swift"
-            timestampString = "533411869.378077"
+            timestampString = "534170178.54139"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "141"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProAcademy/ArtistsViewController.swift"
-            timestampString = "533411869.378128"
+            timestampString = "534170178.541439"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "210"
@@ -234,7 +234,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProAcademy/ArtistsViewController.swift"
-            timestampString = "533411869.378198"
+            timestampString = "534170178.54152"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "62"
@@ -250,7 +250,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProAcademy/ArtistsViewController.swift"
-            timestampString = "533411869.378236"
+            timestampString = "534170178.54156"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "61"
@@ -330,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProAcademy/AppDelegate.swift"
-            timestampString = "533484301.068219"
+            timestampString = "534262753.935765"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "AppDelegate"
             landmarkType = "3">
          </BreakpointContent>
@@ -346,11 +346,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProAcademy/WelcomeViewController.swift"
-            timestampString = "533642133.38652"
+            timestampString = "534262753.935862"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "checkToken()"
             landmarkType = "7">
             <Locations>
@@ -394,11 +394,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProAcademy/WelcomeViewController.swift"
-            timestampString = "533642133.386569"
+            timestampString = "534262753.935918"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "checkToken()"
             landmarkType = "7">
             <Locations>
@@ -442,11 +442,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProAcademy/WelcomeViewController.swift"
-            timestampString = "533642133.386613"
+            timestampString = "534262753.935962"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "checkToken()"
             landmarkType = "7">
          </BreakpointContent>
@@ -528,6 +528,22 @@
             startingLineNumber = "99"
             endingLineNumber = "99"
             landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProAcademy/TrainingsViewController.swift"
+            timestampString = "534262753.93636"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
