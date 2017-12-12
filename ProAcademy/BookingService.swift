@@ -115,6 +115,8 @@ class BookingService {
     
     var mailService : MailService!
     
+    var myTrainings: MyTrainingsService!
+    
     func bookTraniningInWordPress() {
         
     }
@@ -141,9 +143,7 @@ class BookingService {
         mailService.sendBookingNotificationMail(for: training)
         mailService.sendCustomerConfirmationMail(for: training)
         
-        // save to my trainings
-        // display my trainings from service by date
-        // block booking of booked event
+        myTrainings.saveBooking(of: training)
         
         completion(.success)
         print("Finished booking event.")

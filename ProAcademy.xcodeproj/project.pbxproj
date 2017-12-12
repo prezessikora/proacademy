@@ -35,6 +35,7 @@
 		B5514CD91F9213370013A560 /* FadePresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5514CD81F9213370013A560 /* FadePresentAnimationController.swift */; };
 		B5523FD31FBEF6ED00B19FA0 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5523FD21FBEF6ED00B19FA0 /* SessionManager.swift */; };
 		B5523FD51FBEFCD000B19FA0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5523FD41FBEFCD000B19FA0 /* SettingsViewController.swift */; };
+		B55969A41FD9652F00A9D2BE /* OnDeviceMyTrainingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55969A31FD9652F00A9D2BE /* OnDeviceMyTrainingsService.swift */; };
 		B5633C2E1F8D53B7005F9BE5 /* CardArtistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5633C2D1F8D53B7005F9BE5 /* CardArtistView.swift */; };
 		B57054111F7BC98300514412 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57054101F7BC98300514412 /* AppDelegate.swift */; };
 		B57054161F7BC98300514412 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B57054141F7BC98300514412 /* Main.storyboard */; };
@@ -100,6 +101,7 @@
 		B5514CD81F9213370013A560 /* FadePresentAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadePresentAnimationController.swift; sourceTree = "<group>"; };
 		B5523FD21FBEF6ED00B19FA0 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		B5523FD41FBEFCD000B19FA0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B55969A31FD9652F00A9D2BE /* OnDeviceMyTrainingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnDeviceMyTrainingsService.swift; sourceTree = "<group>"; };
 		B5633C2D1F8D53B7005F9BE5 /* CardArtistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardArtistView.swift; sourceTree = "<group>"; };
 		B570540D1F7BC98300514412 /* ProAcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProAcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B57054101F7BC98300514412 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				B5064C5D1FAB2555001E3BB0 /* FavouritesService.swift */,
 				B546FD341FB09ECB00E40482 /* InMemoryTrainingsService.swift */,
 				B54905371FD57FC70003B6BD /* BookingService.swift */,
+				B55969A31FD9652F00A9D2BE /* OnDeviceMyTrainingsService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				B5064C5C1FAB24E3001E3BB0 /* Artist.swift in Sources */,
 				B57054311F7E247600514412 /* WelcomePagesViewController.swift in Sources */,
 				B546FD351FB09ECB00E40482 /* InMemoryTrainingsService.swift in Sources */,
+				B55969A41FD9652F00A9D2BE /* OnDeviceMyTrainingsService.swift in Sources */,
 				B5437ACC1F7F957A003DB93D /* TrainingTableViewCell.swift in Sources */,
 				B5064C5E1FAB2555001E3BB0 /* FavouritesService.swift in Sources */,
 				B5437ADE1F8669E4003DB93D /* ArtistCell.swift in Sources */,

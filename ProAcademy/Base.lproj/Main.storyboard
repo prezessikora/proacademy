@@ -1618,6 +1618,7 @@
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bookTrainingButton" destination="npv-CI-6cJ" id="7Eg-d0-K3O"/>
                         <outlet property="trainer" destination="Qcr-Yj-kv0" id="QkD-SG-Huj"/>
                         <outlet property="trainingTitle" destination="2fr-Cn-EYT" id="2Kh-If-CmY"/>
                     </connections>
@@ -1993,6 +1994,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bookTrainingButton" destination="mde-Mz-TEA" id="6Tp-lg-YMj"/>
                         <outlet property="location" destination="EAe-MA-xx9" id="etO-fJ-P3p"/>
                         <outlet property="trainerName" destination="8QT-mj-QT0" id="q3s-ic-bPD"/>
                         <outlet property="trainingCost" destination="afQ-KZ-kzH" id="3Zi-fR-plw"/>

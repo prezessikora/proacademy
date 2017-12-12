@@ -16,8 +16,8 @@ protocol TrainingsService {
 class InMemoryTrainingsService: TrainingsService {
     
     
-    let trainings = [Training(id: "1",title: "CAT EYES",trainer: "Jagoda Wrześniewska"),Training(id: "2", title: "PERFEKCYJNE BRWI",trainer: "Krzysztof"),
-                     Training(id: "3", title: "ZMYSŁOWE USTA",trainer: "Sandra Sikora")]
+    let trainings = [Training(id: "1",title: "CAT EYES",trainer: "Jagoda Wrześniewska",dateString:"2017/10/10 11:30"),Training(id: "2", title: "PERFEKCYJNE BRWI",trainer: "Krzysztof",dateString:"2017/12/10 10:00"),
+                              Training(id: "3", title: "ZMYSŁOWE USTA",trainer: "Sandra Sikora",dateString:"2018/01/01 09:00")]
     
     func allTrainings() -> [Training]? {
         return trainings

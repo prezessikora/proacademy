@@ -8,38 +8,13 @@
 
 import UIKit
 
-
-
-protocol UserTrainingsService {
-    func upcoming() -> [Training]?
-    func attended() -> [Training]?
-}
-
-class LocalUserTrainingsService: UserTrainingsService {
-    
-    fileprivate var trainigs: TrainingsService {
-        get {
-            return Utils.application().trainingsService
-        }
-    }
-    
-    func upcoming() -> [Training]? {
-        return trainigs.allTrainings()
-    }
-    
-    func attended() -> [Training]? {
-        if let justOne = trainigs.allTrainings()?.last {
-            return [justOne]
-        }
-        return nil
-    }
-    
-    
-}
-
 class ProfileViewController: TabBasedViewController, UITableViewDataSource {
 
-    let trainings = LocalUserTrainingsService()
+    fileprivate var trainigs: MyTrainingsService {
+        get {
+            return Utils.application().myTrainings
+        }
+    }
     
     let cellReuseIdentifier = "TrainingProfileCell"
     
@@ -66,6 +41,10 @@ class ProfileViewController: TabBasedViewController, UITableViewDataSource {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     @IBAction func onUpcoming(_ sender: Any) {
         changeState(active: upcomingTab, inactive: attendedTab)
         tableView.reloadData()
@@ -82,21 +61,16 @@ class ProfileViewController: TabBasedViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let data = upcomingTab.active ? trainings.upcoming() : trainings.attended()
-        
-        if let d = data {
-            return d.count
-        }
-        return 0
+        let data = upcomingTab.active ? trainigs.upcomingTrainings() : trainigs.attendedTrainings()
+
+        return data.count
     }
-    
-    
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let data = upcomingTab.active ? trainings.upcoming() : trainings.attended()
+        let data = upcomingTab.active ? trainigs.upcomingTrainings() : trainigs.attendedTrainings()
         
-        let training = data![indexPath.row]
+        let training = data[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! TrainingProfileTableViewCell
         cell.trainingTitle.text = training.title

@@ -15,6 +15,14 @@ class TrainingDetailsViewController: UIViewController {
     @IBOutlet weak var trainer: UILabel!
     @IBOutlet weak var trainingTitle: UILabel!
     
+    @IBOutlet weak var bookTrainingButton: UIButton!
+    
+    var myTrainingsService : MyTrainingsService {
+        get {
+            return Utils.application().myTrainings
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = training?.title
@@ -27,6 +35,14 @@ class TrainingDetailsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
+        if myTrainingsService.haveBeenAlreadyBooked(training: training!) {
+            bookTrainingButton.isEnabled = false
+            bookTrainingButton.titleLabel?.text = "Szkolenie zarezerwowane"
+        } else {
+            bookTrainingButton.isEnabled = true
+            bookTrainingButton.titleLabel?.text = "Zareerwuj"
+        }
+        
     }
     
     

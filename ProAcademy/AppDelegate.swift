@@ -26,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var bookingService: BookingService!
     
+    var myTrainings: MyTrainingsService!
+    
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
         return Lock.resumeAuth(url, options: options)
     }
@@ -40,6 +42,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         bookingService = BookingService()
         bookingService.mailService = MailgunMailService()
+        
+        myTrainings = OnDeviceMyTrainingsService()
+        bookingService.myTrainings = myTrainings
         
         return true
     }
