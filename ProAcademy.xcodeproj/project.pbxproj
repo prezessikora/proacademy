@@ -11,6 +11,8 @@
 		9DBD96D6B0A89CBB5CDB57A7 /* Pods_ProAcademyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC820CAC6BE073E0C6ED645 /* Pods_ProAcademyTests.framework */; };
 		B5064C5C1FAB24E3001E3BB0 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5064C5B1FAB24E3001E3BB0 /* Artist.swift */; };
 		B5064C5E1FAB2555001E3BB0 /* FavouritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5064C5D1FAB2555001E3BB0 /* FavouritesService.swift */; };
+		B50AF8CE1FE0034000DC5F28 /* WordpressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50AF8CD1FE0034000DC5F28 /* WordpressTests.swift */; };
+		B50AF8D01FE003C300DC5F28 /* WordpressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50AF8CF1FE003C300DC5F28 /* WordpressService.swift */; };
 		B52CC0A21FA1FB4C00EB5ABB /* FadeDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52CC0A11FA1FB4C00EB5ABB /* FadeDismissAnimationController.swift */; };
 		B5311C0B1FB45E270067A64D /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5311C0A1FB45E270067A64D /* Auth0.plist */; };
 		B5311C0D1FB462F60067A64D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5311C0C1FB462F60067A64D /* LoginViewController.swift */; };
@@ -77,6 +79,8 @@
 		A8902566F9CC02EABA39599D /* Pods-ProAcademy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProAcademy.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProAcademy/Pods-ProAcademy.release.xcconfig"; sourceTree = "<group>"; };
 		B5064C5B1FAB24E3001E3BB0 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		B5064C5D1FAB2555001E3BB0 /* FavouritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesService.swift; sourceTree = "<group>"; };
+		B50AF8CD1FE0034000DC5F28 /* WordpressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordpressTests.swift; sourceTree = "<group>"; };
+		B50AF8CF1FE003C300DC5F28 /* WordpressService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordpressService.swift; sourceTree = "<group>"; };
 		B52CC0A11FA1FB4C00EB5ABB /* FadeDismissAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeDismissAnimationController.swift; sourceTree = "<group>"; };
 		B5311C0A1FB45E270067A64D /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		B5311C0C1FB462F60067A64D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +258,7 @@
 		B57054241F7BC98300514412 /* ProAcademyTests */ = {
 			isa = PBXGroup;
 			children = (
+				B50AF8CD1FE0034000DC5F28 /* WordpressTests.swift */,
 				B57054251F7BC98300514412 /* ProAcademyTests.swift */,
 				B57054271F7BC98300514412 /* Info.plist */,
 				B54AB05F1FD013F2001FFA5E /* MailgunTests.swift */,
@@ -294,6 +299,7 @@
 				B546FD341FB09ECB00E40482 /* InMemoryTrainingsService.swift */,
 				B54905371FD57FC70003B6BD /* BookingService.swift */,
 				B55969A31FD9652F00A9D2BE /* OnDeviceMyTrainingsService.swift */,
+				B50AF8CF1FE003C300DC5F28 /* WordpressService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -500,6 +506,7 @@
 				"${BUILT_PRODUCTS_DIR}/Contentful/Contentful.framework",
 				"${BUILT_PRODUCTS_DIR}/Interstellar/Interstellar.framework",
 				"${BUILT_PRODUCTS_DIR}/Lock/Lock.framework",
+				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SimpleKeychain/SimpleKeychain.framework",
 				"${BUILT_PRODUCTS_DIR}/iCarousel/iCarousel.framework",
 			);
@@ -510,6 +517,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Contentful.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Interstellar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lock.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimpleKeychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iCarousel.framework",
 			);
@@ -560,6 +568,7 @@
 				B5CD41FE1F977D6B0081151A /* FAQViewController.swift in Sources */,
 				B5CD41FC1F972ABD0081151A /* AboutViewController.swift in Sources */,
 				B546FD3A1FB1C1D600E40482 /* Model.xcdatamodeld in Sources */,
+				B50AF8D01FE003C300DC5F28 /* WordpressService.swift in Sources */,
 				B5437ACF1F7FB9D7003DB93D /* TrainingDetailsViewController.swift in Sources */,
 				B5E28BB91F9A094100815E15 /* AboutUsUI.swift in Sources */,
 				B53F13821FACE21D00A776C5 /* MainTabBarViewController.swift in Sources */,
@@ -571,6 +580,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B50AF8CE1FE0034000DC5F28 /* WordpressTests.swift in Sources */,
 				B57054261F7BC98300514412 /* ProAcademyTests.swift in Sources */,
 				B54AB0601FD013F2001FFA5E /* MailgunTests.swift in Sources */,
 			);
@@ -653,6 +663,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -696,6 +707,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};

@@ -107,6 +107,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Contentful/Contentful.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Interstellar/Interstellar.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Lock/Lock.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SimpleKeychain/SimpleKeychain.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/iCarousel/iCarousel.framework"
 fi
@@ -116,6 +117,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Contentful/Contentful.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Interstellar/Interstellar.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Lock/Lock.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SimpleKeychain/SimpleKeychain.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/iCarousel/iCarousel.framework"
 fi

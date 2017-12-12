@@ -8,6 +8,7 @@ target 'ProAcademy' do
   pod 'Contentful'
   pod 'iCarousel'
   pod 'Alamofire'
+  pod 'OAuthSwift'
   target 'ProAcademyTests' do
       inherit! :search_paths
   end
