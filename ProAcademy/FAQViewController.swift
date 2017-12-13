@@ -121,6 +121,7 @@ class FAQViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     // MARK: - Expand / Collapse Methods
     
+    @objc
     func sectionHeaderWasTouched(_ sender: UITapGestureRecognizer) {
         let headerView = sender.view as! UITableViewHeaderFooterView
         let section    = headerView.tag

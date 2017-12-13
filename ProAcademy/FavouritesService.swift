@@ -160,8 +160,8 @@ class OnDeviceTrainingFavouritesService: BaseFavouritesService, TrainingFavourit
 
         let favouriteIds = favourites.map({e in e.value(forKey: "id") as! String})
         
-        if let allArtists = Utils.application().trainingsService.allTrainings() {
-            return allArtists.filter({a in favouriteIds.contains(a.id)})
+        if let allTrainings = Utils.application().trainingsService.allTrainings() {
+            return allTrainings.filter({a in favouriteIds.contains(a.id)})
             
         }
         return [Training]()

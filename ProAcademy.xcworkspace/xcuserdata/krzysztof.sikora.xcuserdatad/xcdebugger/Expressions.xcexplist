@@ -3,10 +3,23 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "ArtistsViewController.viewWillAppear(_:):ArtistsViewController.swift">
+         contextName = "closure #1 in ArtistsViewController.loadData():ArtistsViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "closure #1 in ArtistsViewController.loadData():ArtistsViewController.swift">
+         contextName = "FlipPresentAnimationController.animateTransition(using:):FlipPresentAnimationController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "fromVC.dynamicType">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ArtistsViewController.viewDidLoad():ArtistsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "backgrounds">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "closure #1 in OnDeviceFavouritesService.favouriteArtists():FavouritesService.swift">
@@ -17,12 +30,31 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "TrainingsViewController.tableView(_:cellForRowAt:):TrainingsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.price.titleLabel?.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FavouritesViewController.prepare(for:sender:):FavouritesViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "segue.destination">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ArtistsViewController.carouselCurrentItemIndexDidChange(_:):ArtistsViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "carousel.currentItemView?">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ArtistsViewController.viewWillAppear(_:):ArtistsViewController.swift">
       </ContextState>
       <ContextState
          contextName = "SettingsViewController.readProfile():SettingsViewController.swift">
@@ -36,13 +68,24 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in closure #1 in ArtistsViewController.loadData():ArtistsViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ArtistsViewController.prepare(for:sender:):ArtistsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "(segue.destination as! UINavigationController).viewControllers.first as! ArtistViewController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ArtistsViewController.carousel(_:didSelectItemAt:):ArtistsViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "">
             </PersistentString>
             <PersistentString
-               value = "currentCard.convert(currentCard.frame, to: carousel.contentView)">
+               value = "currentCard.frame">
             </PersistentString>
             <PersistentString
                value = "carousel.currentItemView">
@@ -60,48 +103,13 @@
                value = "currentCard.frame.width">
             </PersistentString>
             <PersistentString
+               value = "currentCard.convert(currentCard.frame, to: carousel.contentView)">
+            </PersistentString>
+            <PersistentString
                value = "transitionCard.center">
             </PersistentString>
             <PersistentString
                value = "carousel.itemView(at: 2)">
-            </PersistentString>
-            <PersistentString
-               value = "currentCard.frame">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ArtistsViewController.viewDidLoad():ArtistsViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "backgrounds">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "FavouritesViewController.prepare(for:sender:):FavouritesViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "segue.destination">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in closure #1 in ArtistsViewController.loadData():ArtistsViewController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "ArtistsViewController.prepare(for:sender:):ArtistsViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "(segue.destination as! UINavigationController).viewControllers.first as! ArtistViewController">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "FlipPresentAnimationController.animateTransition(using:):FlipPresentAnimationController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "fromVC.dynamicType">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

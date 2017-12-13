@@ -81,7 +81,7 @@ class WordpressTests: XCTestCase {
                 
             }
         )
-        self.wait(for: [expectation], timeout: 10.0)
+        self.wait(for: [expectation], timeout: 20.0)
         
         
     }

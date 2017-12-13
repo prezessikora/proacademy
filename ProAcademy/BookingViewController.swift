@@ -38,10 +38,11 @@ class BookingViewController: UIViewController {
         userName.isUserInteractionEnabled = false
         userEmail.isUserInteractionEnabled = false
         location.isUserInteractionEnabled = false
-        
-        trainingName.text = training?.title
-        trainerName.text = training?.trainer
-        
+        if let t = training {
+            trainingName.text = t.title
+            trainerName.text = t.trainer
+            trainingCost.text = "\(t.price!) PLN"
+        }
     }
     
     

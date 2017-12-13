@@ -57,7 +57,7 @@ extension TrainingsViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let data = trainigs.allTrainings() {
+        if let data = trainigs.availableTrainings() {
             return data.count
         }
         return 0
@@ -65,11 +65,13 @@ extension TrainingsViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let training = trainigs.allTrainings()![indexPath.row]
+        let training = trainigs.availableTrainings()![indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TrainingCell") as! TrainingTableViewCell
         cell.title.text = training.title
         cell.trainer.text = training.trainer
+        cell.price.text = "\(training.price!) PLN"
+        cell.availablePlaces.text = "\(training.remainingItems!)/\(training.offeredItems!)"
         cell.training = training
         cell.updateFavouriteState()
         

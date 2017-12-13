@@ -36,6 +36,7 @@ class ArtistDetailsViewController: UIViewController {
         
     }
     
+    @objc
     func close() {
         dismiss(animated: true, completion: nil)
     }

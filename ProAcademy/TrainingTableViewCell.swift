@@ -14,6 +14,9 @@ class TrainingTableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var trainer: UILabel!
     
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var availablePlaces: UILabel!
+    
     var training: Training?
     
     var favouritesService : TrainingFavouritesService {

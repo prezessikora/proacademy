@@ -15,7 +15,12 @@ class TrainingDetailsViewController: UIViewController {
     @IBOutlet weak var trainer: UILabel!
     @IBOutlet weak var trainingTitle: UILabel!
     
+    @IBOutlet weak var availablePlaces: UILabel!
+    @IBOutlet weak var price: UIButton!
     @IBOutlet weak var bookTrainingButton: UIButton!
+    
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var fullDescription: UITextView!
     
     var myTrainingsService : MyTrainingsService {
         get {
@@ -25,9 +30,21 @@ class TrainingDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = training?.title
-        trainingTitle.text = training?.title
-        trainer.text = training?.trainer
+        
+        if let t = training {
+            self.title = t.title
+            trainingTitle.text = t.title
+            trainer.text = t.trainer
+            availablePlaces.text = "\(t.remainingItems!)/\(t.offeredItems!)"
+            price.setTitle("\(t.price!) PLN", for: .normal)
+            
+            let htmlString = t.fullDescription            
+            let htmlData = NSString(string: htmlString!).data(using: String.Encoding.unicode.rawValue)            
+            let options = [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html]
+            let attributedString = try! NSAttributedString(data: htmlData!, options: options, documentAttributes: nil)
+            fullDescription.attributedText = attributedString
+        }
+        
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         

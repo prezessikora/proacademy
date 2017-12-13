@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ArE-mC-Jgb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ArE-mC-Jgb">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -1261,7 +1261,7 @@
                                                             <rect key="frame" x="0.0" y="142" width="300" height="57.5"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="TRe-QG-Zta">
-                                                                    <rect key="frame" x="0.0" y="10.5" width="235" height="47"/>
+                                                                    <rect key="frame" x="0.0" y="10.5" width="257" height="47"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22e-vu-fpw">
                                                                             <rect key="frame" x="0.0" y="0.0" width="34" height="20.5"/>
@@ -1277,10 +1277,12 @@
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9U-K3-QGq">
-                                                                    <rect key="frame" x="235" y="27.5" width="65" height="30"/>
-                                                                    <state key="normal" title="450,00 zł"/>
-                                                                </button>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[price]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gzj-Ik-VSP">
+                                                                    <rect key="frame" x="257" y="40.5" width="43" height="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
@@ -1336,7 +1338,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="availablePlaces" destination="T4o-w7-Bt3" id="uuA-bG-1xN"/>
                                     <outlet property="favouriteButton" destination="QNr-PK-n2P" id="K1o-et-yAb"/>
+                                    <outlet property="price" destination="Gzj-Ik-VSP" id="ZO4-rD-fYu"/>
                                     <outlet property="title" destination="giv-yZ-L22" id="FYH-Sh-utZ"/>
                                     <outlet property="trainer" destination="PD3-L8-z6p" id="KPv-Uy-K0E"/>
                                     <segue destination="uxx-9D-iik" kind="show" identifier="showTrainingDetails" id="A7N-ZV-Xin"/>
@@ -1526,8 +1530,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RW5-m9-vAd">
                                                         <rect key="frame" x="0.0" y="45" width="304" height="25"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:00 AM - 5:00 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fds-64-SR2">
-                                                                <rect key="frame" x="10" y="4" width="124" height="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[date missing]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fds-64-SR2">
+                                                                <rect key="frame" x="10" y="4" width="92" height="17"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -1543,8 +1547,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UbB-U0-trA">
                                                         <rect key="frame" x="0.0" y="75" width="304" height="25"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kościuszki 16/3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaV-iH-cYo">
-                                                                <rect key="frame" x="10" y="4" width="100.5" height="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[adress missing]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaV-iH-cYo">
+                                                                <rect key="frame" x="10" y="4" width="106.5" height="17"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -1574,7 +1578,7 @@
                                                             <constraint firstAttribute="height" constant="25" id="n3j-bN-uB4"/>
                                                         </constraints>
                                                     </view>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="itW-2A-bA5">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="itW-2A-bA5">
                                                         <rect key="frame" x="0.0" y="135" width="304" height="147"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <string key="text">Jest to wspaniała okazaja aby spędzić miłe chwile w kobiecym gronie, przy okazji wynosząc przydatną widzę na temat makijażu, czyli wszystko co tygrski lubią najbardziej w jednym miejscu.</string>
@@ -1618,7 +1622,11 @@
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="availablePlaces" destination="C1v-Uh-93U" id="N2w-Qf-rUo"/>
                         <outlet property="bookTrainingButton" destination="npv-CI-6cJ" id="7Eg-d0-K3O"/>
+                        <outlet property="date" destination="fds-64-SR2" id="j66-aD-gj8"/>
+                        <outlet property="fullDescription" destination="itW-2A-bA5" id="MR5-lA-Hhy"/>
+                        <outlet property="price" destination="kKM-PS-eOK" id="xSn-Uz-Ale"/>
                         <outlet property="trainer" destination="Qcr-Yj-kv0" id="QkD-SG-Huj"/>
                         <outlet property="trainingTitle" destination="2fr-Cn-EYT" id="2Kh-If-CmY"/>
                     </connections>

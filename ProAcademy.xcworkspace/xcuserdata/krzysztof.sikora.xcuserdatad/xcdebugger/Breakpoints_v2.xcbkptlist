@@ -314,7 +314,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProAcademy/FavouritesService.swift"
-            timestampString = "531932733.071626"
+            timestampString = "534863261.669313"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "170"
@@ -330,7 +330,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProAcademy/AppDelegate.swift"
-            timestampString = "534352860.382512"
+            timestampString = "534863261.669378"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -538,12 +538,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProAcademy/TrainingsViewController.swift"
-            timestampString = "534262753.93636"
+            timestampString = "534863261.669528"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
             endingLineNumber = "38"
             landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProAcademy/TrainingsViewController.swift"
+            timestampString = "534863261.669729"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProAcademy/WordpressService.swift"
+            timestampString = "534863261.669779"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "availableTrainings()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         artistFavouritesService = OnDeviceArtistFavouritesService()
         trainingFavouritesService = OnDeviceTrainingFavouritesService()
         
-        trainingsService = InMemoryTrainingsService()
+        trainingsService = WordpressService()
         artistsService = ContentfulArtistsService()
         
         bookingService = BookingService()
