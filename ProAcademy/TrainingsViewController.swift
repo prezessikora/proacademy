@@ -17,10 +17,24 @@ class TrainingsViewController: UITableViewController {
         }
     }
     
+    var indicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateOnProductsReload), name: .ProductsDownload, object: nil)
         
+        indicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+        indicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        indicator.center = view.center
+        view.addSubview(indicator)
+        tableView.tableFooterView = UIView(frame: .zero)
+    }
+    
+    @objc func updateOnProductsReload() {
+        self.tableView.reloadData()
+        indicator.stopAnimating()
+        indicator.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,6 +46,13 @@ class TrainingsViewController: UITableViewController {
         
         // unhide it if returned from reservation
         self.tabBarController?.tabBar.isHidden = false
+        
+        // show the activity indicator only when loading
+        if trainigs.availableTrainings()?.count == 0 {
+            indicator.isHidden = false
+            indicator.bringSubview(toFront: view)
+            indicator.startAnimating()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

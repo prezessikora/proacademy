@@ -109,7 +109,8 @@ class WordpressService: TrainingsService {
                     print("ERROR paring JSON with training products: \(error.localizedDescription)")
                 }
                 self.trainings = self.trainings.filter({t in t.status == "publish"})
-                print("Saving \(self.trainings.count) [published] trainings.")
+                print("Saving \(self.trainings.count) [published] trainings and sending notification.")
+                NotificationCenter.default.post(name: .ProductsDownload, object: self)
 
             },
             failure: { error in

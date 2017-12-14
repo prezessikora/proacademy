@@ -13,6 +13,7 @@
 		B5064C5E1FAB2555001E3BB0 /* FavouritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5064C5D1FAB2555001E3BB0 /* FavouritesService.swift */; };
 		B50AF8CE1FE0034000DC5F28 /* WordpressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50AF8CD1FE0034000DC5F28 /* WordpressTests.swift */; };
 		B50AF8D01FE003C300DC5F28 /* WordpressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50AF8CF1FE003C300DC5F28 /* WordpressService.swift */; };
+		B50AF8D41FE27FF300DC5F28 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50AF8D31FE27FF300DC5F28 /* NotificationExtension.swift */; };
 		B52CC0A21FA1FB4C00EB5ABB /* FadeDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52CC0A11FA1FB4C00EB5ABB /* FadeDismissAnimationController.swift */; };
 		B5311C0B1FB45E270067A64D /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5311C0A1FB45E270067A64D /* Auth0.plist */; };
 		B5311C0D1FB462F60067A64D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5311C0C1FB462F60067A64D /* LoginViewController.swift */; };
@@ -81,6 +82,7 @@
 		B5064C5D1FAB2555001E3BB0 /* FavouritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesService.swift; sourceTree = "<group>"; };
 		B50AF8CD1FE0034000DC5F28 /* WordpressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordpressTests.swift; sourceTree = "<group>"; };
 		B50AF8CF1FE003C300DC5F28 /* WordpressService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordpressService.swift; sourceTree = "<group>"; };
+		B50AF8D31FE27FF300DC5F28 /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 		B52CC0A11FA1FB4C00EB5ABB /* FadeDismissAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeDismissAnimationController.swift; sourceTree = "<group>"; };
 		B5311C0A1FB45E270067A64D /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		B5311C0C1FB462F60067A64D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				B5523FD21FBEF6ED00B19FA0 /* SessionManager.swift */,
 				B5523FD41FBEFCD000B19FA0 /* SettingsViewController.swift */,
 				B5397CCD1FCECA78000D8071 /* TrainingProfileTableViewCell.swift */,
+				B50AF8D31FE27FF300DC5F28 /* NotificationExtension.swift */,
 			);
 			path = ProAcademy;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				B5CD41FE1F977D6B0081151A /* FAQViewController.swift in Sources */,
 				B5CD41FC1F972ABD0081151A /* AboutViewController.swift in Sources */,
 				B546FD3A1FB1C1D600E40482 /* Model.xcdatamodeld in Sources */,
+				B50AF8D41FE27FF300DC5F28 /* NotificationExtension.swift in Sources */,
 				B50AF8D01FE003C300DC5F28 /* WordpressService.swift in Sources */,
 				B5437ACF1F7FB9D7003DB93D /* TrainingDetailsViewController.swift in Sources */,
 				B5E28BB91F9A094100815E15 /* AboutUsUI.swift in Sources */,
