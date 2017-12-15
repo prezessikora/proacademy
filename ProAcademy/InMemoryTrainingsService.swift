@@ -11,6 +11,7 @@ import UIKit
 protocol TrainingsService {
     func allTrainings() -> [Training]?
     func availableTrainings() -> [Training]?
+    func loadOrRefreshData() 
 
 }
 
@@ -25,5 +26,9 @@ class InMemoryTrainingsService: TrainingsService {
     
     func availableTrainings() -> [Training]? {
         return trainings
+    }
+    
+    func loadOrRefreshData() {
+        
     }
 }

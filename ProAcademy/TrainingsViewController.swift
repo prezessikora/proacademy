@@ -17,6 +17,9 @@ class TrainingsViewController: UITableViewController {
         }
     }
     
+    var productsRefreshTimer: Timer!
+    let CACHE_REFRESH_SECONDS: TimeInterval = TimeInterval(exactly: 30)!
+    
     var indicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
@@ -29,13 +32,13 @@ class TrainingsViewController: UITableViewController {
         indicator.center = view.center
         view.addSubview(indicator)
         tableView.tableFooterView = UIView(frame: .zero)
+
     }
-    
-    @objc func updateOnProductsReload() {
-        self.tableView.reloadData()
-        indicator.stopAnimating()
-        indicator.isHidden = true
+
+    override func viewDidDisappear(_ animated: Bool) {
+        productsRefreshTimer.invalidate()
     }
+
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icons8-Home-48"), style: .plain, target: nil , action: nil)
@@ -53,6 +56,23 @@ class TrainingsViewController: UITableViewController {
             indicator.bringSubview(toFront: view)
             indicator.startAnimating()
         }
+        
+        productsRefreshTimer = Timer.scheduledTimer(timeInterval: CACHE_REFRESH_SECONDS, target: self, selector: #selector(refreshCache), userInfo: nil, repeats: true)
+        refreshCache()
+    }
+    
+    
+    @objc func refreshCache() {
+        trainigs.loadOrRefreshData()
+    }
+    
+    @objc func updateOnProductsReload() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.indicator.stopAnimating()
+            self.indicator.isHidden = true
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -91,7 +111,8 @@ extension TrainingsViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TrainingCell") as! TrainingTableViewCell
         cell.title.text = training.title
         cell.trainer.text = training.trainer
-        cell.price.text = "\(training.price!) PLN"
+        cell.priceButton.setTitle("\(training.price!) PLN", for: .normal)
+        
         cell.availablePlaces.text = "\(training.remainingItems!)/\(training.offeredItems!)"
         cell.training = training
         cell.updateFavouriteState()

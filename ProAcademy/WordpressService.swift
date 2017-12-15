@@ -13,11 +13,19 @@ class WordpressService: TrainingsService {
     
     let consumerKey = "ck_b0441b3a99da93a3400458b244befaaa61b0ee1b"
     let consumerSecret = "cs_a75e911de45a3b3253426d2eacd1387e6fdc78b2"
+    
     let PRODUCTS_URL = "http://www.pro-academy.pl/wp-json/wc/v2/products"
     
     var oauthswift : OAuth1Swift!
     
-    var trainings = [Training]()
+    var cachedTrainings = [Training]()
+    
+    // sync read/write through this queue
+    fileprivate let concurrentDownloadQueue =
+        DispatchQueue(
+            label: "com.desinglove.proacademy.downloadQueue",
+            attributes: .concurrent)
+    
     
     init() {
         
@@ -26,20 +34,33 @@ class WordpressService: TrainingsService {
             consumerSecret: consumerSecret
         )
         oauthswift.client.paramsLocation = .requestURIQuery
+        
+    }
+
+    
+    func loadOrRefreshData()  {
+        print("WordpressService - Refreshig cached data.")
         downloadTrainings()
     }
 
+    
     func allTrainings() -> [Training]? {
-        return trainings
+        return concurrentDownloadQueue.sync {
+            return cachedTrainings
+        }
     }
     
     func availableTrainings() -> [Training]? {
-        let a = trainings.filter({t in t.remainingItems > 0})
-        print("WordpressService - returning \(a.count) available trainings.")
-        return a
+        return concurrentDownloadQueue.sync {
+            let onlyAvailableTrainings = self.cachedTrainings.filter({t in t.remainingItems > 0})
+            print("WordpressService - returning \(onlyAvailableTrainings.count) available trainings.")
+            return onlyAvailableTrainings
+        }
+
     }
     
     fileprivate func processProducts(_ json: [Any]) {
+        var downloadedTrainings = [Training]()
         for p in json {
             let product = p as! [String:Any]
             
@@ -90,32 +111,49 @@ class WordpressService: TrainingsService {
             training.fullDescription = description
             training.shortDescription = shortDescription
             print("Downloaded product: \(training)")
-            self.trainings.append(training)
+            downloadedTrainings.append(training)
             
         }
+        cachedTrainings = downloadedTrainings
     }
-    
+
     func downloadTrainings() {
-        print("Downloading products from WordPress...")
-        oauthswift.client.get(PRODUCTS_URL,
+        print("WordpressService - Downloading products from WordPress...")
+        let startTime = CFAbsoluteTimeGetCurrent()
+        
+        
+        
+        self.oauthswift.client.get(self.PRODUCTS_URL,
             success: { response in
-                do {
-                    let json = try response.jsonObject() as! [Any]
-                    print("Downloaded \(json.count) products from WordPress.")
+                let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
+                // make sure there is the only thread
+                self.concurrentDownloadQueue.async (flags: .barrier) {
+                    print("WordpressService - Processing response from WordPress...")
+                    do {
+                        let json = try response.jsonObject() as! [Any]
+                        print("Downloaded \(json.count) products from WordPress.")
+                        
+                        self.processProducts(json)
+                        
+                    } catch let (error) {
+                        print("ERROR paring JSON with training products: \(error.localizedDescription)")
+                    }
+                    self.cachedTrainings = self.cachedTrainings.filter({t in t.status == "publish"})
+                    print("Saved \(self.cachedTrainings.count) [published] trainings and sending notification.")
                     
-                    self.processProducts(json)
-                    
-                } catch let (error) {
-                    print("ERROR paring JSON with training products: \(error.localizedDescription)")
+                    DispatchQueue.main.async {
+                        NotificationCenter.default.post(name: .ProductsDownload, object: self)
+                    }
+                    let timeStr = String(format: "[%3.2f] seconds", timeElapsed)
+                    print("WordpressService - Finished downloading products from WordPress \(timeStr) .")
                 }
-                self.trainings = self.trainings.filter({t in t.status == "publish"})
-                print("Saving \(self.trainings.count) [published] trainings and sending notification.")
-                NotificationCenter.default.post(name: .ProductsDownload, object: self)
 
             },
             failure: { error in
-                print("ERROR paring JSON with training products: \(error.localizedDescription)")
+                print("ERROR parsing JSON with training products: \(error.localizedDescription)")
+                print("WordpressService - Finished downloading products from WordPress...")
             })
+        
     }
 
 }

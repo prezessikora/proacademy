@@ -13,11 +13,11 @@ import Lock
 extension UIAlertController {
     
     static func loadingAlert() -> UIAlertController {
-        return UIAlertController(title: "Loading", message: "Please, wait...", preferredStyle: .alert)
+        return UIAlertController(title: "Logowanie", message: "Proszę czekać...", preferredStyle: .alert)
     }
     
     static func bookingAlert() -> UIAlertController {
-        return UIAlertController(title: "Booking event", message: "Please, wait...", preferredStyle: .alert)
+        return UIAlertController(title: "Rezerwacja", message: "Proszę, czekać...", preferredStyle: .alert)
     }
     
     static func bookingAlert(message: String) -> UIAlertController {

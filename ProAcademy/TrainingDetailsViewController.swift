@@ -59,7 +59,7 @@ class TrainingDetailsViewController: UIViewController {
             bookTrainingButton.isEnabled = true
             bookTrainingButton.titleLabel?.text = "Zareerwuj"
         }
-        
+        fullDescription.scrollRangeToVisible(NSRange(location: 0, length: 0w))
     }
     
     
