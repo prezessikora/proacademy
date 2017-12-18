@@ -124,6 +124,7 @@ class WelcomeViewController: UIViewController {
                                 print("Failed to retrieve profile: \(String(describing: error))")
                                 return self.login()
                             }
+                            // user logged in, go to main view
                             self.performSegue(withIdentifier: "showMainView", sender: self)
                         }
                     }

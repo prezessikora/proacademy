@@ -17,8 +17,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var aboutButton: UIButton!
     
-    
-    
+
     override func viewDidLoad() {
 
         
@@ -32,52 +31,13 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         locationTextField.clearButtonMode = .whileEditing
         
         aboutButton.setImage(UIImage(named: "right arrow"), for: .normal)
-        
-        
-        
+  
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        readProfile()
+        readProfile(toEmailTextField: emailTextField, toNameTextField: nameTextField, toLocationTextField: locationTextField)
     }
     
-    func readProfile() {
-        emailTextField.placeholder = "loading ..."
-        nameTextField.placeholder = "loading ..."
-        locationTextField.placeholder = "loading ..."
-        
-        let profile = SessionManager.shared.profile
-        if let p = profile {
-            
-            
-            if let profileEmail = p.email {
-                emailTextField.text = profileEmail
-            } else {
-                emailTextField.text = ""
-                emailTextField.placeholder = "enter email"
-            }
-            
-            SessionManager.shared.readMetadata() { meta in
-                DispatchQueue.main.async {
-                    if let loc = meta["location"], let locationString = loc as? String {
-                        self.locationTextField.text = locationString
-
-                    } else {
-                        self.locationTextField.text = ""
-                        self.locationTextField.placeholder = "enter location city"
-                    }
-                    
-                    if let fn = meta["first_name"], let sn = meta["last_name"], let firstName = fn as? String, let secondName = sn as? String {
-                        self.nameTextField.text = firstName + " " + secondName
-                    } else {
-                        self.nameTextField.text = ""
-                        self.nameTextField.placeholder = "enter name"
-                    }
-                }
-            }
-        }
- 
-    }
     
     func saveProfile(_ location: String) {
         SessionManager.shared.saveToMetadata(location: location)
@@ -106,4 +66,47 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
 
     }
+}
+
+extension UIViewController {
+    
+    func readProfile(toEmailTextField emailTextField: UITextField, toNameTextField nameTextField: UITextField, toLocationTextField locationTextField: UITextField, missingEmail : String = "enter email", missingName : String = "enter name", missingLocation : String = "enter location city") {
+        
+        emailTextField.placeholder = "loading ..."
+        nameTextField.placeholder = "loading ..."
+        locationTextField.placeholder = "loading ..."
+        
+        let profile = SessionManager.shared.profile
+        
+        if let p = profile {
+            
+            if let profileEmail = p.email {
+                emailTextField.text = profileEmail
+            } else {
+                emailTextField.text = ""
+                emailTextField.placeholder = missingEmail
+            }
+            
+            SessionManager.shared.readMetadata() { meta in
+                DispatchQueue.main.async {
+                    if let loc = meta["location"], let locationString = loc as? String {
+                        locationTextField.text = locationString
+                        
+                    } else {
+                        locationTextField.text = ""
+                        locationTextField.placeholder = missingLocation
+                    }
+                    
+                    if let fn = meta["first_name"], let sn = meta["last_name"], let firstName = fn as? String, let secondName = sn as? String {
+                        nameTextField.text = firstName + " " + secondName
+                    } else {
+                        nameTextField.text = ""
+                        nameTextField.placeholder = missingName
+                    }
+                }
+            }
+        }
+        
+    }
+
 }

@@ -45,6 +45,9 @@ class BookingViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        readProfile(toEmailTextField: userEmail, toNameTextField: userName, toLocationTextField: location, missingEmail: "update mail", missingName: "update name", missingLocation: "update location")
+    }
     
     
     func disableBookingButton() {
