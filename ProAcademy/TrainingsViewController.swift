@@ -111,9 +111,11 @@ extension TrainingsViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TrainingCell") as! TrainingTableViewCell
         cell.title.text = training.title
         cell.trainer.text = training.trainer
-        cell.priceButton.setTitle("\(training.price!) PLN", for: .normal)
+        cell.priceButton.setTitle(formatPrice(of: training), for: .normal)
+        cell.priceButton.titleEdgeInsets = priceButtonInsets()
         
-        cell.availablePlaces.text = "\(training.remainingItems!)/\(training.offeredItems!)"
+        
+        cell.availablePlaces.text = formatAvailablePlaces(of: training)
         cell.training = training
         cell.updateFavouriteState()
         

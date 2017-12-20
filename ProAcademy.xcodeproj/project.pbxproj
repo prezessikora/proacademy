@@ -53,6 +53,7 @@
 		B5CD41FC1F972ABD0081151A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CD41FB1F972ABD0081151A /* AboutViewController.swift */; };
 		B5CD41FE1F977D6B0081151A /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CD41FD1F977D6B0081151A /* FAQViewController.swift */; };
 		B5CD42001F9907770081151A /* FAQAnwserCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CD41FF1F9907770081151A /* FAQAnwserCellTableViewCell.swift */; };
+		B5E21F771FEAAFBE00D12289 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E21F761FEAAFBE00D12289 /* RoundButton.swift */; };
 		B5E28BB51F9A07FE00815E15 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E28BB41F9A07FE00815E15 /* TermsViewController.swift */; };
 		B5E28BB71F9A081200815E15 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E28BB61F9A081200815E15 /* AboutUsViewController.swift */; };
 		B5E28BB91F9A094100815E15 /* AboutUsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E28BB81F9A094100815E15 /* AboutUsUI.swift */; };
@@ -126,6 +127,7 @@
 		B5CD41FB1F972ABD0081151A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		B5CD41FD1F977D6B0081151A /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		B5CD41FF1F9907770081151A /* FAQAnwserCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQAnwserCellTableViewCell.swift; sourceTree = "<group>"; };
+		B5E21F761FEAAFBE00D12289 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		B5E28BB41F9A07FE00815E15 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		B5E28BB61F9A081200815E15 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		B5E28BB81F9A094100815E15 /* AboutUsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsUI.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				B5523FD41FBEFCD000B19FA0 /* SettingsViewController.swift */,
 				B5397CCD1FCECA78000D8071 /* TrainingProfileTableViewCell.swift */,
 				B50AF8D31FE27FF300DC5F28 /* NotificationExtension.swift */,
+				B5E21F761FEAAFBE00D12289 /* RoundButton.swift */,
 			);
 			path = ProAcademy;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				B5523FD51FBEFCD000B19FA0 /* SettingsViewController.swift in Sources */,
 				B5437AD31F83A20E003DB93D /* FavouritesViewController.swift in Sources */,
 				B5437ADC1F863726003DB93D /* FavouriteEventCell.swift in Sources */,
+				B5E21F771FEAAFBE00D12289 /* RoundButton.swift in Sources */,
 				B5E28BC11F9E264100815E15 /* ContentfulArtistsService.swift in Sources */,
 				B5514CD91F9213370013A560 /* FadePresentAnimationController.swift in Sources */,
 				B5CD41FE1F977D6B0081151A /* FAQViewController.swift in Sources */,

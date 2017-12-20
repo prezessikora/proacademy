@@ -41,7 +41,7 @@ class BookingViewController: UIViewController {
         if let t = training {
             trainingName.text = t.title
             trainerName.text = t.trainer
-            trainingCost.text = "\(t.price!) PLN"
+            trainingCost.text = formatPrice(of: t)
         }
     }
     

@@ -8,6 +8,21 @@
 
 import UIKit
 
+// formating of view values in one place
+extension UIViewController {
+    func formatPrice(of t: Training) -> String {
+        return "\(t.price!) PLN"
+    }
+    
+    func formatAvailablePlaces(of t: Training) -> String {
+        return "\(t.remainingItems!)/\(t.offeredItems!)"
+    }
+    
+    func priceButtonInsets() -> UIEdgeInsets {
+        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+    }
+}
+
 class TrainingDetailsViewController: UIViewController {
 
     var training : Training?
@@ -35,8 +50,8 @@ class TrainingDetailsViewController: UIViewController {
             self.title = t.title
             trainingTitle.text = t.title
             trainer.text = t.trainer
-            availablePlaces.text = "\(t.remainingItems!)/\(t.offeredItems!)"
-            price.setTitle("\(t.price!) PLN", for: .normal)
+            availablePlaces.text = formatAvailablePlaces(of: t)
+            price.setTitle(formatPrice(of: t), for: .normal)
             
             let htmlString = t.fullDescription            
             let htmlData = NSString(string: htmlString!).data(using: String.Encoding.unicode.rawValue)            
@@ -47,6 +62,7 @@ class TrainingDetailsViewController: UIViewController {
         
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        price.titleEdgeInsets = priceButtonInsets()
         
     }
     
