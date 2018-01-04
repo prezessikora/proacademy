@@ -16,6 +16,9 @@ class WordpressService: TrainingsService {
     
     let PRODUCTS_URL = "http://www.pro-academy.pl/wp-json/wc/v2/products"
     
+    
+    static let instance: WordpressService = WordpressService()
+    
     var oauthswift : OAuth1Swift!
     
     var cachedTrainings = [Training]()
@@ -27,14 +30,14 @@ class WordpressService: TrainingsService {
             attributes: .concurrent)
     
     
-    init() {
+    private init() {
         
         oauthswift = OAuth1Swift(
             consumerKey:    consumerKey,
             consumerSecret: consumerSecret
         )
         oauthswift.client.paramsLocation = .requestURIQuery
-        
+        loadOrRefreshData()
     }
 
     
@@ -56,7 +59,6 @@ class WordpressService: TrainingsService {
             print("WordpressService - returning \(onlyAvailableTrainings.count) available trainings.")
             return onlyAvailableTrainings
         }
-
     }
     
     fileprivate func processProducts(_ json: [Any]) {
@@ -121,8 +123,6 @@ class WordpressService: TrainingsService {
         print("WordpressService - Downloading products from WordPress...")
         let startTime = CFAbsoluteTimeGetCurrent()
         
-        
-        
         self.oauthswift.client.get(self.PRODUCTS_URL,
             success: { response in
                 let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
@@ -139,13 +139,13 @@ class WordpressService: TrainingsService {
                         print("ERROR paring JSON with training products: \(error.localizedDescription)")
                     }
                     self.cachedTrainings = self.cachedTrainings.filter({t in t.status == "publish"})
-                    print("Saved \(self.cachedTrainings.count) [published] trainings and sending notification.")
+
+                    let timeStr = String(format: "[%3.2f] seconds", timeElapsed)
+                    print("WordpressService - Finished downloading \(self.cachedTrainings.count) [published] products from WordPress \(timeStr).")
                     
                     DispatchQueue.main.async {
                         NotificationCenter.default.post(name: .ProductsDownload, object: self)
                     }
-                    let timeStr = String(format: "[%3.2f] seconds", timeElapsed)
-                    print("WordpressService - Finished downloading products from WordPress \(timeStr) .")
                 }
 
             },

@@ -12,7 +12,6 @@ protocol TrainingsService {
     func allTrainings() -> [Training]?
     func availableTrainings() -> [Training]?
     func loadOrRefreshData() 
-
 }
 
 class InMemoryTrainingsService: TrainingsService {

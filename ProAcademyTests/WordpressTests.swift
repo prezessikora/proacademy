@@ -8,83 +8,53 @@
 
 import XCTest
 import OAuthSwift
-
+@testable import ProAcademy
 
 class WordpressTests: XCTestCase {
     
+    var ws : WordpressService = WordpressService.instance
+    
+    let center = NotificationCenter.default
+    
+    var observerToken: Any!
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+        center.removeObserver(observer: observerToken)
+        ws.loadOrRefreshData()
     }
     
-    func testReadProducts() {
-        
+    func testIntegrationDownloadAllTrainings() {
         let expectation = XCTestExpectation(description: "Download")
+        var allTrainings : [Training] = [Training]()
         
-        let consumerKey = "ck_b0441b3a99da93a3400458b244befaaa61b0ee1b"
-        let consumerSecret = "cs_a75e911de45a3b3253426d2eacd1387e6fdc78b2"
-        
-        let oauthswift = OAuth1Swift(
-            consumerKey:    consumerKey,
-            consumerSecret: consumerSecret
-        )
-        oauthswift.client.paramsLocation = .requestURIQuery
-        // do your HTTP request without authorize
-        
-     
-        oauthswift.client.get("http://www.pro-academy.pl/wp-json/wc/v2/products",
-            success: { response in
-                
-                do {
-                    let json = try response.jsonObject() as! [Any]
-                    print("Downloaded \(json.count) products")
-                    XCTAssertGreaterThanOrEqual(json.count, 1)
-                    for p in json {
-                        let product = p as! [String:Any]
-                        
-                        let status = product["status"] as! String
-                        let id = product["id"]
-                        if let productName = product["name"] as? String {
-                            if status == "publish" {
-                                print(productName)
-                            }
-                        }
-                        
-                        let soldAmount = product["total_sales"]
-                        let stockQuantity = product["stock_quantity"]
-                        
-                        let price = product["price"]
-                        
+        observerToken = center.addObserver(forName: .ProductsDownload, object: nil, queue: nil) { notification in
+            print("--------- RECEIVED")
+            allTrainings = self.ws.allTrainings()!
+            expectation.fulfill()
+        }
 
-                        let description = product["description"]
-                        let shortDescription = product["short_description"]
-                        
-                        
-                        
-                    }
-                    
-                } catch {
-                    XCTFail("ERROR paring JSON")
-                }
-                
-                
-                expectation.fulfill()
-            },
-            failure: { error in
-                XCTFail("ERROR making request \(error.localizedDescription)")
-                expectation.fulfill()
-                
-            }
-        )
-        self.wait(for: [expectation], timeout: 20.0)
-        
-        
+        self.wait(for: [expectation], timeout: 10.0)
+        XCTAssertEqual(allTrainings.count, 9)
     }
     
+    func testIntegrastionDownloadAvailableTrainings() {
+        let expectation = XCTestExpectation(description: "Download")
+        var allTrainings : [Training] = [Training]()
+
+        observerToken = NotificationCenter.default.addObserver(forName: .ProductsDownload, object: nil, queue: nil) { notification in
+            print("--------- RECEIVED")
+            allTrainings = self.ws.availableTrainings()!
+            expectation.fulfill()
+        }
+        
+        self.wait(for: [expectation], timeout: 10.0)
+        XCTAssertEqual(allTrainings.count, 5)
+    }
     
 }
+
