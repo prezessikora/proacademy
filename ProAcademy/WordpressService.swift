@@ -16,12 +16,13 @@ class WordpressService: TrainingsService {
     
     let PRODUCTS_URL = "http://www.pro-academy.pl/wp-json/wc/v2/products"
     
-    
-    static let instance: WordpressService = WordpressService()
+    static let sharedInstance: WordpressService = WordpressService()
     
     var oauthswift : OAuth1Swift!
     
     var cachedTrainings = [Training]()
+    
+     var downloadInProgress: Bool = false
     
     // sync read/write through this queue
     fileprivate let concurrentDownloadQueue =
@@ -37,13 +38,16 @@ class WordpressService: TrainingsService {
             consumerSecret: consumerSecret
         )
         oauthswift.client.paramsLocation = .requestURIQuery
-        loadOrRefreshData()
     }
 
     
     func loadOrRefreshData()  {
         print("WordpressService - Refreshig cached data.")
-        downloadTrainings()
+        
+        DispatchQueue.global(qos: .background).async {
+            self.downloadTrainings()
+            self.downloadInProgress = false
+        }
     }
 
     

@@ -13,14 +13,14 @@ class TrainingsViewController: UITableViewController {
     
     fileprivate var trainigs: TrainingsService {
         get {
-            return Utils.application().trainingsService
+            return WordpressService.sharedInstance
         }
     }
     
-    var productsRefreshTimer: Timer!
-    let CACHE_REFRESH_SECONDS: TimeInterval = TimeInterval(exactly: 30)!
-    
     var indicator: UIActivityIndicatorView!
+    
+    var shouldRefreshData = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +34,6 @@ class TrainingsViewController: UITableViewController {
         tableView.tableFooterView = UIView(frame: .zero)
 
     }
-
-    override func viewDidDisappear(_ animated: Bool) {
-        productsRefreshTimer.invalidate()
-    }
-
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icons8-Home-48"), style: .plain, target: nil , action: nil)
@@ -57,13 +52,13 @@ class TrainingsViewController: UITableViewController {
             indicator.startAnimating()
         }
         
-        productsRefreshTimer = Timer.scheduledTimer(timeInterval: CACHE_REFRESH_SECONDS, target: self, selector: #selector(refreshCache), userInfo: nil, repeats: true)
-        refreshCache()
-    }
-    
-    
-    @objc func refreshCache() {
-        trainigs.loadOrRefreshData()
+        // skip first view display reload
+        if (shouldRefreshData) {
+            trainigs.loadOrRefreshData()
+        } else {
+            shouldRefreshData = true
+        }
+        
     }
     
     @objc func updateOnProductsReload() {
@@ -71,8 +66,7 @@ class TrainingsViewController: UITableViewController {
             self.tableView.reloadData()
             self.indicator.stopAnimating()
             self.indicator.isHidden = true
-        }
-        
+        }        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

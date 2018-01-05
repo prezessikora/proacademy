@@ -160,7 +160,7 @@ class OnDeviceTrainingFavouritesService: BaseFavouritesService, TrainingFavourit
 
         let favouriteIds = favourites.map({e in e.value(forKey: "id") as! String})
         
-        if let allTrainings = Utils.application().trainingsService.allTrainings() {
+        if let allTrainings = WordpressService.sharedInstance.allTrainings() {
             return allTrainings.filter({a in favouriteIds.contains(a.id)})
             
         }

@@ -12,48 +12,28 @@ import OAuthSwift
 
 class WordpressTests: XCTestCase {
     
-    var ws : WordpressService = WordpressService.instance
+    var ws : WordpressService = WordpressService.sharedInstance
     
-    let center = NotificationCenter.default
-    
-    var observerToken: Any!
-    
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-        center.removeObserver(observer: observerToken)
-        ws.loadOrRefreshData()
+    override class func setUp() {
+        let expectation = XCTestExpectation(description: "Download")
+        let observerToken = NotificationCenter.default.addObserver(forName: .ProductsDownload, object: nil, queue: nil) { notification in
+            print("--------- DATA LOADED")
+            expectation.fulfill()
+        }
+        print("--------- WAITING FOR DATA TO LOAD ")
+        XCTWaiter.wait(for: [expectation], timeout: 20.0)
+        print("--------- RUNNING TESTS ")
+        NotificationCenter.default.removeObserver(observer: observerToken)
     }
     
     func testIntegrationDownloadAllTrainings() {
-        let expectation = XCTestExpectation(description: "Download")
-        var allTrainings : [Training] = [Training]()
-        
-        observerToken = center.addObserver(forName: .ProductsDownload, object: nil, queue: nil) { notification in
-            print("--------- RECEIVED")
-            allTrainings = self.ws.allTrainings()!
-            expectation.fulfill()
-        }
-
-        self.wait(for: [expectation], timeout: 10.0)
+        let allTrainings = ws.allTrainings()!
         XCTAssertEqual(allTrainings.count, 9)
     }
     
     func testIntegrastionDownloadAvailableTrainings() {
-        let expectation = XCTestExpectation(description: "Download")
-        var allTrainings : [Training] = [Training]()
-
-        observerToken = NotificationCenter.default.addObserver(forName: .ProductsDownload, object: nil, queue: nil) { notification in
-            print("--------- RECEIVED")
-            allTrainings = self.ws.availableTrainings()!
-            expectation.fulfill()
-        }
-        
-        self.wait(for: [expectation], timeout: 10.0)
-        XCTAssertEqual(allTrainings.count, 5)
+        let availableTrainings = self.ws.availableTrainings()!
+        XCTAssertEqual(availableTrainings.count, 5)
     }
     
 }
