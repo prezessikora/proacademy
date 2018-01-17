@@ -31,7 +31,7 @@ class ArtistsViewController: UIViewController, iCarouselDataSource, iCarouselDel
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCarousel()
-        service = ContentfulArtistsService()
+        service = ContentfulArtistsService.sharedInstance
     }
     
     fileprivate func configureCarousel() {

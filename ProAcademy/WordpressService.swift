@@ -9,6 +9,7 @@
 import UIKit
 import OAuthSwift
 
+
 class WordpressService: TrainingsService {
     
     let consumerKey = "ck_b0441b3a99da93a3400458b244befaaa61b0ee1b"
@@ -127,6 +128,7 @@ class WordpressService: TrainingsService {
         print("WordpressService - Downloading products from WordPress...")
         let startTime = CFAbsoluteTimeGetCurrent()
         
+
         self.oauthswift.client.get(self.PRODUCTS_URL,
             success: { response in
                 let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime

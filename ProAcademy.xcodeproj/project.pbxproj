@@ -44,7 +44,7 @@
 		B57054161F7BC98300514412 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B57054141F7BC98300514412 /* Main.storyboard */; };
 		B57054181F7BC98300514412 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B57054171F7BC98300514412 /* Assets.xcassets */; };
 		B570541B1F7BC98300514412 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B57054191F7BC98300514412 /* LaunchScreen.storyboard */; };
-		B57054261F7BC98300514412 /* ProAcademyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57054251F7BC98300514412 /* ProAcademyTests.swift */; };
+		B57054261F7BC98300514412 /* ContentfulTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57054251F7BC98300514412 /* ContentfulTests.swift */; };
 		B57054311F7E247600514412 /* WelcomePagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57054301F7E247600514412 /* WelcomePagesViewController.swift */; };
 		B57054351F7E344C00514412 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57054341F7E344C00514412 /* WelcomeViewController.swift */; };
 		B5842B9E1F8B52F400E6B573 /* ArtistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5842B9D1F8B52F400E6B573 /* ArtistsViewController.swift */; };
@@ -117,7 +117,7 @@
 		B570541A1F7BC98300514412 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B570541C1F7BC98300514412 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B57054211F7BC98300514412 /* ProAcademyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProAcademyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B57054251F7BC98300514412 /* ProAcademyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProAcademyTests.swift; sourceTree = "<group>"; };
+		B57054251F7BC98300514412 /* ContentfulTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentfulTests.swift; sourceTree = "<group>"; };
 		B57054271F7BC98300514412 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B57054301F7E247600514412 /* WelcomePagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePagesViewController.swift; sourceTree = "<group>"; };
 		B57054341F7E344C00514412 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -265,7 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				B50AF8CD1FE0034000DC5F28 /* WordpressTests.swift */,
-				B57054251F7BC98300514412 /* ProAcademyTests.swift */,
+				B57054251F7BC98300514412 /* ContentfulTests.swift */,
 				B57054271F7BC98300514412 /* Info.plist */,
 				B54AB05F1FD013F2001FFA5E /* MailgunTests.swift */,
 			);
@@ -514,6 +514,7 @@
 				"${BUILT_PRODUCTS_DIR}/Lock/Lock.framework",
 				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SimpleKeychain/SimpleKeychain.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/iCarousel/iCarousel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -525,6 +526,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lock.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimpleKeychain.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iCarousel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -589,7 +591,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B50AF8CE1FE0034000DC5F28 /* WordpressTests.swift in Sources */,
-				B57054261F7BC98300514412 /* ProAcademyTests.swift in Sources */,
+				B57054261F7BC98300514412 /* ContentfulTests.swift in Sources */,
 				B54AB0601FD013F2001FFA5E /* MailgunTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -764,7 +766,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.designlove.ProAcademyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProAcademy.app/ProAcademy";
 			};
 			name = Debug;
@@ -780,7 +782,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.designlove.ProAcademyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProAcademy.app/ProAcademy";
 			};
 			name = Release;

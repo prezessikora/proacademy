@@ -11,17 +11,7 @@ import Alamofire
 
 class MailgunTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
+    func testSendTestMail() {
             let expectation = XCTestExpectation(description: "Download")
             
             let domain_name = "sandbox4d10a148199548c693301df628105cd8.mailgun.org"

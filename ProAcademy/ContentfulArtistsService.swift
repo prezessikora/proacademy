@@ -15,13 +15,15 @@ protocol ArtistsService {
 
 class ContentfulArtistsService: ArtistsService {
     
-    let spaceId = "hul02y9lnm1j"
-    let token = "f236c5518033231432fced6a6194e068d8449c2de8ebd9cc7b1b291f3a680325"
+    fileprivate let spaceId = "hul02y9lnm1j"
+    fileprivate let token = "f236c5518033231432fced6a6194e068d8449c2de8ebd9cc7b1b291f3a680325"
 
     var client : Client?
     
-    init() {
-        client = Client(spaceId: spaceId, accessToken: token)
+    public static var sharedInstance =  ContentfulArtistsService()
+    
+    fileprivate init() {
+        client = Client(spaceId: spaceId, accessToken: token)        
     }
     
 

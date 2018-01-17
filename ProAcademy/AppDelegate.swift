@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         WordpressService.sharedInstance.loadOrRefreshData()
         
-        artistsService = ContentfulArtistsService()
+        artistsService = ContentfulArtistsService.sharedInstance
         
         bookingService = BookingService()
         bookingService.mailService = MailgunMailService()
